@@ -1,0 +1,33 @@
+                    PEDIDOS
+                       │
+                       ▼
+             Interpretador de instruções
+                       │
+                       ▼
+              Necessidades de picking
+                       │
+                       ▼
+                Consolidação
+                       │
+                       ▼
+             PickingStrategy
+                       │
+                       ▼
+             ESTOQUE CANDIDATO
+                       │
+                       ▼
+          Seleção de pallets/caixas
+                       │
+                       ▼
+              PONTOS DE COLETA
+                       │
+                       ▼
+                 ROUTE ENGINE
+                       │
+                       ▼
+                    A*
+                       │
+                       ▼
+               ROTA DE PICKING
+                       │
+                       ▼

@@ -1,4 +1,4 @@
 package com.allancleitonppma.sscagent.application.port;
 
-public class ProductRepository {
+public interface ProductRepository {
 }

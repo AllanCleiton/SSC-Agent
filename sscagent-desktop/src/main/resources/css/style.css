@@ -1,0 +1,325 @@
+/* =========================================================
+   SSC AGENT - ESTILO PRINCIPAL
+   ========================================================= */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f4f6f9;
+}
+
+
+/* =========================================================
+   MENU SUPERIOR
+   ========================================================= */
+
+.menu-bar {
+    -fx-background-color: #17365d;
+    -fx-padding: 0 8px 0 8px;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: #24558f;
+}
+
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #d9dee7;
+    -fx-border-radius: 4px;
+    -fx-padding: 4px;
+}
+
+.menu-item {
+    -fx-padding: 7px 18px 7px 18px;
+}
+
+.menu-item .label {
+    -fx-text-fill: #30343b;
+}
+
+.menu-item:hover {
+    -fx-background-color: #e9f1fb;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.label {
+    -fx-text-fill: #30343b;
+}
+
+.title {
+    -fx-text-fill: #17365d;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #707985;
+    -fx-font-size: 13px;
+}
+
+
+/* =========================================================
+   TAB PANE
+   ========================================================= */
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 0 0 0 4px;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #e2e6ec;
+    -fx-background-radius: 6px 6px 0 0;
+    -fx-padding: 8px 18px 8px 18px;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #5d6672;
+    -fx-font-size: 13px;
+}
+
+.tab:hover {
+    -fx-background-color: #d5dce5;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #17365d;
+    -fx-font-weight: bold;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: white;
+    -fx-border-color: #dce1e8;
+    -fx-border-radius: 0 0 6px 6px;
+}
+
+
+/* =========================================================
+   COMBOBOX
+   ========================================================= */
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #cbd2dc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-pref-height: 30px;
+}
+
+.combo-box:hover {
+    -fx-border-color: #7d8da3;
+}
+
+.combo-box:focused {
+    -fx-border-color: #2474c6;
+    -fx-effect: dropshadow(gaussian, rgba(36, 116, 198, 0.18), 4, 0, 0, 0);
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #30343b;
+    -fx-padding: 5px 8px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #cbd2dc;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #e9f1fb;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #2474c6;
+    -fx-text-fill: white;
+}
+
+
+/* =========================================================
+   TOOLBAR / BARRA INFERIOR
+   ========================================================= */
+
+.tool-bar {
+    -fx-background-color: white;
+    -fx-border-color: #dce1e8;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 4px 10px;
+    -fx-spacing: 8px;
+}
+
+.tool-bar .label {
+    -fx-text-fill: #5c6570;
+    -fx-font-size: 12px;
+}
+
+
+/* =========================================================
+   SCROLLPANE
+   ========================================================= */
+
+.scroll-pane {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: white;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+    -fx-text-fill: #5c6570;
+    -fx-font-size: 12px;
+}
+
+.status-ok {
+    -fx-text-fill: #25864a;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================================================
+   BARRAS / CONTAINERS
+   ========================================================= */
+
+.h-box,
+.v-box {
+    -fx-background-color: transparent;
+}
+
+.header {
+    -fx-background-color: white;
+    -fx-padding: 14px 18px;
+    -fx-border-color: #dce1e8;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.header-status {
+    -fx-text-fill: #25864a;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.status-bar {
+    -fx-background-color: white;
+    -fx-border-color: #dce1e8;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 6px 12px;
+    -fx-spacing: 10px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.status-bar .label {
+    -fx-text-fill: #626b76;
+    -fx-font-size: 12px;
+}
+
+.title {
+    -fx-text-fill: #17365d;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #707985;
+    -fx-font-size: 13px;
+}
+
+/* =========================================================
+   BLOCO DE SEPARAÇÃO
+   ========================================================= */
+
+.picking-block {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #dce1e8;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-padding: 18px;
+}
+
+
+/* Cabeçalho */
+
+.picking-block-header {
+    -fx-padding: 0 0 10px 0;
+    -fx-border-color: #e3e7ec;
+    -fx-border-width: 0 0 1px 0;
+}
+
+
+.picking-block-title {
+    -fx-text-fill: #17365d;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+
+.picking-block-subtitle {
+    -fx-text-fill: #7a838f;
+    -fx-font-size: 12px;
+}
+
+
+/* Linhas de informação */
+
+.info-row {
+    -fx-padding: 7px 5px;
+    -fx-background-radius: 4px;
+}
+
+
+.info-row:hover {
+    -fx-background-color: #f5f8fb;
+}
+
+
+/* Nome do campo */
+
+.info-label {
+    -fx-text-fill: #697481;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-min-width: 155px;
+}
+
+
+/* Valor */
+
+.info-value {
+    -fx-text-fill: #30343b;
+    -fx-font-size: 13px;
+}
+
+
+/* Valor pendente */
+
+.info-value.pending {
+    -fx-text-fill: #c47b16;
+    -fx-font-weight: bold;
+}

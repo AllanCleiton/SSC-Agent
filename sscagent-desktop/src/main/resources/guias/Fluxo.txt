@@ -1,0 +1,56 @@
+                CARGA DE VENDA
+                      │
+                      ▼
+              ImportSalesLoad
+                      │
+                      ▼
+                  PEDIDOS
+                      │
+                      ▼
+          InterpretInstruction
+                      │
+             ┌────────┴────────┐
+             │                 │
+          Normal          Instrução
+             │                 │
+             │          Interpretada?
+             │            │       │
+             │           SIM     NÃO
+             │            │       │
+             │            │   INTERVENÇÃO
+             │            │       │
+             └────────────┴───────┘
+                      │
+                      ▼
+          PickingRequirements
+                      │
+                      ▼
+          CONSOLIDAÇÃO DA CARGA
+                      │
+                      ▼
+          NECESSIDADES DE PICKING
+                      │
+                      ▼
+             PickingStrategy
+                      │
+                      ▼
+              STOCK DISPONÍVEL
+                      │
+                      ▼
+           Produto + Caixa + Validade
+                      │
+                      ▼
+                 PALLETS
+                      │
+                      ▼
+                ENDEREÇOS
+                      │
+                      ▼
+              PESOS / PRIORIDADE
+                      │
+                      ▼
+               PICKING MAP
+                      │
+             ┌────────┴────────┐
+             ▼                 ▼
+         JavaFX             Impressão

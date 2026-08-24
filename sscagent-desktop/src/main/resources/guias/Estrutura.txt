@@ -1,0 +1,15 @@
+picking/
+│
+├── pom.xml
+│
+├── picking-domain/
+│   └── pom.xml
+│
+├── picking-application/
+│   └── pom.xml
+│
+├── picking-infrastructure/
+│   └── pom.xml
+│
+└── picking-desktop/
+    └── pom.xml

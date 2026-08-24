@@ -1,0 +1,24 @@
+Para este projeto eu vou usar:
+
+Arquitetura: Clean Architecture / Hexagonal
+
+Organização: Multi-module Maven
+
+Domínio: DDD leve
+
+Interface: JavaFX + MVVM
+
+Estratégias de picking: Strategy Pattern
+
+Interpretação de instruções: Strategy/Chain of Responsibility
+
+Integração de dados: Ports & Adapters
+
+Persistência futura: Repository Pattern
+
+DTOs: somente nas fronteiras entre camadas
+
+Java: 25
+
+E principalmente: não vamos começar pelo JavaFX.
+

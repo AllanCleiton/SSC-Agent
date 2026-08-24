@@ -1,30 +1,42 @@
 package com.allancleitonppma.sscagent.desktop.application;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.util.Objects;
+import java.io.IOException;
+
 
 public class Launcher extends Application{
 
+    private static Stage mainStage;
+
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) {
         try {
-            var root = new BorderPane();
-            var scene = new Scene(root,400,400);
-            //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("src/main/resources/com/allancleitonppma/sscagent/styles/MainView.css")).toExternalForm());
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch(Exception e) {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/gui/MainView.fxml")
+            );
+
+            Parent parent = loader.load();
+
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+
+            stage.show();
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     static void main(String[] args) {
-
         Application.launch(Launcher.class, args);
+
     }
+
+
 }
 
