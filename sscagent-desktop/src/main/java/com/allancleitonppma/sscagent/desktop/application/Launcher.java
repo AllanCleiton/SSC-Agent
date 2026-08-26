@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class Launcher extends Application{
 
-    private static Stage mainStage;
+    private static Stage stage;
 
     @Override
     public void start(Stage stage) {

@@ -1,32 +1,42 @@
 package com.allancleitonppma.sscagent.desktop.controller;
 
-import com.allancleitonppma.sscagent.application.port.SalesLoadReader;
 import com.allancleitonppma.sscagent.application.usecase.ImportSalesLoadUseCase;
 import com.allancleitonppma.sscagent.desktop.alerts.DefaultAlert;
 import com.allancleitonppma.sscagent.desktop.dto.OrderDTO;
-import com.allancleitonppma.sscagent.domain.model.entities.Order;
-import com.allancleitonppma.sscagent.domain.model.entities.OrderLine;
-import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
-import com.allancleitonppma.sscagent.infrastructure.json.JsonSalesLoadReader;
+import com.allancleitonppma.sscagent.domain.model.entities.OrderPreview;
+
+import com.allancleitonppma.sscagent.infrastructure.adapters.json.JsonSalesLoadReader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 
 
+import java.io.File;
 import java.net.URL;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.allancleitonppma.sscagent.application.usecase.ImportListOrderPreview.getListOrderDto;
+
+
 public class MainViewController implements Initializable {
+    @FXML
+    public Button btnConsolidation;
+    @FXML
+    public Label lbFileStatus;
     @FXML
     private TextField txtOrderCharger;
     @FXML
     private Button btnLoader;
+    @FXML
+    private Button btnLoaderFile;
+    @FXML
+    private TextField txtImportPath;
     @FXML
     private Label lbStatus;
     @FXML
@@ -41,7 +51,9 @@ public class MainViewController implements Initializable {
     private TableColumn<OrderDTO,String> tableColumnOrder;
     @FXML
     private TableColumn<OrderDTO,String> tableColumnInstruction;
-    private ObservableList<OrderDTO> orderDTOS;
+
+    @FXML
+    private ComboBox<String> comboBoxDataMode;
 
     @FXML
     public void onTabOrderDeCargaAction(){
@@ -50,11 +62,26 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void onLoaderAction(){
-
-        orderDTOS = FXCollections.observableArrayList(getListOrderDto());
-        tbOrderChargeList.setItems(orderDTOS);
-
         try {
+
+            ImportSalesLoadUseCase salesLoadUseCase = new ImportSalesLoadUseCase(new JsonSalesLoadReader());
+
+            List<OrderPreview> orderPreview = getListOrderDto(Path.of(txtImportPath.getText()), salesLoadUseCase);
+
+            ObservableList<OrderDTO> orderDTOS = FXCollections.observableArrayList(orderPreview.stream().map(orderPreview1 -> new OrderDTO(
+
+                    orderPreview1.getProduct(),
+                    orderPreview1.getNeed(),
+                    orderPreview1.getCondition(),
+                    orderPreview1.getOrder(),
+                    orderPreview1.getInstruction()
+            )).toList());
+
+            txtOrderCharger.setText(orderDTOS.getFirst().getOrder());
+
+            tbOrderChargeList.setItems(orderDTOS);
+
+
 
             lbStatus.setText("Sucesso!");
 
@@ -76,37 +103,55 @@ public class MainViewController implements Initializable {
         tableColumnCondition.setCellValueFactory(new PropertyValueFactory<>("condition"));
         tableColumnOrder.setCellValueFactory(new PropertyValueFactory<>("order"));
         tableColumnInstruction.setCellValueFactory(new PropertyValueFactory<>("instruction"));
+
+        comboBoxDataMode.getItems().add("Arquivo");
+        comboBoxDataMode.getItems().add("Banco De dados");
+
+        comboBoxDataMode.getSelectionModel().selectFirst();
+
+        setDataModel(comboBoxDataMode.getValue());
+
+
+        comboBoxDataMode.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+
+                    System.out.println("Valor anterior: " + oldValue);
+                    System.out.println("Novo valor: " + newValue);
+                    comboBoxDataModelAlter(newValue);
+
+                });
     }
 
-    private List<OrderDTO> getListOrderDto() {
+    private void setDataModel(String mode){
+        //implementar a logica para escolher como os dados iram ser carregados.
+    }
 
-        SalesLoadReader reader = new JsonSalesLoadReader();
-        ImportSalesLoadUseCase useCase = new ImportSalesLoadUseCase(reader);
+    @FXML
+    public void  comboBoxDataModelAlter(String value){
+        setDataModel(value);
+    }
 
-        Path path = Path.of(
-                "C:\\Users\\allan\\Documents\\MyWorkspace\\SSCAgent\\SSCAGENT\\sscagent-desktop\\src\\main\\resources\\Data\\CargaDeVenda.exemplo.json"
+    @FXML
+    public void OnOpenFileAction(){
+        FileChooser fileChooser = new FileChooser();
+
+        fileChooser.setTitle("Selecionar arquivo");
+
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter(
+                        "Arquivos de carga",
+                        "*.json",
+                        "*.xls",
+                        "*.xlsx"
+                )
         );
 
-        SalesLoad salesLoad = useCase.execute(path);
+        File arquivo = fileChooser.showOpenDialog(txtImportPath.getScene().getWindow());
 
-        List<OrderDTO> list = new ArrayList<>();
-
-        for (Order order : salesLoad.Orders) {
-
-            for (OrderLine orderLine : order.lines) {
-
-                OrderDTO orderDTO = new OrderDTO();
-
-                orderDTO.setOrder(String.valueOf(order.orderId));
-                orderDTO.setInstruction(String.valueOf(order.loadingInstruction));
-                orderDTO.setProduct(String.valueOf(orderLine.productCode));
-                orderDTO.setNeed(String.valueOf(orderLine.quantity));
-                orderDTO.setCondition(String.valueOf(orderLine.condition));
-
-                list.add(orderDTO);
-            }
+        if (arquivo != null) {
+            txtImportPath.setText(arquivo.getAbsolutePath());
         }
-
-        return list;
     }
+
 }

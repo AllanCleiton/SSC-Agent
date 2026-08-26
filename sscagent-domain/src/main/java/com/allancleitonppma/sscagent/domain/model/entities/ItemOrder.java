@@ -1,6 +1,6 @@
 package com.allancleitonppma.sscagent.domain.model.entities;
 
-public class OrderLine
+public class ItemOrder
 {
     public long productCode;
     public Double quantity;

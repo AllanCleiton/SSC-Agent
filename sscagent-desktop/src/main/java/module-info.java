@@ -2,11 +2,12 @@ module sscagent.desktop {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires javafx.base;
 
     requires sscagent.domain;
-    requires com.allancleitonppma.sscagent.application;
     requires sscagent.infrastructure;
-    requires javafx.base;
+    requires sscagent.application;
+
 
     exports com.allancleitonppma.sscagent.desktop.application;
     exports com.allancleitonppma.sscagent.desktop.dto;

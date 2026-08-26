@@ -1,0 +1,18 @@
+profilePikingDefault:
+
+  name: 'Padrão'
+
+  description: 'Piking padrão sem regras'
+
+  defaultQuantityUnit: 'Kilograms'
+
+  excludeWithoutAddress: true
+
+  excludeUnavailable: true
+
+  useExpirationOrder: false
+
+  regex:
+    - 'frango\s+com\s+(\d+)'
+    - '(\d+)\s*kg\s*na\s*caixa'
+    - 'caixa\s+de\s+(\d+)'

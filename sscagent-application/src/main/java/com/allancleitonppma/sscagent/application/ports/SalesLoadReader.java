@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.application.port;
+package com.allancleitonppma.sscagent.application.ports;
 
 import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
 

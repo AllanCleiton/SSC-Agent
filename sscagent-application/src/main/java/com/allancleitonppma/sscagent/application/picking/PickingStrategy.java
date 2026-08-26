@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.domain.picking;
+package com.allancleitonppma.sscagent.application.picking;
 
 public interface PickingStrategy {
     PickingMap generate(PickingContext context);

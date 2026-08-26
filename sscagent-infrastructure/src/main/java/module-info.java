@@ -1,9 +1,15 @@
 module sscagent.infrastructure {
+
     requires sscagent.domain;
     requires tools.jackson.databind;
-    requires com.allancleitonppma.sscagent.application;
+    requires sscagent.application;
+    requires org.apache.poi.poi;
+    requires org.apache.poi.ooxml;
 
-    exports com.allancleitonppma.sscagent.infrastructure.json;
+    exports com.allancleitonppma.sscagent.infrastructure.adapters.json;
+    exports com.allancleitonppma.sscagent.infrastructure.adapters.excel;
+    exports com.allancleitonppma.sscagent.infrastructure.export;
+
 
     opens com.allancleitonppma.sscagent.infrastructure.dto
             to tools.jackson.databind;

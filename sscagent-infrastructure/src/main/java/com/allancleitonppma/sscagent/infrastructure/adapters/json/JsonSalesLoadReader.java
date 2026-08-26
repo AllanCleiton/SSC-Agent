@@ -1,13 +1,13 @@
-package com.allancleitonppma.sscagent.infrastructure.json;
+package com.allancleitonppma.sscagent.infrastructure.adapters.json;
 
-import com.allancleitonppma.sscagent.application.port.SalesLoadReader;
+import com.allancleitonppma.sscagent.application.ports.SalesLoadReader;
 import com.allancleitonppma.sscagent.infrastructure.dto.OrderJson;
 import com.allancleitonppma.sscagent.infrastructure.dto.OrderLineJson;
 import com.allancleitonppma.sscagent.infrastructure.dto.SalesLoadJson;
 import tools.jackson.databind.ObjectMapper;
 
 import com.allancleitonppma.sscagent.domain.model.entities.Order;
-import com.allancleitonppma.sscagent.domain.model.entities.OrderLine;
+import com.allancleitonppma.sscagent.domain.model.entities.ItemOrder;
 import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
 
 import java.nio.file.Path;
@@ -76,7 +76,7 @@ public class JsonSalesLoadReader implements SalesLoadReader {
 
             for (OrderLineJson lineJson : json.produtos) {
 
-                OrderLine line = mapOrderLine(lineJson);
+                ItemOrder line = mapOrderLine(lineJson);
 
                 order.lines.add(line);
             }
@@ -85,9 +85,9 @@ public class JsonSalesLoadReader implements SalesLoadReader {
         return order;
     }
 
-    private OrderLine mapOrderLine(OrderLineJson json) {
+    private ItemOrder mapOrderLine(OrderLineJson json) {
 
-        OrderLine line = new OrderLine();
+        ItemOrder line = new ItemOrder();
 
         line.productCode = json.codProduto;
         line.quantity = json.qtde;

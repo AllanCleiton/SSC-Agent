@@ -12,7 +12,7 @@ public  class PickingProfile
     public QuantityUnit defaultQuantityUnit = QuantityUnit.Kilograms;
     public boolean excludeWithoutAddress = true;
     public boolean excludeUnavailable = true;
-    public boolean useExpirationOrder ;
+    public boolean useExpirationOrder = true ;
     public boolean useAddressWeight = true;
     public List<RegexRule> regexRules = new ArrayList<>();
 }

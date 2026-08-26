@@ -1,6 +1,6 @@
 package com.allancleitonppma.sscagent.application.usecase;
 
-import com.allancleitonppma.sscagent.application.port.SalesLoadReader;
+import com.allancleitonppma.sscagent.application.ports.SalesLoadReader;
 import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
 
 

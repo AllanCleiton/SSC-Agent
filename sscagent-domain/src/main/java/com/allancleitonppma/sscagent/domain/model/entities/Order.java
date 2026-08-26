@@ -14,5 +14,5 @@ public class Order
     public int  sequence;
     public LocalDate orderDate;
     public String loadingInstruction;
-    public List<OrderLine> lines = new ArrayList<>();
+    public List<ItemOrder> lines = new ArrayList<>();
 }
