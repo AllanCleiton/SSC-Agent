@@ -9,6 +9,7 @@ module sscagent.desktop {
     requires sscagent.application;
 
 
+
     exports com.allancleitonppma.sscagent.desktop.application;
     exports com.allancleitonppma.sscagent.desktop.dto;
 

@@ -1,5 +1,6 @@
 package com.allancleitonppma.sscagent.desktop.alerts;
 
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 public class DefaultAlert {

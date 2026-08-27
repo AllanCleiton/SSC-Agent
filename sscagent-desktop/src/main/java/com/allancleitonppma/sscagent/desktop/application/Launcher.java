@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -11,21 +12,19 @@ import java.io.IOException;
 
 public class Launcher extends Application{
 
-    private static Stage stage;
+    private static Scene mainScene;
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/gui/MainView.fxml")
-            );
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+            BorderPane borderPane = loader.load();
 
-            Parent parent = loader.load();
 
-            Scene scene = new Scene(parent);
-            stage.setScene(scene);
-
-            stage.show();
+            mainScene = new Scene(borderPane);
+            primaryStage.setScene(mainScene);
+            primaryStage.setTitle("SSG-Agent");
+            primaryStage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -35,6 +34,10 @@ public class Launcher extends Application{
     static void main(String[] args) {
         Application.launch(Launcher.class, args);
 
+    }
+
+    public static Scene getMainScene(){
+        return mainScene;
     }
 
 

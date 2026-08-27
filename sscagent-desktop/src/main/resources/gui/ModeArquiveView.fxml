@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<HBox spacing="10.0" styleClass="status-bar" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.ModeDataImport">
+
+        <!--Item da area superior-->
+        <Label text="Informe o diretório           " />
+        <TextField fx:id="txtImportPath" />
+        <Button fx:id="btnLoaderFile" mnemonicParsing="false" onAction="#onLoaderAction" prefWidth="60.0" text="Abrir" />
+        <Label text="Status:" />
+        <Label fx:id="lbStatus" text="Aguardando..." />
+</HBox>
