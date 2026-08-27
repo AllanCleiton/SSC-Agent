@@ -1,42 +1,65 @@
 package com.allancleitonppma.sscagent.desktop.controller;
-import com.allancleitonppma.sscagent.desktop.dto.OrderDTO;
+
 import com.allancleitonppma.sscagent.desktop.alerts.DefaultAlert;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-
-
 public class MainViewController implements Initializable {
-    @FXML
-    public Label lbFileStatus;
 
     @FXML
-    private VBox vBoxDataImport;
-
+    private TabPane tabPane;
+    @FXML
+    private ComboBox<String> comboBoxDataMode;
 
 
     @FXML
-    public void onTabOrderDeCargaAction(){
+    public void onTabOrderDeCargaAction() {
         System.out.println("Entrou!");
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadView("/gui/ModeArquiveView.fxml");
+        initializeNodes();
     }
 
+    public void initializeNodes() {
+        comboBoxDataMode.getItems().add("Arquivo");
+        comboBoxDataMode.getItems().add("Banco De dados");
+        comboBoxDataMode.getSelectionModel().selectFirst();
+        setDataModel(comboBoxDataMode.getValue());
+
+        comboBoxDataMode.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+
+                    System.out.println("Valor anterior: " + oldValue);
+                    System.out.println("Novo valor: " + newValue);
+                    comboBoxDataModelAlter(newValue);
+
+                });
+
+        loadView("/gui/TabViewOrderCharger.fxml");
+
+    }
+
+    @FXML
+    public void comboBoxDataModelAlter(String value) {
+        setDataModel(value);
+    }
+
+    private void setDataModel(String mode) {
+        //implementar a logica para escolher como os dados iram ser carregados.
+    }
 
     private void loadView(String absoluteName) {
         try {
@@ -44,9 +67,9 @@ public class MainViewController implements Initializable {
                     getClass().getResource(absoluteName)
             );
 
-            HBox box = loader.load();
+            Tab tab = loader.load();
 
-            vBoxDataImport.getChildren().set(0, box);
+            tabPane.getTabs().set(0,tab);
 
         } catch (IOException e) {
             DefaultAlert.showAlert(
@@ -57,5 +80,4 @@ public class MainViewController implements Initializable {
             );
         }
     }
-
 }

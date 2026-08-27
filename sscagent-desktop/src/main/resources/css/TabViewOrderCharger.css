@@ -1,0 +1,45 @@
+/* =========================================================
+   TAB PANE
+   ========================================================= */
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-padding: 0 0 0 4px;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #e2e6ec;
+    -fx-background-radius: 6px 6px 0 0;
+    -fx-padding: 8px 18px 8px 18px;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #5d6672;
+    -fx-font-size: 13px;
+}
+
+.tab:hover {
+    -fx-background-color: #d5dce5;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #17365d;
+    -fx-font-weight: bold;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: white;
+    -fx-border-color: #dce1e8;
+    -fx-border-radius: 0 0 6px 6px;
+}

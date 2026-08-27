@@ -7,8 +7,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -61,59 +59,31 @@
          CENTRO
          ===================================================== -->
     <center>
-        <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <tabs>
-                <!--Aba Ordem de Carga-->
-                <Tab fx:id="tabOrderDeCarga" onSelectionChanged="#onTabOrderDeCargaAction" text="Ordem de Carga">
-                    <content>
-                        <VBox spacing="10.0">
-  <!--QUERO PEGAR ESTE AQUI -> --><VBox fx:id="vBoxDataImport" alignment="CENTER" prefHeight="55.0" prefWidth="778.0">
-                                <children>
-                                    <!-- ÁREA SUPERIOR -->
-                                    <VBox>
+        <TabPane stylesheets="@../css/TabViewOrderCharger.css" fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <!--Aba Ordem de Carga-->
+<!--Aqui eu substituo--><Tab text="Ordem de Carga">
 
-                                    </VBox>
-                                </children>
-                            </VBox>
+            </Tab>
 
-
-                            <!-- TABELA -->
-                            <TableView fx:id="tbOrderChargeList" prefHeight="299.0" prefWidth="778.0" VBox.vgrow="ALWAYS">
-                                <columns>
-                                    <TableColumn fx:id="tableColumnProduct" prefWidth="112.0" text="CÓD. PRODUTO" />
-
-                                    <TableColumn fx:id="tableColumNeed" prefWidth="106.0" text="NECESSIDADE" />
-
-                                    <TableColumn fx:id="tableColumnCondition" prefWidth="107.0" text="CONDIÇÃO" />
-
-                                    <TableColumn fx:id="tableColumnOrder" prefWidth="111.0" text="PEDIDO" />
-
-                                    <TableColumn fx:id="tableColumnInstruction" prefWidth="339.0" text="INSTRUÇÃO" />
-                                </columns>
-                            </TableView>
-                        </VBox>
-                    </content>
-                </Tab>
-
-                <!--Aba Mapa de Coleta-->
-                <Tab text="Mapa de coleta">
-                    <content>
-                        <AnchorPane />
-                    </content>
-                </Tab>
-                <!--Aba Perfis de Coleta-->
-                <Tab text="Perfis de coleta">
-                    <content>
-                        <AnchorPane />
-                    </content>
-                </Tab>
-                <!--Aba Gestão de Endereços-->
-                <Tab text="Endereços">
-                    <content>
-                        <AnchorPane />
-                    </content>
-                </Tab>
-            </tabs>
+            <!--Aba Mapa de Coleta-->
+            <Tab text="Mapa de coleta">
+                <content>
+                    <AnchorPane/>
+                </content>
+            </Tab>
+            <!--Aba Perfis de Coleta-->
+            <Tab text="Perfis de coleta">
+                <content>
+                    <AnchorPane/>
+                </content>
+            </Tab>
+            <!--Aba Gestão de Endereços-->
+            <Tab text="Endereços">
+                <content>
+                    <AnchorPane/>
+                </content>
+            </Tab>
         </TabPane>
     </center>
 

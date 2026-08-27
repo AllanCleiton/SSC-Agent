@@ -8,12 +8,16 @@ import com.allancleitonppma.sscagent.infrastructure.adapters.json.JsonSalesLoadR
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.List;
@@ -21,15 +25,16 @@ import java.util.ResourceBundle;
 
 import static com.allancleitonppma.sscagent.application.usecase.ImportListOrderPreview.getListOrderDto;
 
-public class ModeDataImport implements Initializable {
+public class TabViewOrderCharger implements Initializable {
+    @FXML
+    public Label lbFileStatus;
     @FXML
     private TextField txtImportPath;
     @FXML
     private Button btnLoaderFile;
     @FXML
-    private TextField txtOrderCharger;
-    @FXML
     private Label lbStatus;
+
     @FXML
     private TableView<OrderDTO> tbOrderChargeList;
 
@@ -43,13 +48,7 @@ public class ModeDataImport implements Initializable {
     private TableColumn<OrderDTO,String> tableColumnOrder;
     @FXML
     private TableColumn<OrderDTO,String> tableColumnInstruction;
-    @FXML
-    private ComboBox<String> comboBoxDataMode;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        initializeNodes();
-    }
 
     @FXML
     public void onLoaderAction(){
@@ -68,11 +67,7 @@ public class ModeDataImport implements Initializable {
                     orderPreview1.getInstruction()
             )).toList());
 
-            txtOrderCharger.setText(orderDTOS.getFirst().getOrder());
-
             tbOrderChargeList.setItems(orderDTOS);
-
-
 
             lbStatus.setText("Sucesso!");
 
@@ -84,7 +79,6 @@ public class ModeDataImport implements Initializable {
     }
 
 
-    @FXML
     public void OnOpenFileAction(){
         FileChooser fileChooser = new FileChooser();
 
@@ -106,6 +100,13 @@ public class ModeDataImport implements Initializable {
         }
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        initializeNodes();
+    }
+
+
+
     public void initializeNodes(){
         tableColumnProduct.setCellValueFactory(new PropertyValueFactory<>("product"));
         tableColumNeed.setCellValueFactory(new PropertyValueFactory<>("need"));
@@ -113,34 +114,5 @@ public class ModeDataImport implements Initializable {
         tableColumnOrder.setCellValueFactory(new PropertyValueFactory<>("order"));
         tableColumnInstruction.setCellValueFactory(new PropertyValueFactory<>("instruction"));
 
-        comboBoxDataMode.getItems().add("Arquivo");
-        comboBoxDataMode.getItems().add("Banco De dados");
-
-        comboBoxDataMode.getSelectionModel().selectFirst();
-
-        setDataModel(comboBoxDataMode.getValue());
-
-
-        comboBoxDataMode.getSelectionModel()
-                .selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-
-                    System.out.println("Valor anterior: " + oldValue);
-                    System.out.println("Novo valor: " + newValue);
-                    comboBoxDataModelAlter(newValue);
-
-                });
-
-
-
-    }
-
-    @FXML
-    public void  comboBoxDataModelAlter(String value){
-        setDataModel(value);
-    }
-
-    private void setDataModel(String mode){
-        //implementar a logica para escolher como os dados iram ser carregados.
     }
 }

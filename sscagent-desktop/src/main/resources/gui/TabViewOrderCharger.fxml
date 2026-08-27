@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Tab text="Ordem de Carga"
+     xmlns:fx="http://javafx.com/fxml/1"
+     fx:controller="com.allancleitonppma.sscagent.desktop.controller.TabViewOrderCharger">
+    <content>
+        <VBox spacing="10.0">
+            <!--QUERO PEGAR ESTE AQUI -> -->
+            <VBox  alignment="CENTER" prefHeight="55.0" prefWidth="778.0">
+                <children>
+                    <!-- ÁREA SUPERIOR -->
+                    <HBox spacing="10.0" styleClass="status-bar">
+
+                        <!--Item da area superior-->
+                        <Label text="Informe o diretório           "/>
+                        <TextField fx:id="txtImportPath"/>
+                        <Button fx:id="btnLoaderFile" mnemonicParsing="false" onAction="#onLoaderAction"
+                                prefWidth="60.0" text="Abrir"/>
+                        <Label text="Status:"/>
+                        <Label fx:id="lbStatus" text="Aguardando..."/>
+                    </HBox>
+                </children>
+            </VBox>
+
+
+            <!-- TABELA -->
+            <TableView fx:id="tbOrderChargeList" prefHeight="299.0" prefWidth="778.0" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="tableColumnProduct" prefWidth="112.0" text="CÓD. PRODUTO"/>
+
+                    <TableColumn fx:id="tableColumNeed" prefWidth="106.0" text="NECESSIDADE"/>
+
+                    <TableColumn fx:id="tableColumnCondition" prefWidth="107.0" text="CONDIÇÃO"/>
+
+                    <TableColumn fx:id="tableColumnOrder" prefWidth="111.0" text="PEDIDO"/>
+
+                    <TableColumn fx:id="tableColumnInstruction" prefWidth="339.0" text="INSTRUÇÃO"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </content>
+</Tab>
