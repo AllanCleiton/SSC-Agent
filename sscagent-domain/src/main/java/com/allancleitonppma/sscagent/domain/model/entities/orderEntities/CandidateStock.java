@@ -1,4 +1,7 @@
-package com.allancleitonppma.sscagent.domain.model.entities;
+package com.allancleitonppma.sscagent.domain.model.entities.orderEntities;
+
+import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
+import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 
 import java.util.ArrayList;
 import java.util.List;

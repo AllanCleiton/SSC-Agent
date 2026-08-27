@@ -2,8 +2,9 @@ package com.allancleitonppma.sscagent.desktop.controller;
 
 import com.allancleitonppma.sscagent.application.usecase.ImportSalesLoadUseCase;
 import com.allancleitonppma.sscagent.desktop.alerts.DefaultAlert;
+import com.allancleitonppma.sscagent.desktop.constraints.Constraints;
 import com.allancleitonppma.sscagent.desktop.dto.OrderDTO;
-import com.allancleitonppma.sscagent.domain.model.entities.OrderPreview;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.OrderPreview;
 
 import com.allancleitonppma.sscagent.infrastructure.adapters.json.JsonSalesLoadReader;
 import javafx.collections.FXCollections;
@@ -71,7 +72,7 @@ public class MainViewController implements Initializable {
             ObservableList<OrderDTO> orderDTOS = FXCollections.observableArrayList(orderPreview.stream().map(orderPreview1 -> new OrderDTO(
 
                     orderPreview1.getProduct(),
-                    orderPreview1.getNeed(),
+                    String.valueOf(orderPreview1.getNeed()),
                     orderPreview1.getCondition(),
                     orderPreview1.getOrder(),
                     orderPreview1.getInstruction()
@@ -121,6 +122,7 @@ public class MainViewController implements Initializable {
                     comboBoxDataModelAlter(newValue);
 
                 });
+        
     }
 
     private void setDataModel(String mode){

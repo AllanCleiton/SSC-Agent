@@ -1,6 +1,6 @@
 package com.allancleitonppma.sscagent.application.ports;
 
-import com.allancleitonppma.sscagent.domain.model.entities.StockBox;
+import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 
 
 import java.io.IOException;

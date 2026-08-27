@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.domain.model.entities;
+package com.allancleitonppma.sscagent.domain.model.entities.orderEntities;
 
 
 import java.util.ArrayList;

@@ -3,8 +3,8 @@ package com.allancleitonppma.sscagent.infrastructure.adapters.excel;
 import java.util.List;
 
 import com.allancleitonppma.sscagent.application.ports.StockBoxReader;
-import com.allancleitonppma.sscagent.domain.model.entities.Address;
-import com.allancleitonppma.sscagent.domain.model.entities.StockBox;
+import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
+import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 import com.allancleitonppma.sscagent.infrastructure.dto.BoxStockDTO;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;

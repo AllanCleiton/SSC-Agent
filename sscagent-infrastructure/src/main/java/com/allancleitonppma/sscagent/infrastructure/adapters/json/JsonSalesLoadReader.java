@@ -6,9 +6,9 @@ import com.allancleitonppma.sscagent.infrastructure.dto.OrderLineJson;
 import com.allancleitonppma.sscagent.infrastructure.dto.SalesLoadJson;
 import tools.jackson.databind.ObjectMapper;
 
-import com.allancleitonppma.sscagent.domain.model.entities.Order;
-import com.allancleitonppma.sscagent.domain.model.entities.ItemOrder;
-import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.Order;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.ItemOrder;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.SalesLoad;
 
 import java.nio.file.Path;
 import java.time.LocalDate;

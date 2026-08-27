@@ -1,6 +1,6 @@
-package com.allancleitonppma.sscagent.domain.model.entities;
+package com.allancleitonppma.sscagent.domain.model.entities.orderEntities;
 
-public class OrderPreview {
+public class ConsolidatedOrder {
     String product;
     String need;
     String condition;
@@ -8,7 +8,7 @@ public class OrderPreview {
     String instruction;
 
 
-    public OrderPreview(String product, String need, String condition, String order, String instruction) {
+    public ConsolidatedOrder(String product, String need, String condition, String order, String instruction) {
         this.product = product;
         this.need = need;
         this.condition = condition;
@@ -16,7 +16,7 @@ public class OrderPreview {
         this.instruction = instruction;
     }
 
-    public OrderPreview(){};
+    public ConsolidatedOrder(){};
 
     public String getProduct() {
         return product;

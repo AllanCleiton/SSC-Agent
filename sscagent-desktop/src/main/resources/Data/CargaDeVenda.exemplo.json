@@ -9,11 +9,11 @@
       "rota": 8213,
       "sequencia": 1,
       "dataPedido": "02/12/2025",
-      "instrucaoCarregamento": "PAC = 9 || DIAS >= 121",
+      "instrucaoCarregamento": "Camila (37)99167324",
       "produtos": [
-        { "codProduto": 200101, "qtde": 421.26, "condicao": "=42" },
-        { "codProduto": 200101, "qtde": 80.12, "condicao": "=32" },
-        { "codProduto": 200050, "qtde": 421.26, "condicao": "=49" },
+        { "codProduto": 200101, "qtde": 421.26, "condicao": "Val >= 42" },
+        { "codProduto": 200101, "qtde": 80.12, "condicao": "Val = 32" },
+        { "codProduto": 200050, "qtde": 421.26, "condicao": "Val > 49" },
         { "codProduto": 11410, "qtde": 120, "condicao": null }
       ]
     },
@@ -25,10 +25,10 @@
       "rota": 8213,
       "sequencia": 2,
       "dataPedido": "01/12/2025",
-      "instrucaoCarregamento": "DIAS ↑",
+      "instrucaoCarregamento": "Cliente so recebe ate 14:00 horas",
       "produtos": [
-        { "codProduto": 11046, "qtde": 40, "condicao": null },
-        { "codProduto": 11092, "qtde": 32, "condicao": null }
+        { "codProduto": 11046, "qtde": 40, "condicao": "PAC = 9 || DIAS >= 121" },
+        { "codProduto": 11092, "qtde": 32, "condicao": "DIAS ↑" }
       ]
     }
   ]

@@ -1,5 +1,6 @@
-package com.allancleitonppma.sscagent.domain.model.entities;
+package com.allancleitonppma.sscagent.domain.model.entities.productEntities;
 
+import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
 import com.allancleitonppma.sscagent.domain.model.enums.StockAvailability;
 
 import java.time.LocalDate;

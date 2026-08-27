@@ -1,9 +1,9 @@
 package com.allancleitonppma.sscagent.application.usecase;
 
-import com.allancleitonppma.sscagent.domain.model.entities.ItemOrder;
-import com.allancleitonppma.sscagent.domain.model.entities.Order;
-import com.allancleitonppma.sscagent.domain.model.entities.OrderPreview;
-import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.ItemOrder;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.Order;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.OrderPreview;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.SalesLoad;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class ImportListOrderPreview {
                 orderPreview.setOrder(String.valueOf(order.orderId));
                 orderPreview.setInstruction(String.valueOf(order.loadingInstruction));
                 orderPreview.setProduct(String.valueOf(itemOrder.productCode));
-                orderPreview.setNeed(String.valueOf(itemOrder.quantity));
+                orderPreview.setNeed(itemOrder.quantity);
                 orderPreview.setCondition(String.valueOf(itemOrder.condition));
 
                 list.add(orderPreview);

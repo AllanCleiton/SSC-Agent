@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.domain.model.entities;
+package com.allancleitonppma.sscagent.domain.model.entities.stockEntities;
 
 import java.util.ArrayList;
 import java.util.List;

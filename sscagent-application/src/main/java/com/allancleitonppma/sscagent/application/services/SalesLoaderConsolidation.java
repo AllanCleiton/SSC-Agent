@@ -1,9 +1,9 @@
 package com.allancleitonppma.sscagent.application.services;
 
-import com.allancleitonppma.sscagent.domain.model.entities.ConsolidatedOrder;
-import com.allancleitonppma.sscagent.domain.model.entities.Order;
-import com.allancleitonppma.sscagent.domain.model.entities.ItemOrder;
-import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.ConsolidatedOrder;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.Order;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.ItemOrder;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.SalesLoad;
 
 import java.util.ArrayList;
 import java.util.List;

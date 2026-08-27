@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.domain.model.entities;
+package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
 import com.allancleitonppma.sscagent.domain.model.enums.CriterionOperator;
 import com.allancleitonppma.sscagent.domain.model.enums.CriterionType;

@@ -1,6 +1,6 @@
 package com.allancleitonppma.sscagent.application.ports;
 
-import com.allancleitonppma.sscagent.domain.model.entities.SalesLoad;
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.SalesLoad;
 
 import java.nio.file.Path;
 
