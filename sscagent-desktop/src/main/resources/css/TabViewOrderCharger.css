@@ -43,3 +43,8 @@
     -fx-border-color: #dce1e8;
     -fx-border-radius: 0 0 6px 6px;
 }
+
+.tab-pane {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

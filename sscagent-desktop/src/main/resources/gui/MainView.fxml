@@ -12,9 +12,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="560.0" prefWidth="780.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.MainViewController">
-
-    <!-- =====================================================
+<BorderPane prefHeight="560.0"
+            prefWidth="780.0"
+            stylesheets="@../css/style.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.allancleitonppma.sscagent.desktop.controller.MainViewController">
+        <!-- =====================================================
          TOPO
          ===================================================== -->
 
@@ -59,10 +63,14 @@
          CENTRO
          ===================================================== -->
     <center>
-        <TabPane stylesheets="@../css/TabViewOrderCharger.css" fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TabPane stylesheets="@../css/TabViewOrderCharger.css"
+                 tabClosingPolicy="UNAVAILABLE"
+                 AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0"
+                 AnchorPane.topAnchor="0.0">
             <!--Aba Ordem de Carga-->
-<!--Aqui eu substituo--><Tab text="Ordem de Carga">
+            <Tab fx:id="tabOrderCharge" text="Ordem de Carga" >
 
             </Tab>
 

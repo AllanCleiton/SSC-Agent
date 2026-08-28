@@ -24,9 +24,10 @@ public class ExcelLoaderStockBox implements StockBoxReader {
 
     private static final DateTimeFormatter DATE_FORMAT =
             DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     private final Path arquivo;
 
-    ExcelLoaderStockBox(Path path){
+    public ExcelLoaderStockBox(Path path){
         this.arquivo = path;
     }
 

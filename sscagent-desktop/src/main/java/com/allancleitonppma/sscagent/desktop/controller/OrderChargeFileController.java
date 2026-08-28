@@ -1,5 +1,6 @@
 package com.allancleitonppma.sscagent.desktop.controller;
 
+import com.allancleitonppma.sscagent.application.usecase.ConsolidateSalesLoad;
 import com.allancleitonppma.sscagent.application.usecase.ImportSalesLoadUseCase;
 import com.allancleitonppma.sscagent.desktop.alerts.DefaultAlert;
 import com.allancleitonppma.sscagent.desktop.dto.OrderDTO;
@@ -8,26 +9,20 @@ import com.allancleitonppma.sscagent.infrastructure.adapters.json.JsonSalesLoadR
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static com.allancleitonppma.sscagent.application.usecase.ImportListOrderPreview.getListOrderDto;
-
-public class TabViewOrderCharger implements Initializable {
+public class OrderChargeFileController implements Initializable {
     @FXML
-    public Label lbFileStatus;
+    public Button btnLoaderOrder;
     @FXML
     private TextField txtImportPath;
     @FXML
@@ -56,7 +51,7 @@ public class TabViewOrderCharger implements Initializable {
             OnOpenFileAction();
             ImportSalesLoadUseCase salesLoadUseCase = new ImportSalesLoadUseCase(new JsonSalesLoadReader());
 
-            List<OrderPreview> orderPreview = getListOrderDto(Path.of(txtImportPath.getText()), salesLoadUseCase);
+            List<OrderPreview> orderPreview = ConsolidateSalesLoad.consolidate(Path.of(txtImportPath.getText()), salesLoadUseCase);
 
             ObservableList<OrderDTO> orderDTOS = FXCollections.observableArrayList(orderPreview.stream().map(orderPreview1 -> new OrderDTO(
 
@@ -83,6 +78,7 @@ public class TabViewOrderCharger implements Initializable {
         FileChooser fileChooser = new FileChooser();
 
         fileChooser.setTitle("Selecionar arquivo");
+
 
         fileChooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter(
@@ -115,4 +111,5 @@ public class TabViewOrderCharger implements Initializable {
         tableColumnInstruction.setCellValueFactory(new PropertyValueFactory<>("instruction"));
 
     }
+
 }

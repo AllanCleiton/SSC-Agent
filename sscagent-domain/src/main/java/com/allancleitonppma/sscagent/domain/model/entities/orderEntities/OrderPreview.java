@@ -1,5 +1,8 @@
 package com.allancleitonppma.sscagent.domain.model.entities.orderEntities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderPreview {
 
     private  String product;
@@ -7,6 +10,8 @@ public class OrderPreview {
     private  String condition;
     private String order;
     private  String instruction;
+
+    private List<String> consolidateOrders = new ArrayList<>();
 
     public OrderPreview(
             String product,
@@ -62,5 +67,13 @@ public class OrderPreview {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
+    }
+
+    public List<String> getConsolidateOrders() {
+        return consolidateOrders;
+    }
+
+    public void setConsolidateOrders(List<String> consolidateOrders) {
+        this.consolidateOrders = consolidateOrders;
     }
 }

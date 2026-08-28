@@ -1,42 +1,43 @@
 package com.allancleitonppma.sscagent.desktop.controller;
 
-import com.allancleitonppma.sscagent.desktop.alerts.DefaultAlert;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 public class MainViewController implements Initializable {
-
     @FXML
-    private TabPane tabPane;
+    public Tab tabOrderCharge;
     @FXML
     private ComboBox<String> comboBoxDataMode;
 
 
-    @FXML
-    public void onTabOrderDeCargaAction() {
-        System.out.println("Entrou!");
-    }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        initializeNodes();
+        try {
+            initializeNodes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void initializeNodes() {
+    public void initializeNodes() throws IOException {
         comboBoxDataMode.getItems().add("Arquivo");
         comboBoxDataMode.getItems().add("Banco De dados");
+        comboBoxDataMode.getItems().add("test");
         comboBoxDataMode.getSelectionModel().selectFirst();
-        setDataModel(comboBoxDataMode.getValue());
+        //CARREGANDO O CONTEUDO DA ABA ORDEM DE CARGA
+        tabOrderCharge.setContent(loadView(setDataModel(comboBoxDataMode.getValue())));
+
 
         comboBoxDataMode.getSelectionModel()
                 .selectedItemProperty()
@@ -44,40 +45,42 @@ public class MainViewController implements Initializable {
 
                     System.out.println("Valor anterior: " + oldValue);
                     System.out.println("Novo valor: " + newValue);
-                    comboBoxDataModelAlter(newValue);
+                    try {
+                        //CARREGANDO O CONTEUDO DA ABA ORDEM DE CARGA
+                        tabOrderCharge.setContent(loadView(setDataModel(newValue)));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
 
                 });
-
-        loadView("/gui/TabViewOrderCharger.fxml");
-
     }
 
-    @FXML
-    public void comboBoxDataModelAlter(String value) {
-        setDataModel(value);
-    }
 
-    private void setDataModel(String mode) {
-        //implementar a logica para escolher como os dados iram ser carregados.
-    }
+    private Node loadView(String absoluteName) throws IOException {
 
-    private void loadView(String absoluteName) {
-        try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource(absoluteName)
             );
 
-            Tab tab = loader.load();
+            return loader.load();
+    }
 
-            tabPane.getTabs().set(0,tab);
+    private String setDataModel(String mode) throws IOException {
+        String path = "/gui/OrderChargeFileView.fxml";
+        switch (mode) {
 
-        } catch (IOException e) {
-            DefaultAlert.showAlert(
-                    "IO Exception",
-                    "Erro ao carregar a tela",
-                    e.getMessage(),
-                    Alert.AlertType.ERROR
+            case "Arquivo" -> path = (
+                    "/gui/OrderChargeFileView.fxml"
+            );
+
+            case "Banco De dados" -> path = (
+                    "/gui/OrderChargeDatabaseView.fxml"
+            );
+            case "test" -> path = (
+                    "/gui/MapaColetaView.fxml"
             );
         }
+        return path;
+
     }
 }

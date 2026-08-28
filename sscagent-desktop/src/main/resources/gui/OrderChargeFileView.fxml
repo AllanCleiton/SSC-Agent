@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox stylesheets="@../css/OrderChargeFile.css"
+      styleClass="order-charge-file"
+      spacing="10.0"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.allancleitonppma.sscagent.desktop.controller.OrderChargeFileController">
+
+    <HBox spacing="10.0"
+          styleClass="import-bar">
+
+        <Label text="Informe o diretório"/>
+
+        <TextField fx:id="txtImportPath"
+                   HBox.hgrow="ALWAYS"/>
+
+        <Button fx:id="btnLoaderFile"
+                onAction="#onLoaderAction"
+                text="Abrir"/>
+
+        <Label text="Status:"/>
+
+        <Label fx:id="lbStatus"
+               styleClass="import-status"
+               text="Aguardando..."/>
+
+    </HBox>
+
+    <TableView fx:id="tbOrderChargeList"
+               VBox.vgrow="ALWAYS"
+               styleClass="order-table">
+
+        <columns>
+
+            <TableColumn fx:id="tableColumnProduct"
+                         text="CÓD. PRODUTO"/>
+
+            <TableColumn fx:id="tableColumNeed"
+                         text="NECESSIDADE"/>
+
+            <TableColumn fx:id="tableColumnCondition"
+                         text="CONDIÇÃO"/>
+
+            <TableColumn fx:id="tableColumnOrder"
+                         text="PEDIDO"/>
+
+            <TableColumn fx:id="tableColumnInstruction"
+                         text="INSTRUÇÃO"/>
+
+        </columns>
+
+    </TableView>
+
+</VBox>

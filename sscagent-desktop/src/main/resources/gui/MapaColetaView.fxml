@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ToggleButton?>
+<VBox xmlns="http://javafx.com/javafx/25">
+
+
+    <padding>
+        <Insets top="8" right="8" bottom="5" left="8"/>
+    </padding>
+
+    <!-- =========================================================
+         ÁREA PRINCIPAL
+         ========================================================= -->
+
+    <HBox
+            spacing="8"
+            VBox.vgrow="ALWAYS">
+
+
+        <!-- =====================================================
+             COLUNA 1
+             MAPAS DE SEPARAÇÃO
+             ===================================================== -->
+
+        <VBox
+                spacing="5"
+                prefWidth="205"
+                minWidth="180"
+                HBox.hgrow="ALWAYS">
+
+            <!-- TÍTULO -->
+
+            <HBox alignment="CENTER_LEFT">
+
+                <Label
+                        text="Mapas de separação"
+                        styleClass="section-title"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label
+                        text="3 mapas"
+                        styleClass="map-count"/>
+
+            </HBox>
+
+
+            <!-- LISTA DOS MAPAS -->
+
+            <ScrollPane
+                    fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="map-scroll">
+
+                <VBox
+                        spacing="6"
+                        styleClass="map-list">
+
+
+                    <!-- =================================================
+                         BLOCO 0001
+                         ================================================= -->
+
+                    <VBox
+                            spacing="4"
+                            styleClass="separation-block">
+
+                        <!-- CABEÇALHO DO BLOCO -->
+
+                        <HBox
+                                alignment="CENTER_LEFT"
+                                styleClass="block-header">
+
+                            <Label
+                                    text="BLOCO DE SEPARAÇÃO"
+                                    styleClass="block-title"/>
+
+                            <Region HBox.hgrow="ALWAYS"/>
+
+                            <Label
+                                    text="MAPA: 0001"
+                                    styleClass="block-map-id"/>
+
+                        </HBox>
+
+
+                        <VBox
+                                spacing="2"
+                                styleClass="block-content">
+
+                            <Label text="Produto: 11046"/>
+
+                            <Label text="Necessidade: 34 caixas"/>
+
+                            <Label text="Pacotes por caixa: 8"/>
+
+                            <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8"/>
+
+                            <Label text="Validade: NULL"/>
+
+                            <Label text="Pendente: 0"/>
+
+                        </VBox>
+
+
+                        <Separator/>
+
+
+                        <Label
+                                wrapText="true"
+                                text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx"
+                                styleClass="positions"/>
+
+                    </VBox>
+
+
+                    <!-- =================================================
+                         BLOCO 0002
+                         ================================================= -->
+
+                    <VBox
+                            spacing="4"
+                            styleClass="separation-block">
+
+                        <HBox
+                                alignment="CENTER_LEFT"
+                                styleClass="block-header">
+
+                            <Label
+                                    text="BLOCO DE SEPARAÇÃO"
+                                    styleClass="block-title"/>
+
+                            <Region HBox.hgrow="ALWAYS"/>
+
+                            <Label
+                                    text="MAPA: 0002"
+                                    styleClass="block-map-id"/>
+
+                        </HBox>
+
+
+                        <VBox
+                                spacing="2"
+                                styleClass="block-content">
+
+                            <Label text="Produto: 11046"/>
+
+                            <Label text="Necessidade: 34 caixas"/>
+
+                            <Label text="Pacotes por caixa: 8"/>
+
+                            <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8"/>
+
+                            <Label text="Validade: NULL"/>
+
+                            <Label text="Pendente: 0"/>
+
+                        </VBox>
+
+
+                        <Separator/>
+
+
+                        <Label
+                                wrapText="true"
+                                text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx"
+                                styleClass="positions"/>
+
+                    </VBox>
+
+
+                    <!-- =================================================
+                         BLOCO 0003
+                         ================================================= -->
+
+                    <VBox
+                            spacing="4"
+                            styleClass="separation-block">
+
+                        <HBox
+                                alignment="CENTER_LEFT"
+                                styleClass="block-header">
+
+                            <Label
+                                    text="BLOCO DE SEPARAÇÃO"
+                                    styleClass="block-title"/>
+
+                            <Region HBox.hgrow="ALWAYS"/>
+
+                            <Label
+                                    text="MAPA: 0003"
+                                    styleClass="block-map-id"/>
+
+                        </HBox>
+
+
+                        <VBox
+                                spacing="2"
+                                styleClass="block-content">
+
+                            <Label text="Produto: 11075"/>
+
+                            <Label text="Necessidade: 20 caixas"/>
+
+                            <Label text="Pacotes por caixa: 10"/>
+
+                            <Label text="Condição: NORMAL"/>
+
+                            <Label text="Validade: 5 dias"/>
+
+                            <Label text="Pendente: 0"/>
+
+                        </VBox>
+
+
+                        <Separator/>
+
+
+                        <Label
+                                wrapText="true"
+                                text="Posições: CAM02 RUA08 POS: 2B -&gt; 20cx"
+                                styleClass="positions"/>
+
+                    </VBox>
+
+                </VBox>
+
+            </ScrollPane>
+
+        </VBox>
+
+
+        <!-- =====================================================
+             COLUNA 2
+             ÁREA DE FUNCIONALIDADES
+             ===================================================== -->
+
+        <VBox
+                spacing="5"
+                prefWidth="150"
+                minWidth="130"
+                HBox.hgrow="ALWAYS">
+
+            <Label
+                    text="Outras funcionalidades"
+                    styleClass="section-title"/>
+
+
+            <ScrollPane
+                    fitToWidth="true"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="feature-scroll">
+
+                <VBox
+                        spacing="8"
+                        styleClass="feature-area">
+
+                    <Label
+                            wrapText="true"
+                            text="{OUTRAS FUNCIONALIDADES AQUI NESSA ÁREA}"
+                            styleClass="feature-placeholder"/>
+
+                </VBox>
+
+            </ScrollPane>
+
+        </VBox>
+
+
+        <!-- =====================================================
+             COLUNA 3
+             ESTOQUE
+             ===================================================== -->
+
+        <VBox
+                spacing="5"
+                prefWidth="195"
+                minWidth="175"
+                HBox.hgrow="ALWAYS">
+
+            <!-- CABEÇALHO -->
+
+            <HBox alignment="CENTER_LEFT">
+
+                <Label
+                        text="Estoque"
+                        styleClass="section-title"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label
+                        text="Rua A01"
+                        styleClass="street-title"/>
+
+            </HBox>
+
+
+            <!-- MAPA DO ESTOQUE -->
+
+            <ScrollPane
+                    fitToWidth="true"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="stock-scroll">
+
+                <VBox
+                        spacing="5"
+                        styleClass="stock-area">
+
+                    <!-- ENDEREÇO -->
+
+                    <Label
+                            text="CAMARA 03 RUA 14"
+                            styleClass="stock-header"/>
+
+
+                    <!-- LINHA 1 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text="7A / 355"
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text="7C / 240"
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+
+                    <!-- LINHA 2 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+
+                    <!-- LINHA 3 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+
+                    <!-- LINHA 4 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+
+                    <!-- LINHA 5 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text="3A / 356"
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+
+                    <!-- LINHA 6 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text="2A / 213"
+                                selected="true"
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+
+                    <!-- LINHA 7 -->
+
+                    <HBox
+                            spacing="5"
+                            alignment="CENTER">
+
+                        <ToggleButton
+                                text="1A / 236"
+                                selected="true"
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                        <ToggleButton
+                                text=""
+                                styleClass="stock-position"/>
+
+                    </HBox>
+
+                </VBox>
+
+            </ScrollPane>
+
+        </VBox>
+
+    </HBox>
+
+
+    <!-- =========================================================
+         RODAPÉ / PALETE SELECIONADO
+         ========================================================= -->
+
+    <HBox
+            spacing="10"
+            alignment="CENTER_LEFT"
+            styleClass="selection-bar">
+
+        <Label
+                text="Palete selecionado: P01"
+                styleClass="selected-pallet"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label
+                text="MAPA 0001"
+                styleClass="selected-map"/>
+
+
+        <Label
+                text="Quantidade:"
+                styleClass="quantity-label"/>
+
+        <Spinner
+                prefWidth="90"
+                editable="true"/>
+
+        <Label
+                text="caixas"
+                styleClass="quantity-label"/>
+
+
+        <Button
+                text="Remover do mapa"
+                styleClass="remove-button"/>
+
+    </HBox>
+
+</VBox>
