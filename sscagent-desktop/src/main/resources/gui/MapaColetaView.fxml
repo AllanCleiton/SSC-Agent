@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
 
@@ -48,138 +49,31 @@
             <!-- LISTA DOS MAPAS -->
 
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="map-scroll" VBox.vgrow="ALWAYS">
-
-                <VBox spacing="6" styleClass="map-list">
-
-
-                    <!-- =================================================
-                         BLOCO 0001
-                         ================================================= -->
-
-                    <VBox spacing="4" styleClass="separation-block">
-
-                        <!-- CABEÇALHO DO BLOCO -->
-
-                        <HBox alignment="CENTER_LEFT" styleClass="block-header">
-
-                            <Label styleClass="block-title" text="BLOCO DE SEPARAÇÃO" />
-
-                            <Region HBox.hgrow="ALWAYS" />
-
-                            <Label styleClass="block-map-id" text="MAPA: 0001" />
-
-                        </HBox>
-
-
-                        <VBox spacing="2" styleClass="block-content">
-
-                            <Label text="Produto: 11046" />
-
-                            <Label text="Necessidade: 34 caixas" />
-
-                            <Label text="Pacotes por caixa: 8" />
-
-                            <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8" />
-
-                            <Label text="Validade: NULL" />
-
-                            <Label text="Pendente: 0" />
-
-                        </VBox>
-
-
-                        <Separator />
-
-
-                        <Label styleClass="positions" text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx" wrapText="true" />
-
-                    </VBox>
-
-
-                    <!-- =================================================
-                         BLOCO 0002
-                         ================================================= -->
-
-                    <VBox spacing="4" styleClass="separation-block">
-
-                        <HBox alignment="CENTER_LEFT" styleClass="block-header">
-
-                            <Label styleClass="block-title" text="BLOCO DE SEPARAÇÃO" />
-
-                            <Region HBox.hgrow="ALWAYS" />
-
-                            <Label styleClass="block-map-id" text="MAPA: 0002" />
-
-                        </HBox>
-
-
-                        <VBox spacing="2" styleClass="block-content">
-
-                            <Label text="Produto: 11046" />
-
-                            <Label text="Necessidade: 34 caixas" />
-
-                            <Label text="Pacotes por caixa: 8" />
-
-                            <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8" />
-
-                            <Label text="Validade: NULL" />
-
-                            <Label text="Pendente: 0" />
-
-                        </VBox>
-
-
-                        <Separator />
-
-
-                        <Label styleClass="positions" text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx" wrapText="true" />
-
-                    </VBox>
-
-
-                    <!-- =================================================
-                         BLOCO 0003
-                         ================================================= -->
-
-                    <VBox spacing="4" styleClass="separation-block">
-
-                        <HBox alignment="CENTER_LEFT" styleClass="block-header">
-
-                            <Label styleClass="block-title" text="BLOCO DE SEPARAÇÃO" />
-
-                            <Region HBox.hgrow="ALWAYS" />
-
-                            <Label styleClass="block-map-id" text="MAPA: 0003" />
-
-                        </HBox>
-
-
-                        <VBox spacing="2" styleClass="block-content">
-
-                            <Label text="Produto: 11075" />
-
-                            <Label text="Necessidade: 20 caixas" />
-
-                            <Label text="Pacotes por caixa: 10" />
-
-                            <Label text="Condição: NORMAL" />
-
-                            <Label text="Validade: 5 dias" />
-
-                            <Label text="Pendente: 0" />
-
-                        </VBox>
-
-
-                        <Separator />
-
-
-                        <Label styleClass="positions" text="Posições: CAM02 RUA08 POS: 2B -&gt; 20cx" wrapText="true" />
-
-                    </VBox>
-
-                </VBox>
+            <content>
+               <VBox spacing="4" styleClass="separation-block">
+                  <children>
+                     <HBox alignment="CENTER_LEFT" styleClass="block-header">
+                        <children>
+                           <Label styleClass="block-title" text="BLOCO DE SEPARAÇÃO" />
+                           <Region HBox.hgrow="ALWAYS" />
+                           <Label styleClass="block-map-id" text="MAPA: 0001" />
+                        </children>
+                     </HBox>
+                     <VBox spacing="2" styleClass="block-content">
+                        <children>
+                           <Label text="Produto: 11046" />
+                           <Label text="Necessidade: 34 caixas" />
+                           <Label text="Pacotes por caixa: 8" />
+                           <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8" />
+                           <Label text="Validade: NULL" />
+                           <Label text="Pendente: 0" />
+                        </children>
+                     </VBox>
+                     <Separator />
+                     <Label styleClass="positions" text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx" wrapText="true" />
+                  </children>
+               </VBox>
+            </content>
 
             </ScrollPane>
 
@@ -197,126 +91,983 @@
 
             <HBox alignment="CENTER_LEFT">
 
-                <Label styleClass="section-title" text="Estoque" />
+                <Label fx:id="lbChamberName" styleClass="section-title" text="Estoque" />
 
                 <Region HBox.hgrow="ALWAYS" />
 
-                <Label styleClass="street-title" text="Rua A01" />
+                <Label fx:id="lbStritName" styleClass="street-title" text="Rua A01" />
 
             </HBox>
 
 
             <!-- MAPA DO ESTOQUE -->
 
-            <ScrollPane fitToWidth="true" styleClass="stock-scroll" VBox.vgrow="ALWAYS">
-
-                <VBox spacing="5" styleClass="stock-area">
-               <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+            <ScrollPane fitToWidth="true" hbarPolicy="ALWAYS" styleClass="stock-scroll" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+            <content>
+               <VBox prefHeight="192.0" prefWidth="157.0">
                   <children>
-                     <VBox prefHeight="192.0" prefWidth="103.0" />
-                     <VBox prefHeight="192.0" prefWidth="157.0">
+                     <Label styleClass="stock-header" text="CAMARA 03 RUA 14" />
+                     <HBox alignment="CENTER" spacing="5.0">
                         <children>
-            
-                                      <!-- ENDEREÇO -->
-            
-                                      <Label styleClass="stock-header" text="CAMARA 03 RUA 14" />
-            
-                  
-                                      <!-- LINHA 1 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton styleClass="stock-position" text="7A / 355" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="7C / 240" />
-            
-                                      </HBox>
-            
-                  
-                                      <!-- LINHA 2 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                      </HBox>
-            
-                  
-                                      <!-- LINHA 3 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                      </HBox>
-            
-                  
-                                      <!-- LINHA 4 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton styleClass="stock-position" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                      </HBox>
-            
-                  
-                                      <!-- LINHA 5 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton styleClass="stock-position" text="3A / 356" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                      </HBox>
-            
-                  
-                                      <!-- LINHA 6 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton selected="true" styleClass="stock-position" text="2A / 213" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                      </HBox>
-            
-                  
-                                      <!-- LINHA 7 -->
-            
-                                      <HBox alignment="CENTER" spacing="5">
-            
-                                          <ToggleButton selected="true" styleClass="stock-position" text="1A / 236" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                          <ToggleButton styleClass="stock-position" text="" />
-            
-                                      </HBox>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
                         </children>
-                     </VBox>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" spacing="5.0">
+                        <children>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                        </children>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" spacing="5.0">
+                        <children>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                        </children>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" spacing="5.0">
+                        <children>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                        </children>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" spacing="5.0">
+                        <children>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                        </children>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" spacing="5.0">
+                        <children>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                        </children>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" spacing="5.0">
+                        <children>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                           <ToggleButton styleClass="stock-position">
+                              <graphic>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="7A" />
+                                          </children>
+                                       </VBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Cód:  " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="caixas: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="dias: " />
+                                             <Label>
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </graphic>
+                           </ToggleButton>
+                        </children>
+                        <padding>
+                           <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                        </padding>
+                     </HBox>
                   </children>
-               </HBox>
-
-                </VBox>
+                  <padding>
+                     <Insets left="5.0" right="5.0" />
+                  </padding>
+               </VBox>
+            </content>
+            <VBox.margin>
+               <Insets left="10.0" />
+            </VBox.margin>
 
             </ScrollPane>
 
