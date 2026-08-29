@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
-<ToggleButton contentDisplay="TOP" mnemonicParsing="false" wrapText="true"  xmlns:fx="http://javafx.com/fxml/1"
-              fx:controller="com.allancleitonppma.sscagent.desktop.controller.MapCollectNodeController">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.VBox?>
+
+<ToggleButton fx:id="thisToggle" contentDisplay="TOP" mnemonicParsing="false" onAction="#editMapCollectItem" wrapText="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.allancleitonppma.sscagent.desktop.controller.MapCollectNodeController">
     <graphic>
         <VBox minWidth="330.0">
             <children>
-                <Label styleClass="block-map-id" text="MAPA: 0001" />
+                <Label fx:id="lbMapID" styleClass="block-map-id" text="" />
                 <VBox spacing="2" styleClass="block-content">
                     <children>
-                        <Label text="Produto: 11046" />
-                        <Label text="34 caixas" />
-                        <Label text="Pendente: 0" />
-                        <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8" />
+                        <Label fx:id="lbMapProduct" text="" />
+                        <Label fx:id="lbQuantity" text="" />
+                        <Label fx:id="lbPending" text="" />
+                        <Label fx:id="lbCondition" text="" />
                     </children>
                     <VBox.margin>
                         <Insets left="5.0" />
                     </VBox.margin>
                 </VBox>
                 <Separator />
-                <Label styleClass="positions" text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx" wrapText="true" />
+                <Label fx:id="lbMapPositions" styleClass="positions" text="" wrapText="true" />
             </children>
             <padding>
                 <Insets left="5.0" />
