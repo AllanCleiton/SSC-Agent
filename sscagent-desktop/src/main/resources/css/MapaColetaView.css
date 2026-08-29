@@ -1,0 +1,494 @@
+/* =========================================================
+   SSC AGENT - MAPA DE COLETA / ANÁLISE
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT DA VIEW
+   ========================================================= */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f4f6f9;
+}
+
+
+/* =========================================================
+   TÍTULOS DAS SEÇÕES
+   ========================================================= */
+
+.section-title {
+    -fx-text-fill: #17365d;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.map-count {
+    -fx-text-fill: #7a838f;
+    -fx-font-size: 11px;
+}
+
+.street-title {
+    -fx-text-fill: #5c6570;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================================================
+   SCROLLPANE - MAPAS
+   ========================================================= */
+
+.map-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.map-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.map-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.map-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #c5ccd5;
+    -fx-background-radius: 5px;
+}
+
+.map-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #aeb7c2;
+}
+
+
+/* =========================================================
+   CONTAINER DOS BLOCOS DE SEPARAÇÃO
+   ========================================================= */
+
+.separation-block {
+    -fx-background-color: transparent;
+}
+
+
+/* =========================================================
+   BLOCO DE SEPARAÇÃO
+   ========================================================= */
+
+.separation-block .toggle-button {
+    -fx-background-color: white;
+    -fx-background-radius: 7px;
+    -fx-border-color: #dce1e8;
+    -fx-border-radius: 7px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+}
+
+
+/* Hover */
+
+.separation-block .toggle-button:hover {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #aeb9c7;
+}
+
+
+/* Selecionado */
+
+.separation-block .toggle-button:selected {
+    -fx-background-color: #e9f1fb;
+    -fx-border-color: #2474c6;
+    -fx-border-width: 1.5px;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO BLOCO
+   ========================================================= */
+
+.block-map-id {
+    -fx-text-fill: #17365d;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.block-content .label {
+    -fx-text-fill: #4f5965;
+    -fx-font-size: 11px;
+}
+
+.positions {
+    -fx-text-fill: #707985;
+    -fx-font-size: 10px;
+}
+
+
+/* =========================================================
+   SEPARATOR
+   ========================================================= */
+
+.separator {
+    -fx-padding: 5px 0;
+}
+
+.separator .line {
+    -fx-border-color: #e3e7ec;
+    -fx-border-width: 1px 0 0 0;
+}
+
+
+/* =========================================================
+   SCROLLPANE - ESTOQUE
+   ========================================================= */
+
+.stock-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.stock-scroll > .viewport {
+    -fx-background-color: #f4f6f9;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO ESTOQUE
+   ========================================================= */
+
+.stock-header {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-color: #dce1e8;
+    -fx-border-radius: 6px;
+    -fx-padding: 7px 12px;
+
+    -fx-text-fill: #17365d;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================================================
+   POSIÇÃO DE ESTOQUE
+   ========================================================= */
+
+.stock-position {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-color: #d6dce4;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+
+/* Hover */
+
+.stock-position:hover {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #9eabb9;
+}
+
+
+/* =========================================================
+   POSIÇÃO SELECIONADA
+   ========================================================= */
+
+.stock-position:selected {
+    -fx-background-color: #e9f1fb;
+    -fx-border-color: #2474c6;
+    -fx-border-width: 1.5px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA POSIÇÃO
+   ========================================================= */
+
+.stock-position .label {
+    -fx-text-fill: #59636f;
+    -fx-font-size: 10px;
+}
+
+.stock-position .label:first-child {
+    -fx-text-fill: #17365d;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================================================
+   TEXTFIELD - QUANTIDADE A PEGAR
+   ========================================================= */
+
+.stock-position .text-field {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #cbd2dc;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+
+    -fx-padding: 3px 5px;
+    -fx-font-size: 10px;
+
+    -fx-text-fill: #30343b;
+}
+
+
+/* Campo ao receber foco */
+
+.stock-position .text-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: #2474c6;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(36, 116, 198, 0.18),
+        4,
+        0,
+        0,
+        0
+    );
+}
+
+
+/* =========================================================
+   ESTADO - POSIÇÃO ORIGINAL DO A*
+
+   Essa classe pode ser adicionada pelo controller:
+
+   .stock-position.astar-selected
+   ========================================================= */
+
+.stock-position.astar-selected {
+    -fx-background-color: #f0f6fd;
+    -fx-border-color: #5d91c5;
+}
+
+
+/* A* + selecionado manualmente */
+
+.stock-position.astar-selected:selected {
+    -fx-background-color: #e3f0fc;
+    -fx-border-color: #2474c6;
+}
+
+
+/* =========================================================
+   ESTADO - SELEÇÃO MANUAL
+
+   Pode ser usado quando futuramente quiser diferenciar
+   visualmente a seleção manual da seleção original do A*.
+   ========================================================= */
+
+.stock-position.manual-selected {
+    -fx-background-color: #eef8f2;
+    -fx-border-color: #4b9b6b;
+}
+
+.stock-position.manual-selected:selected {
+    -fx-background-color: #e2f3e8;
+    -fx-border-color: #25864a;
+}
+
+
+/* =========================================================
+   ÁREA INFERIOR / EDIÇÃO
+   ========================================================= */
+
+.edit-bar {
+    -fx-background-color: white;
+
+    -fx-border-color: #dce1e8;
+    -fx-border-width: 1px 0 0 0;
+
+    -fx-padding: 8px 10px;
+    -fx-spacing: 10px;
+
+    -fx-alignment: CENTER_LEFT;
+}
+
+
+/* =========================================================
+   LABELS DA ÁREA DE EDIÇÃO
+   ========================================================= */
+
+.edit-bar .label {
+    -fx-text-fill: #5c6570;
+    -fx-font-size: 12px;
+}
+
+.edit-title {
+    -fx-text-fill: #17365d !important;
+    -fx-font-weight: bold;
+}
+
+.quantity-label {
+    -fx-text-fill: #697481 !important;
+    -fx-font-size: 11px !important;
+}
+
+
+/* =========================================================
+   TEXTFIELD - QUANTIDADE SOLICITADA
+   ========================================================= */
+
+.requested-quantity {
+    -fx-background-color: white;
+
+    -fx-border-color: #cbd2dc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+
+    -fx-pref-width: 70px;
+    -fx-padding: 5px 7px;
+
+    -fx-text-fill: #30343b;
+    -fx-font-size: 12px;
+}
+
+.requested-quantity:hover {
+    -fx-border-color: #9da9b7;
+}
+
+.requested-quantity:focused {
+    -fx-border-color: #2474c6;
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(36, 116, 198, 0.18),
+        4,
+        0,
+        0,
+        0
+    );
+}
+
+
+/* =========================================================
+   QUANTIDADE SELECIONADA
+   ========================================================= */
+
+.selected-quantity {
+    -fx-text-fill: #30343b !important;
+    -fx-font-size: 13px !important;
+    -fx-font-weight: bold;
+}
+
+.selected-quantity.ok {
+    -fx-text-fill: #25864a !important;
+}
+
+.selected-quantity.warning {
+    -fx-text-fill: #c47b16 !important;
+}
+
+.selected-quantity.error {
+    -fx-text-fill: #b83a3a !important;
+}
+
+
+/* =========================================================
+   BOTÃO APLICAR
+   ========================================================= */
+
+.apply-button {
+    -fx-background-color: #2474c6;
+    -fx-background-radius: 5px;
+
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-padding: 7px 14px;
+
+    -fx-cursor: hand;
+}
+
+.apply-button:hover {
+    -fx-background-color: #1e63a8;
+}
+
+.apply-button:pressed {
+    -fx-background-color: #18558f;
+}
+
+
+/* =========================================================
+   BOTÃO CANCELAR
+   ========================================================= */
+
+.cancel-button {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+
+    -fx-border-color: #cbd2dc;
+    -fx-border-radius: 5px;
+
+    -fx-text-fill: #59636f;
+    -fx-font-size: 12px;
+
+    -fx-padding: 7px 14px;
+
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #f5f7f9;
+    -fx-border-color: #aeb7c2;
+}
+
+
+/* =========================================================
+   ESTADO DESABILITADO
+   ========================================================= */
+
+.apply-button:disabled {
+    -fx-opacity: 0.55;
+}
+
+.cancel-button:disabled {
+    -fx-opacity: 0.55;
+}
+
+.stock-position:disabled {
+    -fx-opacity: 0.55;
+}
+
+
+/* =========================================================
+   COMPONENTES RESPONSIVOS
+   ========================================================= */
+
+/* Área dos blocos de separação */
+.separation-block {
+    -fx-max-width: Infinity;
+}
+
+
+/* Bloco individual */
+.separation-block .toggle-button {
+    -fx-max-width: Infinity;
+}
+
+
+/* Área de edição inferior */
+.edit-bar {
+    -fx-max-width: Infinity;
+}
+
+
+/* Campos de texto */
+.edit-bar .text-field {
+    -fx-max-width: 180px;
+}
+
+
+/* Títulos e informações podem crescer */
+.block-content {
+    -fx-max-width: Infinity;
+}
