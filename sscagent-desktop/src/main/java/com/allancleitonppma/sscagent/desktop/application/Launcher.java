@@ -23,6 +23,8 @@ public class Launcher extends Application{
             mainScene = new Scene(borderPane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("SSG-Agent");
+            primaryStage.setMinWidth(910);
+            primaryStage.setMinHeight(650);
             primaryStage.show();
 
         } catch (IOException e) {
