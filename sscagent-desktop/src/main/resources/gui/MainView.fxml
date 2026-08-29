@@ -12,7 +12,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<<<<<<< HEAD
 <BorderPane minHeight="560.0" minWidth="880.0" prefHeight="560.0" prefWidth="880.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.MainViewController">
+=======
+<BorderPane prefHeight="560.0" prefWidth="780.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.MainViewController">
+>>>>>>> 940ccf5fd753baa4717801f8c8c4fa5d73413388
         <!-- =====================================================
          TOPO
          ===================================================== -->
@@ -65,7 +69,7 @@
             </Tab>
 
             <!--Aba Mapa de Coleta-->
-            <Tab text="Mapa de coleta">
+            <Tab fx:id="tabCollectMap" onSelectionChanged="#onSelectCollectMap" text="Mapa de coleta">
                 <content>
                     <AnchorPane />
                 </content>

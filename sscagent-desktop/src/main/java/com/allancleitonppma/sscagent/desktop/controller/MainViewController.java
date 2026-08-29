@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,8 +17,13 @@ public class MainViewController implements Initializable {
     public Tab tabOrderCharge;
     @FXML
     private ComboBox<String> comboBoxDataMode;
+    @FXML
+    private Tab tabCollectMap;
 
-
+    @FXML
+    public void onSelectCollectMap() throws IOException {
+        tabCollectMap.setContent(loadView("/gui/MapCollectView.fxml"));
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -33,7 +37,6 @@ public class MainViewController implements Initializable {
     public void initializeNodes() throws IOException {
         comboBoxDataMode.getItems().add("Arquivo");
         comboBoxDataMode.getItems().add("Banco De dados");
-        comboBoxDataMode.getItems().add("test");
         comboBoxDataMode.getSelectionModel().selectFirst();
         //CARREGANDO O CONTEUDO DA ABA ORDEM DE CARGA
         tabOrderCharge.setContent(loadView(setDataModel(comboBoxDataMode.getValue())));
@@ -76,9 +79,7 @@ public class MainViewController implements Initializable {
             case "Banco De dados" -> path = (
                     "/gui/OrderChargeDatabaseView.fxml"
             );
-            case "test" -> path = (
-                    "/gui/MapaColetaView.fxml"
-            );
+
         }
         return path;
 
