@@ -2,16 +2,19 @@ package com.allancleitonppma.sscagent.desktop.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 
-public class MapCollectNodeController {
+public class MapCollectNodeController implements Initializable {
     @FXML
     private Label lbMapID;
     @FXML
@@ -30,6 +33,16 @@ public class MapCollectNodeController {
 
     private List<AllocationPositionController> address = new ArrayList<>();
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            loadAllocationPositions();
+            loadAllocationPositions();
+            loadAllocationPositions();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     // ESTE METODO VAI ADICIONAR A LISTA De addres (QUE REPRESENTA O ENDEREÇAMENTO
     // ONDE O PRODUTO DA SEPARAÇÃO ESTÁ ALOCADO) TODOS AS POSIÇÕES ONDE O SISTEMA
@@ -49,7 +62,7 @@ public class MapCollectNodeController {
     }
 
     @FXML
-    public List<AllocationPositionController> editMapCollectItem() throws IOException {
+    public void editMapCollectItem() throws IOException {
 
         if(thisToggle.isSelected()){
             System.out.println("EDITAR MAPA...");
@@ -58,10 +71,6 @@ public class MapCollectNodeController {
             //  CARREGAR AS TELAS DE ENDEREÇOS DO PRODUTO DO BLOCO DE
             //  SEPARAÇÃO SELECIONAO.
             // */
-            loadAllocationPositions();
-
-            return getPositonsAddress();
-
         }else{
             System.out.println("SAIR DE EDITAR MAPA...");
             //* AQUI O COMPORTAMENTO ESPERADO É: QUANDO ENTRAR NO MODO DE
@@ -69,7 +78,7 @@ public class MapCollectNodeController {
             //  MAS SE EDITAR, DEVE SALVAR OU CANCELAR AS ALTERAÇÕES.
             // *//
         }
-        return null;
+
     }
 
     public MapCollectNodeController(){};
@@ -146,4 +155,6 @@ public class MapCollectNodeController {
     public void setAddress(List<AllocationPositionController> address) {
         this.address = address;
     }
+
+
 }

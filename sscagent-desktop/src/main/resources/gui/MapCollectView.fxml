@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
@@ -24,7 +23,7 @@
          RODAPÉ / PALETE SELECIONADO
          ========================================================= -->
 
-    <HBox alignment="CENTER_LEFT" maxHeight="50.0" spacing="10" styleClass="selection-bar" VBox.vgrow="ALWAYS">
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="selection-bar" VBox.vgrow="SOMETIMES">
 
         <Label styleClass="selected-pallet" text="MAPA: 0001" HBox.hgrow="ALWAYS">
          <font>
@@ -139,17 +138,7 @@
 
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="stock-scroll" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
             <content>
-               <VBox>
-                  <children>
-                     <HBox fx:id="paneAddressMap" VBox.vgrow="SOMETIMES">
-                        <children>
-
-                        </children>
-                        <VBox.margin>
-                           <Insets bottom="20.0" top="10.0" />
-                        </VBox.margin>
-                     </HBox>
-                  </children>
+               <VBox fx:id="paneAddressMap">
                   <padding>
                      <Insets left="5.0" right="5.0" />
                   </padding>

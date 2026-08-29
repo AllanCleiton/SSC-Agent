@@ -20,7 +20,7 @@ public class MapCollectController implements Initializable {
     @FXML
     private TextField txtQtdeRequired;
     @FXML
-    private HBox paneAddressMap;
+    private VBox paneAddressMap;
 
 
     private List<MapCollectNodeController> mapCollectNodeControllers = new ArrayList<>();
@@ -56,6 +56,25 @@ public class MapCollectController implements Initializable {
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+
+        for (MapCollectNodeController controller : mapCollectNodeControllers) {
+
+            controller.getThisToggle().selectedProperty().addListener(
+                    (observable, oldValue, selected) -> {
+
+                        if (selected) {
+                            for(AllocationPositionController allocationPositionController : controller.getPositonsAddress()){
+                                paneAddressMap.getChildren().add(allocationPositionController.getAllocationProduct());
+                            }
+                            System.out.println("Selecionado");
+                        } else {
+                            System.out.println("Desmarcado");
+                            paneAddressMap.getChildren().clear();
+                        }
+
+                    }
+            );
         }
 
     }
@@ -97,11 +116,6 @@ public class MapCollectController implements Initializable {
 
     }
 
-
-    private void LoadPaneAddressMap() {
-
-
-    }
 
     /*===========================================================
         Bloqueia toggleButton para não ser possivel precionalo
