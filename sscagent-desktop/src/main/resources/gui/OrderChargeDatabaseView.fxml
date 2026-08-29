@@ -3,18 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox
+<VBox   stylesheets="@../css/OrderChargeFile.css"
+        styleClass="order-charge-file"
         spacing="10.0"
         xmlns:fx="http://javafx.com/fxml/1"
         fx:controller="com.allancleitonppma.sscagent.desktop.controller.OrderChargeFileController">
 
-    <HBox spacing="10.0">
+    <HBox spacing="10.0"
+          styleClass="import-bar">
 
         <Label text="Informe a ordem de carga"/>
         <TextField fx:id="txtImportPath" HBox.hgrow="ALWAYS"/>
         <Button fx:id="btnLoaderOrder" mnemonicParsing="false" text="Carregar" onAction="#onLoaderAction"/>
         <Label text="Status:"/>
-        <Label fx:id="lbStatus" text="Aguardando..."/>
+        <Label fx:id="lbStatus" text="Aguardando..." styleClass="import-status"/>
 
     </HBox>
 

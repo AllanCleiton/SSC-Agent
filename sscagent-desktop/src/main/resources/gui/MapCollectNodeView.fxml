@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<ToggleButton contentDisplay="TOP" mnemonicParsing="false" wrapText="true"  xmlns:fx="http://javafx.com/fxml/1"
+              fx:controller="com.allancleitonppma.sscagent.desktop.controller.MapCollectNodeController">
+    <graphic>
+        <VBox minWidth="330.0">
+            <children>
+                <Label styleClass="block-map-id" text="MAPA: 0001" />
+                <VBox spacing="2" styleClass="block-content">
+                    <children>
+                        <Label text="Produto: 11046" />
+                        <Label text="34 caixas" />
+                        <Label text="Pendente: 0" />
+                        <Label text="Condição: PAC &lt;= 8 | PAC &lt; 8" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="5.0" />
+                    </VBox.margin>
+                </VBox>
+                <Separator />
+                <Label styleClass="positions" text="Posições: CAM03 RUA14 POS: 1A 2A -&gt; 5cx" wrapText="true" />
+            </children>
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </VBox>
+    </graphic>
+</ToggleButton>
