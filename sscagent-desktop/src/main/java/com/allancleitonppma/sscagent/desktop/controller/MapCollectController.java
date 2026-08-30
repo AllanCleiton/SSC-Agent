@@ -53,6 +53,10 @@ public class MapCollectController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             initializeNodes();
+            initializeNodes();
+            initializeNodes();
+            initializeNodes();
+            initializeNodes();
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -77,6 +81,8 @@ public class MapCollectController implements Initializable {
             );
         }
 
+        //verifica se tem algum toggleButton presionado
+        configToggleButtons();
     }
 
     /*===========================================================
@@ -92,8 +98,6 @@ public class MapCollectController implements Initializable {
                 "Posições: Cam 3 Rua 14= 1A 2A 3A -> 14cx"
         );
 
-        //verifica se tem algum toggleButton presionado
-        configToggleButtons();
 
     }
 

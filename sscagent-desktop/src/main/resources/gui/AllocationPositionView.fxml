@@ -6,7 +6,12 @@
 
 <?import javafx.scene.text.Font?>
 <?import javafx.geometry.Insets?>
-<VBox fx:id="allocationProduct" alignment="CENTER" HBox.hgrow="SOMETIMES" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.AllocationPositionController">
+
+<VBox fx:id="allocationProduct"
+      alignment="CENTER"
+      HBox.hgrow="SOMETIMES"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.allancleitonppma.sscagent.desktop.controller.AllocationPositionController">
     <children>
         <Label styleClass="stock-header" text="CAMARA 03 RUA 14" />
         <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">

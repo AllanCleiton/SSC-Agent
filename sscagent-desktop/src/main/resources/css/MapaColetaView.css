@@ -24,7 +24,7 @@
 }
 
 .map-count {
-    -fx-text-fill: #7a838f;
+    -fx-text-fill: #5c5e61;
     -fx-font-size: 11px;
 }
 
@@ -92,7 +92,7 @@
 /* Hover */
 
 .separation-block .toggle-button:hover {
-    -fx-background-color: #f8fafc;
+    -fx-background-color: #c5e4cd;
     -fx-border-color: #aeb9c7;
 }
 
@@ -100,8 +100,8 @@
 /* Selecionado */
 
 .separation-block .toggle-button:selected {
-    -fx-background-color: #e9f1fb;
-    -fx-border-color: #2474c6;
+    -fx-background-color: #e8dada;
+    -fx-border-color: #f64e61;
     -fx-border-width: 1.5px;
 }
 
@@ -146,10 +146,16 @@
    ========================================================= */
 
 .stock-scroll {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
     -fx-background-insets: 0;
     -fx-padding: 0;
+
+    -fx-background-color: #e9edf2;
+    -fx-background-radius: 10px;
+
+    -fx-border-color: rgba(0, 0, 0, 0.08);
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+
 }
 
 .stock-scroll > .viewport {
@@ -218,28 +224,6 @@
     -fx-font-size: 10px;
 }
 
-.stock-position .label:first-child {
-    -fx-text-fill: #17365d;
-    -fx-font-weight: bold;
-}
-
-
-/* =========================================================
-   TEXTFIELD - QUANTIDADE A PEGAR
-   ========================================================= */
-
-.stock-position .text-field {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd2dc;
-    -fx-border-radius: 4px;
-    -fx-background-radius: 4px;
-
-    -fx-padding: 3px 5px;
-    -fx-font-size: 10px;
-
-    -fx-text-fill: #30343b;
-}
-
 
 /* Campo ao receber foco */
 
@@ -267,7 +251,7 @@
 
 .stock-position.astar-selected {
     -fx-background-color: #f0f6fd;
-    -fx-border-color: #5d91c5;
+    -fx-border-color: #f64e61;
 }
 
 
@@ -330,7 +314,7 @@
 
 .quantity-label {
     -fx-text-fill: #697481 !important;
-    -fx-font-size: 11px !important;
+    -fx-font-size: 14px !important;
 }
 
 
@@ -393,57 +377,6 @@
 
 
 /* =========================================================
-   BOTÃO APLICAR
-   ========================================================= */
-
-.apply-button {
-    -fx-background-color: #2474c6;
-    -fx-background-radius: 5px;
-
-    -fx-text-fill: white;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-
-    -fx-padding: 7px 14px;
-
-    -fx-cursor: hand;
-}
-
-.apply-button:hover {
-    -fx-background-color: #1e63a8;
-}
-
-.apply-button:pressed {
-    -fx-background-color: #18558f;
-}
-
-
-/* =========================================================
-   BOTÃO CANCELAR
-   ========================================================= */
-
-.cancel-button {
-    -fx-background-color: white;
-    -fx-background-radius: 5px;
-
-    -fx-border-color: #cbd2dc;
-    -fx-border-radius: 5px;
-
-    -fx-text-fill: #59636f;
-    -fx-font-size: 12px;
-
-    -fx-padding: 7px 14px;
-
-    -fx-cursor: hand;
-}
-
-.cancel-button:hover {
-    -fx-background-color: #f5f7f9;
-    -fx-border-color: #aeb7c2;
-}
-
-
-/* =========================================================
    ESTADO DESABILITADO
    ========================================================= */
 
@@ -491,4 +424,21 @@
 /* Títulos e informações podem crescer */
 .block-content {
     -fx-max-width: Infinity;
+}
+
+.action-button {
+    -fx-background-color: #17365d;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+
+    -fx-padding: 6px 16px;
+    -fx-pref-height: 30px;
+}
+
+.action-button:hover {
+    -fx-background-color: #24558f;
 }
