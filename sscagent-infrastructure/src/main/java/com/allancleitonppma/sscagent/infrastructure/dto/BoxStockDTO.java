@@ -1,132 +1,166 @@
 package com.allancleitonppma.sscagent.infrastructure.dto;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class BoxStockDTO {
-
-    private String endereco;
-    private String etiquetaMae;
-    private Long etiquetaProduto;
-    private Long apont;
-    private Long codigoSankhya;
-    private String produto;
-    private Integer diasAVencer;
-    private String dataValidade;
-    private BigDecimal pesoLiquidoCaixa;
-    private Integer pacotes;
+    /**
+     *REFERENCIA A COLUNA {[0]-Endereço}
+     */
+    private String address;
+    /**
+     *REFERENCIA A COLUNA {[1]-Etiq Mãe}
+     */
+    private String motherId;
+    /**
+     *REFERENCIA A COLUNA {[2]-Etiq prod}
+     */
+    private Long productId;
+    /**
+     *REFERENCIA A COLUNA {[3]-Apont}
+     */
+    private Long integrationId;
+    /**
+     *REFERENCIA A COLUNA {[4]-Cód Sankhya}
+     */
+    private Long SankhyaId;
+    /**
+     *REFERENCIA A COLUNA {[5]-Produto}
+     */
+    private String productDescription;
+    /**
+     *REFERENCIA A COLUNA {[6]-Dias a vencer}
+     */
+    private Integer daysToExpire;
+    /**
+     *REFERENCIA A COLUNA {[7]-Data Val}
+     */
+    private String validity;
+    /**
+     *REFERENCIA A COLUNA {[13]-Peso Liq CX}
+     */
+    private BigDecimal netWeight;
+    /**
+     *REFERENCIA A COLUNA {[14]-Pacotes}
+     */
+    private Integer packages;
+    /**
+     *REFERENCIA A COLUNA {[15]-Data Fab}
+     */
+    private String manufacturingDate;
+    /**
+     *REFERENCIA A COLUNA {[16]-Data Fab}
+     */
     private String status;
-    private String camaraFria;
 
     public BoxStockDTO() {
     }
 
     public BoxStockDTO(
-            String endereco,
-            String etiquetaMae,
-            Long etiquetaProduto,
-            Long apont,
-            Long codigoSankhya,
-            String produto,
-            Integer diasAVencer,
-            String dataValidade,
-            BigDecimal pesoLiquidoCaixa,
-            Integer pacotes,
-            String status,
-            String camaraFria) {
+            String address,
+            String motherId,
+            Long productId,
+            Long integrationId,
+            Long SankhyaId,
+            String productDescription,
+            Integer daysToExpire,
+            String validity,
+            BigDecimal netWeight,
+            Integer packages,
+            String manufacturingDate,
+            String status) {
 
-        this.endereco = endereco;
-        this.etiquetaMae = etiquetaMae;
-        this.etiquetaProduto = etiquetaProduto;
-        this.apont = apont;
-        this.codigoSankhya = codigoSankhya;
-        this.produto = produto;
-        this.diasAVencer = diasAVencer;
-        this.dataValidade = dataValidade;
-        this.pesoLiquidoCaixa = pesoLiquidoCaixa;
-        this.pacotes = pacotes;
+        this.address = address;
+        this.motherId = motherId;
+        this.productId = productId;
+        this.integrationId = integrationId;
+        this.SankhyaId = SankhyaId;
+        this.productDescription = productDescription;
+        this.daysToExpire = daysToExpire;
+        this.validity = validity;
+        this.netWeight = netWeight;
+        this.packages = packages;
+        this.manufacturingDate = manufacturingDate;
         this.status = status;
-        this.camaraFria = camaraFria;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getEtiquetaMae() {
-        return etiquetaMae;
+    public String getMotherId() {
+        return motherId;
     }
 
-    public void setEtiquetaMae(String etiquetaMae) {
-        this.etiquetaMae = etiquetaMae;
+    public void setMotherId(String motherId) {
+        this.motherId = motherId;
     }
 
-    public Long getEtiquetaProduto() {
-        return etiquetaProduto;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setEtiquetaProduto(Long etiquetaProduto) {
-        this.etiquetaProduto = etiquetaProduto;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
-    public Long getApont() {
-        return apont;
+    public Long getIntegrationId() {
+        return integrationId;
     }
 
-    public void setApont(Long apont) {
-        this.apont = apont;
+    public void setIntegrationId(Long integrationId) {
+        this.integrationId = integrationId;
     }
 
-    public Long getCodigoSankhya() {
-        return codigoSankhya;
+    public Long getSankhyaId() {
+        return SankhyaId;
     }
 
-    public void setCodigoSankhya(Long codigoSankhya) {
-        this.codigoSankhya = codigoSankhya;
+    public void setSankhyaId(Long sankhyaId) {
+        this.SankhyaId = sankhyaId;
     }
 
-    public String getProduto() {
-        return produto;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setProduto(String produto) {
-        this.produto = produto;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public Integer getDiasAVencer() {
-        return diasAVencer;
+    public Integer getDaysToExpire() {
+        return daysToExpire;
     }
 
-    public void setDiasAVencer(Integer diasAVencer) {
-        this.diasAVencer = diasAVencer;
+    public void setDaysToExpire(Integer daysToExpire) {
+        this.daysToExpire = daysToExpire;
     }
 
-    public String getDataValidade() {
-        return dataValidade;
+    public String getValidity() {
+        return validity;
     }
 
-    public void setDataValidade(String dataValidade) {
-        this.dataValidade = dataValidade;
+    public void setValidity(String validity) {
+        this.validity = validity;
     }
 
-    public BigDecimal getPesoLiquidoCaixa() {
-        return pesoLiquidoCaixa;
+    public BigDecimal getNetWeight() {
+        return netWeight;
     }
 
-    public void setPesoLiquidoCaixa(BigDecimal pesoLiquidoCaixa) {
-        this.pesoLiquidoCaixa = pesoLiquidoCaixa;
+    public void setNetWeight(BigDecimal netWeight) {
+        this.netWeight = netWeight;
     }
 
-    public Integer getPacotes() {
-        return pacotes;
+    public Integer getPackages() {
+        return packages;
     }
 
-    public void setPacotes(Integer pacotes) {
-        this.pacotes = pacotes;
+    public void setPackages(Integer packages) {
+        this.packages = packages;
     }
 
     public String getStatus() {
@@ -137,11 +171,29 @@ public class BoxStockDTO {
         this.status = status;
     }
 
-    public String getCamaraFria() {
-        return camaraFria;
+    public String getManufacturingDate() {
+        return manufacturingDate;
     }
 
-    public void setCamaraFria(String camaraFria) {
-        this.camaraFria = camaraFria;
+    public void setManufacturingDate(String manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+    }
+
+    @Override
+    public String toString() {
+        return "BoxStockDTO{" +
+                "address='" + address + '\'' +
+                ", motherId='" + motherId + '\'' +
+                ", productId=" + productId +
+                ", integrationId=" + integrationId +
+                ", SankhyaId=" + SankhyaId +
+                ", productDescription='" + productDescription + '\'' +
+                ", daysToExpire=" + daysToExpire +
+                ", validity='" + validity + '\'' +
+                ", netWeight=" + netWeight +
+                ", packages=" + packages +
+                ", manufacturingDate='" + manufacturingDate + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

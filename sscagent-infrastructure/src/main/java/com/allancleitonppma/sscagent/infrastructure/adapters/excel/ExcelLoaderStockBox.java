@@ -31,9 +31,9 @@ public class ExcelLoaderStockBox implements StockBoxReader {
         this.arquivo = path;
     }
 
-    private List<BoxStockDTO> load() throws IOException {
+    public List<BoxStockDTO> load() throws IOException {
 
-        List<BoxStockDTO> estoque = new ArrayList<>();
+        List<BoxStockDTO> boxes = new ArrayList<>();
 
         try (InputStream inputStream = Files.newInputStream(arquivo);
              Workbook workbook = criarWorkbook(arquivo, inputStream)) {
@@ -60,7 +60,7 @@ public class ExcelLoaderStockBox implements StockBoxReader {
                     continue;
                 }
 
-                BoxStockDTO dto = new BoxStockDTO(
+                BoxStockDTO dtoBox = new BoxStockDTO(
                         getString(row.getCell(0)),
                         getString(row.getCell(1)),
                         getLong(row.getCell(2)),
@@ -69,17 +69,18 @@ public class ExcelLoaderStockBox implements StockBoxReader {
                         getString(row.getCell(5)),
                         getInteger(row.getCell(6)),
                         getString(row.getCell(7)),
-                        getBigDecimal(row.getCell(8)),
-                        getInteger(row.getCell(9)),
-                        getString(row.getCell(10)),
-                        getString(row.getCell(11))
+                        getBigDecimal(row.getCell(13)),
+                        getInteger(row.getCell(14)),
+                        getString(row.getCell(15)),
+                        getString(row.getCell(16))
+
                 );
 
-                estoque.add(dto);
+                boxes.add(dtoBox);
             }
         }
 
-        return estoque;
+        return boxes;
     }
 
     private Workbook criarWorkbook(Path arquivo, InputStream inputStream)
@@ -170,15 +171,15 @@ public class ExcelLoaderStockBox implements StockBoxReader {
     private StockBox mapBoxStock(BoxStockDTO boxStockDTO) {
         StockBox box = new StockBox();
 
-        box.boxId = String.valueOf(boxStockDTO.getEtiquetaProduto());
-        box.address = new Address(boxStockDTO.getEndereco(),boxStockDTO.getEndereco(),boxStockDTO.getEndereco(),boxStockDTO.getEndereco());
-        box.packagesPerBox = boxStockDTO.getPacotes();
-        box.daysToExpiry = boxStockDTO.getDiasAVencer();
-        box.productCode = String.valueOf(boxStockDTO.getCodigoSankhya());
-        box.palletId = boxStockDTO.getEtiquetaMae();
-        box.expirationDate = LocalDate.parse(boxStockDTO.getDataValidade(), DATE_FORMAT);
-        box.productName = boxStockDTO.getProduto();
-        box.NetWeight = boxStockDTO.getDiasAVencer();
+        box.boxId = String.valueOf(boxStockDTO.getProductId());
+        box.address = new Address(boxStockDTO.getAddress(),boxStockDTO.getAddress(),boxStockDTO.getAddress(),boxStockDTO.getAddress());
+        box.packagesPerBox = boxStockDTO.getPackages();
+        box.daysToExpiry = boxStockDTO.getDaysToExpire();
+        box.productCode = String.valueOf(boxStockDTO.getSankhyaId());
+        box.palletId = boxStockDTO.getMotherId();
+        box.expirationDate = LocalDate.parse(boxStockDTO.getValidity(), DATE_FORMAT);
+        box.productName = boxStockDTO.getProductDescription();
+        box.NetWeight = boxStockDTO.getDaysToExpire();
 
         return box;
     }
