@@ -146,20 +146,23 @@
    ========================================================= */
 
 .stock-scroll {
-    -fx-background-insets: 0;
-    -fx-padding: 0;
-
-    -fx-background-color: #e9edf2;
-    -fx-background-radius: 10px;
-
-    -fx-border-color: rgba(0, 0, 0, 0.08);
-    -fx-border-width: 1px;
-    -fx-border-radius: 10px;
-
+    -fx-background-insets: 50;
+    -fx-background-color: #5c5858;
 }
 
+
+
 .stock-scroll > .viewport {
-    -fx-background-color: #bebebe;
+    -fx-background-color: #c0c0c0;
+
+        -fx-effect: innershadow(
+            gaussian,
+            rgba(0, 0, 0, 0.30),
+            12,
+            0.25,
+            5,
+            5
+        );
 }
 
 

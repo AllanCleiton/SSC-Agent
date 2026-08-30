@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.text.Font?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="allocationProduct"
-      alignment="CENTER"
-      HBox.hgrow="SOMETIMES"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.allancleitonppma.sscagent.desktop.controller.AllocationPositionController">
+<VBox fx:id="allocationProduct" alignment="CENTER" HBox.hgrow="SOMETIMES" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.allancleitonppma.sscagent.desktop.controller.AllocationPositionController">
     <children>
-        <Label styleClass="stock-header" text="CAMARA 03 RUA 14" />
+        <Label prefHeight="17.0" prefWidth="352.0" styleClass="stock-header" text="CAMARA 03 RUA 14" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
         <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
             <children>
                 <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
@@ -1409,4 +1410,7 @@
         </HBox>
         <Separator prefWidth="200.0" />
     </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
 </VBox>

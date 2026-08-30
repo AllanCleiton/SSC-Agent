@@ -11,7 +11,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="546.0" prefWidth="725.0" stylesheets="@../css/MapaColetaView.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.MapCollectController">
+<VBox prefHeight="546.0"
+      prefWidth="725.0"
+      stylesheets="@../css/MapaColetaView.css"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.allancleitonppma.sscagent.desktop.controller.MapCollectController">
 
 
     <padding>
@@ -128,9 +133,13 @@
 
             <!-- MAPA DO ESTOQUE -->
 
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="stock-scroll" VBox.vgrow="ALWAYS">
+            <ScrollPane fitToWidth="true"
+                        hbarPolicy="NEVER"
+                        VBox.vgrow="ALWAYS"
+                        styleClass="stock-scroll"
+                        >
             <content>
-               <VBox fx:id="paneAddressMap" >
+               <VBox fx:id="paneAddressMap" style="-fx-background-color=transparent" >
                   <padding>
                      <Insets left="5.0" right="5.0" />
                   </padding>
