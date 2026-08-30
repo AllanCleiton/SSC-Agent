@@ -6,10 +6,7 @@ import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.OrderPr
 import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.SalesLoad;
 
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ConsolidateSalesLoad {
     static List<OrderPreview> previews = new ArrayList<>();
@@ -56,6 +53,7 @@ public class ConsolidateSalesLoad {
             if (result == null) {
 
                 result = new OrderPreview(
+                        UUID.randomUUID(),
                         preview.getProduct(),
                         preview.getNeed(),
                         preview.getCondition(),

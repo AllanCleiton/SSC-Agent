@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
     static void main() throws IOException {
         ExcelLoaderStockBox loaderStockBox = new ExcelLoaderStockBox(Path.of("C:\\Users\\allan\\Documents\\MyWorkspace\\SSCAgent\\SSCAGENT\\sscagent-desktop\\src\\main\\resources\\Data\\StockBox.xls"));
-        List<BoxStockDTO> stockBoxes = loaderStockBox.load();
+        List<BoxStockDTO> stockBoxes = loaderStockBox.load("11.410");
 
         stockBoxes.forEach(stockBox -> System.out.println(stockBox.toString()));
     }

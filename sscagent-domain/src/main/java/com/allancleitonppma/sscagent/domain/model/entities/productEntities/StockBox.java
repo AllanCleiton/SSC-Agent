@@ -6,10 +6,11 @@ import com.allancleitonppma.sscagent.domain.model.enums.StockAvailability;
 import java.time.LocalDate;
 
 public class StockBox {
-
-        public String boxId;
+        public Address address;
         public String  palletId;
+        public String productId;
         public String productCode;
+        public Long SankhyaId;
         public String productName;
         public Integer packagesPerBox;
         public Integer NetWeight;
@@ -17,7 +18,6 @@ public class StockBox {
         public LocalDate productionDate;
         public Integer daysToExpiry;
         public String sourceStatus;
-        public Address address;
         public boolean isAvailable;
 
         public StockBox(

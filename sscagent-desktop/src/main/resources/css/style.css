@@ -280,3 +280,9 @@
     -fx-text-fill: #c47b16;
     -fx-font-weight: bold;
 }
+
+.tab-close-button {
+    -fx-background-color: #555555;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}

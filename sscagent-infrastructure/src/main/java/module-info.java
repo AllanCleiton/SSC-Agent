@@ -6,6 +6,7 @@ module sscagent.infrastructure {
     requires org.apache.poi.poi;
     requires org.apache.poi.ooxml;
 
+
     exports com.allancleitonppma.sscagent.infrastructure.adapters.json;
     exports com.allancleitonppma.sscagent.infrastructure.adapters.excel;
     exports com.allancleitonppma.sscagent.infrastructure.export;

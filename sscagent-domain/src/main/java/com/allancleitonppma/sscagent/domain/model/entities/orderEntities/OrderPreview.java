@@ -2,9 +2,10 @@ package com.allancleitonppma.sscagent.domain.model.entities.orderEntities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class OrderPreview {
-
+    private UUID id;
     private  String product;
     private double need;
     private  String condition;
@@ -14,12 +15,14 @@ public class OrderPreview {
     private List<String> consolidateOrders = new ArrayList<>();
 
     public OrderPreview(
+            UUID id,
             String product,
             double need,
             String condition,
             String order,
             String instruction
     ) {
+        this.id = id;
         this.product = product;
         this.need = need;
         this.condition = condition;
@@ -75,5 +78,13 @@ public class OrderPreview {
 
     public void setConsolidateOrders(List<String> consolidateOrders) {
         this.consolidateOrders = consolidateOrders;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }

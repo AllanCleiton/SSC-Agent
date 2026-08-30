@@ -1,6 +1,9 @@
 package com.allancleitonppma.sscagent.desktop.dto;
 
+import java.util.UUID;
+
 public class OrderDTO {
+        UUID id;
         String product;
         String need;
         String condition;
@@ -8,7 +11,8 @@ public class OrderDTO {
         String instruction;
 
 
-    public OrderDTO(String product, String need, String condition, String order, String instruction) {
+    public OrderDTO(UUID id,String product, String need, String condition, String order, String instruction) {
+        this.id = id;
         this.product = product;
         this.need = need;
         this.condition = condition;
@@ -56,6 +60,14 @@ public class OrderDTO {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }
 

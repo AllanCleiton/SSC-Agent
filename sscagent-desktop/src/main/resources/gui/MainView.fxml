@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <BorderPane minHeight="560.0" minWidth="880.0" prefHeight="560.0" prefWidth="880.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.MainViewController">
         <!-- =====================================================
          TOPO
@@ -35,7 +34,7 @@
                     </Menu>
                     <Menu mnemonicParsing="false" text="Ajuda">
                         <items>
-                            <MenuItem mnemonicParsing="false" text="About" />
+                            <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#loadAbout" text="Sobre" />
                         </items>
                     </Menu>
                 </menus>
@@ -59,7 +58,7 @@
          CENTRO
          ===================================================== -->
     <center>
-        <TabPane stylesheets="@../css/TabViewOrderCharger.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TabPane fx:id="tabPaneMain" stylesheets="@../css/TabViewOrderCharger.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <!--Aba Ordem de Carga-->
             <Tab fx:id="tabOrderCharge" text="Ordem de Carga">
 

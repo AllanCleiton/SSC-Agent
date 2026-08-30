@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+
+<?import javafx.scene.control.Label?>
+
+
+<Tab text="Sobre" closable="true">
+    <Label text="Bem vindo ao SSG Agent."/>
+</Tab>
+
+
+
+
+

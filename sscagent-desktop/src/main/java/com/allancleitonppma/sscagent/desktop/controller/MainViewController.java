@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +20,10 @@ public class MainViewController implements Initializable {
     private ComboBox<String> comboBoxDataMode;
     @FXML
     private Tab tabCollectMap;
+    @FXML
+    private TabPane tabPaneMain;
 
+    //PROVISORIO PARA CARREGAR O CONTEUDO DA ABA MAPA DE SEPARAÇÃO
     @FXML
     public void onSelectCollectMap() throws IOException {
         tabCollectMap.setContent(loadView("/gui/MapCollectView.fxml"));
@@ -35,7 +39,8 @@ public class MainViewController implements Initializable {
     }
 
     public void initializeNodes() throws IOException {
-        comboBoxDataMode.getItems().add("Arquivo");
+        comboBoxDataMode.getItems().add("Excel");
+        comboBoxDataMode.getItems().add("Json");
         comboBoxDataMode.getItems().add("Banco De dados");
         comboBoxDataMode.getSelectionModel().selectFirst();
         //CARREGANDO O CONTEUDO DA ABA ORDEM DE CARGA
@@ -72,8 +77,12 @@ public class MainViewController implements Initializable {
         String path = "/gui/OrderChargeFileView.fxml";
         switch (mode) {
 
-            case "Arquivo" -> path = (
+            case "Json" -> path = (
                     "/gui/OrderChargeFileView.fxml"
+            );
+
+            case "Excel" -> path = (
+                    "/gui/OrderChargeExcel.fxml"
             );
 
             case "Banco De dados" -> path = (
@@ -84,4 +93,17 @@ public class MainViewController implements Initializable {
         return path;
 
     }
+
+    @FXML
+    private void loadAbout() throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/gui/About.fxml")
+        );
+
+        Tab aboutTab = loader.load();
+
+        tabPaneMain.getTabs().add(aboutTab);
+    }
+
+
 }

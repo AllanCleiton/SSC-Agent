@@ -7,6 +7,7 @@ module sscagent.desktop {
     requires sscagent.domain;
     requires sscagent.infrastructure;
     requires sscagent.application;
+    requires org.apache.poi.poi;
 
 
     exports com.allancleitonppma.sscagent.desktop.application;

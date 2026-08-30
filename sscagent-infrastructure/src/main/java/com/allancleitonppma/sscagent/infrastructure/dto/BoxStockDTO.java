@@ -18,7 +18,7 @@ public class BoxStockDTO {
     /**
      *REFERENCIA A COLUNA {[3]-Apont}
      */
-    private Long integrationId;
+    private Long integrationCode;
     /**
      *REFERENCIA A COLUNA {[4]-Cód Sankhya}
      */
@@ -72,7 +72,7 @@ public class BoxStockDTO {
         this.address = address;
         this.motherId = motherId;
         this.productId = productId;
-        this.integrationId = integrationId;
+        this.integrationCode = integrationId;
         this.SankhyaId = SankhyaId;
         this.productDescription = productDescription;
         this.daysToExpire = daysToExpire;
@@ -107,12 +107,12 @@ public class BoxStockDTO {
         this.productId = productId;
     }
 
-    public Long getIntegrationId() {
-        return integrationId;
+    public Long getIntegrationCode() {
+        return integrationCode;
     }
 
-    public void setIntegrationId(Long integrationId) {
-        this.integrationId = integrationId;
+    public void setIntegrationCode(Long integrationCode) {
+        this.integrationCode = integrationCode;
     }
 
     public Long getSankhyaId() {
@@ -185,7 +185,7 @@ public class BoxStockDTO {
                 "address='" + address + '\'' +
                 ", motherId='" + motherId + '\'' +
                 ", productId=" + productId +
-                ", integrationId=" + integrationId +
+                ", integrationId=" + integrationCode +
                 ", SankhyaId=" + SankhyaId +
                 ", productDescription='" + productDescription + '\'' +
                 ", daysToExpire=" + daysToExpire +

@@ -54,7 +54,7 @@ public class OrderChargeFileController implements Initializable {
             List<OrderPreview> orderPreview = ConsolidateSalesLoad.consolidate(Path.of(txtImportPath.getText()), salesLoadUseCase);
 
             ObservableList<OrderDTO> orderDTOS = FXCollections.observableArrayList(orderPreview.stream().map(orderPreview1 -> new OrderDTO(
-
+                    orderPreview1.getId(),
                     orderPreview1.getProduct(),
                     String.valueOf(orderPreview1.getNeed()),
                     orderPreview1.getCondition(),
