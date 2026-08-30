@@ -63,7 +63,7 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
 
     @FXML
     public void onNewOrderAction(){
-        if(!  ((txtNewCode.getText().isEmpty()) && (txtNewCondition.getText().isEmpty()) && (txtNewQuantity.getText().isEmpty()) && (txtNewOrder.getText().isEmpty() ))) {
+        if((!txtNewCode.getText().isEmpty()) && (!txtNewCondition.getText().isEmpty()) && (!txtNewQuantity.getText().isEmpty()) && (!txtNewOrder.getText().isEmpty())) {
             subscribeDataChangeListener(this);
 
             orders.add(new OrderPreview(UUID.randomUUID(),txtNewCode.getText(), Double.parseDouble(txtNewQuantity.getText()), txtNewCondition.getText(), txtNewOrder.getText(), ""));
@@ -189,7 +189,7 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
         OrderDTO orderSelect = tableViewOrderCharge.getSelectionModel().getSelectedItem();
 
         if (orderSelect != null) {
-            System.out.println("Indice"+tableViewOrderCharge.getSelectionModel().getSelectedIndex());
+                    //System.out.println("Indice"+tableViewOrderCharge.getSelectionModel().getSelectedIndex());
             txtNewCode.setText(orderSelect.getProduct());
             txtNewOrder.setText(orderSelect.getOrder());
             actualLineSelected = tableViewOrderCharge.getSelectionModel().getSelectedIndex();
