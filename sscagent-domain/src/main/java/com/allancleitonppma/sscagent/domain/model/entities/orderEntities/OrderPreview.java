@@ -87,4 +87,16 @@ public class OrderPreview {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    public boolean updateNeed(String value) {
+
+        double subtract = Double.parseDouble(value);
+
+        if(subtract > this.need){
+            return false;
+        }
+
+        this.need -= subtract;
+        return true;
+    }
 }

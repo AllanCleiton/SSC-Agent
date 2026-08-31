@@ -63,12 +63,17 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
 
     @FXML
     public void onNewOrderAction(){
-        if((!txtNewCode.getText().isEmpty()) && (!txtNewCondition.getText().isEmpty()) && (!txtNewQuantity.getText().isEmpty()) && (!txtNewOrder.getText().isEmpty())) {
+        if((!txtNewCode.getText().isEmpty()) && (!txtNewQuantity.getText().isEmpty()) && (!txtNewOrder.getText().isEmpty())) {
             subscribeDataChangeListener(this);
 
             orders.add(new OrderPreview(UUID.randomUUID(),txtNewCode.getText(), Double.parseDouble(txtNewQuantity.getText()), txtNewCondition.getText(), txtNewOrder.getText(), ""));
-
             lbStatusApply.setText("Sucesso!");
+
+            for(OrderPreview orderPreview : orders){
+                if(Objects.equals(orderPreview.getProduct(), txtNewCode.getText()))
+                    subtractValue(txtNewQuantity.getText(),actualLineSelected);
+            }
+
 
             txtNewCode.setText("");
             txtNewCondition.setText("");
@@ -196,6 +201,31 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
         }
     }
 
+    private void subtractValue(String value, Integer index){
+        orders.forEach( orderPreview -> {
+
+            if (orderPreview.getId() == tableViewOrderCharge.getItems().get(index).getId()){
+                orderPreview.updateNeed(value);
+            }
+        });
+        ObservableList<OrderDTO> orderDTOS =
+                FXCollections.observableArrayList(
+                        orders.stream()
+                                .map(orderPreview1 -> new OrderDTO(
+                                        orderPreview1.getId(),
+                                        orderPreview1.getProduct(),
+                                        String.valueOf(orderPreview1.getNeed()),
+                                        orderPreview1.getCondition(),
+                                        orderPreview1.getOrder(),
+                                        orderPreview1.getInstruction()
+                                ))
+                                .toList()
+                );
+
+        tableViewOrderCharge.setItems(orderDTOS);
+
+
+    }
 
     private void deleteItemTableView(){
         OrderDTO orderSelect = tableViewOrderCharge.getSelectionModel().getSelectedItem();

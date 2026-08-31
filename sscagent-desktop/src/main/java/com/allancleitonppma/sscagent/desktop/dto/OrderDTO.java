@@ -38,6 +38,19 @@ public class OrderDTO {
         this.need = need;
     }
 
+    public boolean updateNeed(String value) {
+        double oldValue = Double.parseDouble(this.need);
+        double subtract = Double.parseDouble(value);
+
+        if(subtract < oldValue){
+            return false;
+        }
+
+
+        this.need = String.valueOf(oldValue-subtract);
+        return true;
+    }
+
     public String getCondition() {
         return condition;
     }
