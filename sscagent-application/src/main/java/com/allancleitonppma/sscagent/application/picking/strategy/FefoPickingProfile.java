@@ -2,9 +2,9 @@ package com.allancleitonppma.sscagent.application.picking.strategy;
 
 import com.allancleitonppma.sscagent.application.picking.PickingContext;
 import com.allancleitonppma.sscagent.application.picking.PickingMap;
-import com.allancleitonppma.sscagent.application.picking.PickingStrategy;
+import com.allancleitonppma.sscagent.application.picking.PickingProfile;
 
-public class FefoPickingStrategy implements PickingStrategy {
+public class FefoPickingProfile implements PickingProfile {
     @Override
     public PickingMap generate(PickingContext context) {
         return null;

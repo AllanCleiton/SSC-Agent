@@ -1,5 +1,5 @@
 package com.allancleitonppma.sscagent.application.picking;
 
-public interface PickingStrategy {
+public interface PickingProfile {
     PickingMap generate(PickingContext context);
 }

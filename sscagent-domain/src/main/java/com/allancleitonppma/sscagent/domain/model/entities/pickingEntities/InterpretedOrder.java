@@ -1,6 +1,11 @@
 package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
 
+import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.CandidateStock;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class InterpretedOrder {
     private final String product;
     private final double need;
@@ -9,6 +14,8 @@ public class InterpretedOrder {
     private final String instruction;
 
     private final Expression expression;
+
+    private List<CandidateStock> candidateStocks = new ArrayList<>();
 
     public InterpretedOrder(
             String product,
@@ -48,5 +55,13 @@ public class InterpretedOrder {
 
     public Expression getExpression() {
         return expression;
+    }
+
+    public List<CandidateStock> getCandidateStocks() {
+        return candidateStocks;
+    }
+
+    public void setCandidateStocks(List<CandidateStock> candidateStocks) {
+        this.candidateStocks = candidateStocks;
     }
 }

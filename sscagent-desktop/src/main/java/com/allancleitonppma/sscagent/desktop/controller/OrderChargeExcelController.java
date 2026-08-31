@@ -66,13 +66,13 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
         if((!txtNewCode.getText().isEmpty()) && (!txtNewQuantity.getText().isEmpty()) && (!txtNewOrder.getText().isEmpty())) {
             subscribeDataChangeListener(this);
 
-            orders.add(new OrderPreview(UUID.randomUUID(),txtNewCode.getText(), Double.parseDouble(txtNewQuantity.getText()), txtNewCondition.getText(), txtNewOrder.getText(), ""));
-            lbStatusApply.setText("Sucesso!");
-
             for(OrderPreview orderPreview : orders){
                 if(Objects.equals(orderPreview.getProduct(), txtNewCode.getText()))
                     subtractValue(txtNewQuantity.getText(),actualLineSelected);
             }
+
+            orders.add(new OrderPreview(UUID.randomUUID(),txtNewCode.getText(), Double.parseDouble(txtNewQuantity.getText()), txtNewCondition.getText(), txtNewOrder.getText(), ""));
+            lbStatusApply.setText("Sucesso!");
 
 
             txtNewCode.setText("");
@@ -93,6 +93,10 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
         try {
             OnOpenFileAction();
             ImportSalesLoadUseCase salesLoadUseCase = new ImportSalesLoadUseCase(new JsonSalesLoadReader());
+
+            if(!orders.isEmpty()){
+                orders.clear();
+            }
             orders.addAll(ConsolidateSalesLoad.consolidate(Path.of(txtImportPath.getText()), salesLoadUseCase));
 
             ObservableList<OrderDTO> orderDTOS = FXCollections.observableArrayList(orders.stream().map(orderPreview1 -> new OrderDTO(
