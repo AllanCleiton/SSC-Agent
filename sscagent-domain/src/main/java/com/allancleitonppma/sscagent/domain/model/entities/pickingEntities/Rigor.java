@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.application.picking.strategy;
+package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
 public enum Rigor {
     NENHUM(0),
@@ -11,5 +11,9 @@ public enum Rigor {
 
     private Rigor(int rigor){
         this.rigor = rigor;
+    }
+    @Override
+    public String toString(){
+        return String.valueOf(this.rigor);
     }
 }

@@ -4,7 +4,11 @@ import com.allancleitonppma.sscagent.application.services.InterpretationEngine;
 import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.OrderPreview;
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.Condition;
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.InterpretedOrder;
+import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.PickingProfile;
+import com.allancleitonppma.sscagent.domain.model.enums.QuantityUnit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Main {
@@ -39,5 +43,21 @@ public class Main {
                             + condition.getValue()
             );
         }
+
+        PickingProfile profile = new PickingProfile(
+        "PRODUTOS CRÍTICOS",
+                new ArrayList<>(List.of("11046")),
+                60,
+                20.0,
+                "0-10.7",
+                "11.0-50.76",
+                "51-150",
+                "151-10000",
+                QuantityUnit.Kilograms
+        );
+
+
+        System.out.println("Rigor de separaçao: " + profile.getRigor().toString());
+
     }
 }

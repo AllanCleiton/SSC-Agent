@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PickingMap {
-    private List<InterpretedOrder> orders = new ArrayList<>();
+    private InterpretedOrder order;
     private List<Pallet> pallets = new ArrayList<>();
     private List<StockBox> boxes = new ArrayList<>();
 
