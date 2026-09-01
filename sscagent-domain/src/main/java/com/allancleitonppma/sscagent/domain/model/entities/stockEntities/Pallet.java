@@ -7,7 +7,8 @@ public class Pallet
 {
     String palletID;
     String ProductDescription;
-
+    String productCode;
+    Long SankhyaId;
     String status;
     Address address;
     int expectedBoxCount;

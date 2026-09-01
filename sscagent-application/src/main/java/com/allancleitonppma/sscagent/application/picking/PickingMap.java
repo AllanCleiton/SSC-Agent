@@ -13,10 +13,5 @@ public class PickingMap {
     private List<StockBox> boxes = new ArrayList<>();
 
 
-    public void getPickingMap(){
-
-
-    }
-
 
 }
