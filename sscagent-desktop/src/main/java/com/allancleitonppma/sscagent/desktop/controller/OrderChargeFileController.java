@@ -155,6 +155,8 @@ public class OrderChargeFileController implements Initializable, DataChangeListe
 
             lbStatus.setText("Sucesso!");
 
+            btnConsolidate.setDisable(false);
+
             notifyDataChangerListeners();
         }catch (NumberFormatException e) {
             lbStatus.setText("erro!");
@@ -220,6 +222,7 @@ public class OrderChargeFileController implements Initializable, DataChangeListe
 
         initializeNodes();
 
+        btnConsolidate.setDisable(true);
 
     }
 
@@ -241,15 +244,6 @@ public class OrderChargeFileController implements Initializable, DataChangeListe
             listenerSelectTableView();
         });
 
-
-        tableViewOrderCharge.getItems().addListener(
-                (ListChangeListener<OrderDTO>) change -> {
-
-                    boolean tabelaVazia = tableViewOrderCharge.getItems().isEmpty();
-
-                    btnConsolidate.setDisable(tabelaVazia);
-                }
-        );
 
         initializeConditionEditor();
 
