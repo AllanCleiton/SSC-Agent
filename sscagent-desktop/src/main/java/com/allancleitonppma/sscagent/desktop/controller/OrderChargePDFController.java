@@ -7,6 +7,7 @@ import com.allancleitonppma.sscagent.desktop.dto.OrderDTO;
 import com.allancleitonppma.sscagent.desktop.util.DataChangeListener;
 import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.OrderPreview;
 import com.allancleitonppma.sscagent.infrastructure.adapters.json.JsonSalesLoadReader;
+import com.allancleitonppma.sscagent.infrastructure.adapters.pdf.PdfSalesLoadReader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,7 +22,7 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.util.*;
 
-public class OrderChargeExcelController implements Initializable, DataChangeListener {
+public class OrderChargePDFController implements Initializable, DataChangeListener {
     @FXML
     public Button btnLoaderOrder;
     @FXML
@@ -93,7 +94,7 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
     public void onLoaderAction(){
         try {
             OnOpenFileAction();
-            ImportSalesLoadUseCase salesLoadUseCase = new ImportSalesLoadUseCase(new JsonSalesLoadReader());
+            ImportSalesLoadUseCase salesLoadUseCase = new ImportSalesLoadUseCase(new PdfSalesLoadReader());
 
             if(!orders.isEmpty()){
                 orders.clear();
@@ -141,7 +142,8 @@ public class OrderChargeExcelController implements Initializable, DataChangeList
                         "Arquivos de carga",
                         "*.json",
                         "*.xls",
-                        "*.xlsx"
+                        "*.xlsx",
+                        "*.pdf"
                 )
         );
 

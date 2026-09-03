@@ -41,6 +41,7 @@ public class MainViewController implements Initializable {
     public void initializeNodes() throws IOException {
         comboBoxDataMode.getItems().add("Excel");
         comboBoxDataMode.getItems().add("Json");
+        comboBoxDataMode.getItems().add("Pdf");
         comboBoxDataMode.getItems().add("Banco De dados");
         comboBoxDataMode.getSelectionModel().selectFirst();
         //CARREGANDO O CONTEUDO DA ABA ORDEM DE CARGA
@@ -83,6 +84,10 @@ public class MainViewController implements Initializable {
 
             case "Excel" -> path = (
                     "/gui/OrderChargeExcel.fxml"
+            );
+
+            case "Pdf" -> path = (
+                    "/gui/OrderChargePDF.fxml"
             );
 
             case "Banco De dados" -> path = (

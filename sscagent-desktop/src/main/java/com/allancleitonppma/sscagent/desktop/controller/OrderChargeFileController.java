@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.List;
@@ -70,6 +71,9 @@ public class OrderChargeFileController implements Initializable {
             lbStatus.setText("erro!");
             DefaultAlert.showAlert("Erro!", "Parce Error", e.getMessage(), Alert.AlertType.ERROR);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -85,7 +89,8 @@ public class OrderChargeFileController implements Initializable {
                         "Arquivos de carga",
                         "*.json",
                         "*.xls",
-                        "*.xlsx"
+                        "*.xlsx",
+                        "*.pdf"
                 )
         );
 

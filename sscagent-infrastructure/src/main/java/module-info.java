@@ -15,4 +15,5 @@ module sscagent.infrastructure {
 
     opens com.allancleitonppma.sscagent.infrastructure.dto
             to tools.jackson.databind;
-    }
+    exports com.allancleitonppma.sscagent.infrastructure.adapters.pdf;
+}

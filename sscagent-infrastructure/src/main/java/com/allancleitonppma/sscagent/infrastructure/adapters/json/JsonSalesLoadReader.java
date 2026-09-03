@@ -26,6 +26,7 @@ public class JsonSalesLoadReader implements SalesLoadReader {
         this.objectMapper = new ObjectMapper();
     }
 
+    @Override
     public SalesLoad read(Path file) {
 
         SalesLoadJson json = objectMapper.readValue(file.toFile(), SalesLoadJson.class);
