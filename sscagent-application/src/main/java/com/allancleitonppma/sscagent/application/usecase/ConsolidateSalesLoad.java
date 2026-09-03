@@ -12,13 +12,14 @@ import java.util.*;
 public class ConsolidateSalesLoad {
     static List<OrderPreview> previews = new ArrayList<>();
 
-    private static void  preConsolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) throws IOException {
+    private static void preConsolidat(Path path, ImportSalesLoadUseCase ImportSalesLoad) throws IOException {
 
-        SalesLoad salesLoad = salesLoadUseCase.execute(path);
+        //RECEBE A ORDEM DE CARGA IMPORTADA PELO ImportSalesLoadUser Case
+        SalesLoad salesLoad = ImportSalesLoad.execute(path);
 
-
+        //ITERA SOBRE AS ORDENS DE CARGA salesLoad
         for (Order order : salesLoad.Orders) {
-
+            //PARA CATA OrderItem da order.lines faca.
             for (ItemOrder itemOrder : order.lines) {
 
                 OrderPreview orderPreview = new OrderPreview();
@@ -37,7 +38,8 @@ public class ConsolidateSalesLoad {
 
 
     public static List<OrderPreview> consolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) throws IOException {
-        preConsolidate(path, salesLoadUseCase);
+        //Aqui ele chama o metodo preConsolidat, que transformou cada Order order em OrderPreview previews
+        preConsolidat(path, salesLoadUseCase);
 
         Map<ConsolidationKey, OrderPreview> consolidated = new LinkedHashMap<>();
 
@@ -81,7 +83,15 @@ public class ConsolidateSalesLoad {
             }
         }
 
-        return new ArrayList<>(consolidated.values());
+        consolidated.values().forEach(x -> {
+            if(x.getProduct().equals("11046")){
+                IO.println("cod: " + x.getProduct() + " quant: " + x.getNeed());
+            }
+
+        });
+
+
+        return consolidated.values().stream().toList();
     }
 
     private record ConsolidationKey(

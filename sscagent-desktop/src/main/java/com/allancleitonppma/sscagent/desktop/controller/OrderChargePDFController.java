@@ -14,8 +14,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.stage.FileChooser;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -55,13 +57,14 @@ public class OrderChargePDFController implements Initializable, DataChangeListen
     private TableColumn<OrderDTO,String> tableColumnOrder;
     @FXML
     private TableColumn<OrderDTO,String> tableColumnInstruction;
+    @FXML
+    private TableView<OrderDTO> tableViewOrderCharge;
 
     private List<DataChangeListener> listers = new ArrayList<>();
 
     private List<OrderPreview> orders = new ArrayList<>();
 
-    @FXML
-    private TableView<OrderDTO> tableViewOrderCharge;
+
 
     @FXML
     public void onNewOrderAction(){
@@ -81,7 +84,6 @@ public class OrderChargePDFController implements Initializable, DataChangeListen
             txtNewCondition.setText("");
             txtNewQuantity.setText("");
             txtNewOrder.setText("");
-
 
 
             notifyDataChangerListeners();
@@ -176,6 +178,9 @@ public class OrderChargePDFController implements Initializable, DataChangeListen
 
             listenerSelectTableView();
         });
+
+        initializeConditionEditor();
+
     }
 
     public void subscribeDataChangeListener(DataChangeListener lister){
@@ -266,4 +271,81 @@ public class OrderChargePDFController implements Initializable, DataChangeListen
 
 
     }
+
+    private void editCondition(OrderDTO order) {
+
+        TextInputDialog dialog =
+                new TextInputDialog(order.getCondition());
+
+        dialog.setTitle("Editar condição");
+        dialog.setHeaderText(
+                "Alterar condição do produto "
+                        + order.getProduct()
+        );
+        dialog.setContentText("Condição:");
+
+        Optional<String> result =
+                dialog.showAndWait();
+
+        result.ifPresent(newCondition -> {
+
+            orders.stream()
+                    .filter(orderPreview ->
+                            Objects.equals(
+                                    orderPreview.getId(),
+                                    order.getId()
+                            )
+                    )
+                    .findFirst()
+                    .ifPresent(orderPreview ->
+                            orderPreview.setCondition(newCondition)
+                    );
+
+            upDateTableVew();
+        });
+    }
+
+
+    private void initializeConditionEditor() {
+
+        tableColumnCondition.setCellFactory(column -> {
+
+            TableCell<OrderDTO, String> cell =
+                    new TableCell<>() {
+
+                        @Override
+                        protected void updateItem(
+                                String item,
+                                boolean empty
+                        ) {
+                            super.updateItem(item, empty);
+
+                            if (empty) {
+                                setText(null);
+                            } else {
+                                setText(item);
+                            }
+                        }
+                    };
+
+            cell.setOnContextMenuRequested(event -> {
+
+                if (cell.isEmpty()) {
+                    return;
+                }
+
+                OrderDTO orderSelect =
+                        tableViewOrderCharge
+                                .getItems()
+                                .get(cell.getIndex());
+
+                editCondition(orderSelect);
+            });
+
+            return cell;
+        });
+    }
+
+
+
 }
