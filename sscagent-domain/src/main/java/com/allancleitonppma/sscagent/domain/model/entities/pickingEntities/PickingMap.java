@@ -1,6 +1,5 @@
-package com.allancleitonppma.sscagent.application.picking;
+package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
-import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.InterpretedOrder;
 import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 

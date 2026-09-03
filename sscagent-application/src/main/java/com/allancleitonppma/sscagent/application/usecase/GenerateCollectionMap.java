@@ -14,8 +14,9 @@ Strategy Strategy    Strategy
                     │
                     ▼
               algoritmo perfil*/
-import com.allancleitonppma.sscagent.application.picking.PickingMap;
+
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.InterpretedOrder;
+import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.PickingMap;
 
 import java.util.ArrayList;
 import java.util.List;

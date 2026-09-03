@@ -5,6 +5,7 @@ module sscagent.infrastructure {
     requires sscagent.application;
     requires org.apache.poi.poi;
     requires org.apache.poi.ooxml;
+    requires org.apache.pdfbox;
 
 
     exports com.allancleitonppma.sscagent.infrastructure.adapters.json;

@@ -5,13 +5,14 @@ import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.Order;
 import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.OrderPreview;
 import com.allancleitonppma.sscagent.domain.model.entities.orderEntities.SalesLoad;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.*;
 
 public class ConsolidateSalesLoad {
     static List<OrderPreview> previews = new ArrayList<>();
 
-    private static void  preConsolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) {
+    private static void  preConsolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) throws IOException {
 
         SalesLoad salesLoad = salesLoadUseCase.execute(path);
 
@@ -35,7 +36,7 @@ public class ConsolidateSalesLoad {
     }
 
 
-    public static List<OrderPreview> consolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) {
+    public static List<OrderPreview> consolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) throws IOException {
         preConsolidate(path, salesLoadUseCase);
 
         Map<ConsolidationKey, OrderPreview> consolidated = new LinkedHashMap<>();

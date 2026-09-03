@@ -1,15 +1,563 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
-
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.control.Tab?>
+<Tab xmlns="http://javafx.com/javafx/25"
+     text="Sobre">
+
+        <ScrollPane fitToWidth="true"
+                    fitToHeight="false"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    styleClass="about-scroll">
+
+            <content>
+
+                <VBox spacing="28"
+                      maxWidth="1050"
+                      styleClass="about-content">
+
+                    <padding>
+                        <Insets top="40"
+                                right="50"
+                                bottom="40"
+                                left="50"/>
+                    </padding>
 
 
-<Tab text="Sobre" closable="true">
-    <Label text="Bem vindo ao SSG Agent."/>
+                    <!-- =====================================================
+                         CABEÇALHO
+                         ===================================================== -->
+
+                    <VBox spacing="8"
+                          styleClass="about-header">
+
+                        <HBox alignment="CENTER_LEFT"
+                              spacing="14">
+
+                            <Rectangle width="6"
+                                       height="64"
+                                       arcWidth="6"
+                                       arcHeight="6"
+                                       styleClass="about-accent"/>
+
+                            <VBox spacing="2">
+
+                                <Label text="SSC AGENT"
+                                       styleClass="about-title"/>
+
+                                <Label text="Sistema de Separação de Carga Inteligente"
+                                       styleClass="about-subtitle"/>
+
+                            </VBox>
+
+                        </HBox>
+
+                        <Label wrapText="true"
+                               maxWidth="850"
+                               text="Uma aplicação inteligente para transformar dados de carga, estoque e regras de separação em um mapa de coleta claro, consistente e pronto para a operação."
+                               styleClass="about-description"/>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         RESUMO
+                         ===================================================== -->
+
+                    <VBox spacing="12"
+                          styleClass="about-section">
+
+                        <Label text="Sobre o sistema"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               text="O SSC AGENT é uma aplicação desktop desenvolvida para apoiar o processo de separação de cargas. O sistema importa uma carga de venda em JSON, dados de pallets e caixas em Excel, interpreta instruções de carregamento configuráveis, seleciona as melhores posições de coleta, consolida necessidades compatíveis e apresenta um mapa de coleta pronto para revisão, impressão e confirmação."
+                               styleClass="section-text"/>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         CARDS PRINCIPAIS
+                         ===================================================== -->
+
+                    <FlowPane hgap="14"
+                              vgap="14"
+                              prefWrapLength="900"
+                              styleClass="about-cards">
+
+
+                        <!-- TECNOLOGIA -->
+
+                        <VBox spacing="8"
+                              prefWidth="280"
+                              minHeight="145"
+                              styleClass="info-card">
+
+                            <Label text="TECNOLOGIA"
+                                   styleClass="card-label"/>
+
+                            <Label text="Java 25"
+                                   styleClass="card-title"/>
+
+                            <Label wrapText="true"
+                                   text="Aplicação desktop para Windows 10 e Windows 11, construída com JavaFX e Maven."
+                                   styleClass="card-text"/>
+
+                        </VBox>
+
+
+                        <!-- ARQUITETURA -->
+
+                        <VBox spacing="8"
+                              prefWidth="280"
+                              minHeight="145"
+                              styleClass="info-card">
+
+                            <Label text="ARQUITETURA"
+                                   styleClass="card-label"/>
+
+                            <Label text="Clean + Hexagonal"
+                                   styleClass="card-title"/>
+
+                            <Label wrapText="true"
+                                   text="Domínio isolado, portas e adaptadores, casos de uso e interface desacoplados."
+                                   styleClass="card-text"/>
+
+                        </VBox>
+
+
+                        <!-- INTERFACE -->
+
+                        <VBox spacing="8"
+                              prefWidth="280"
+                              minHeight="145"
+                              styleClass="info-card">
+
+                            <Label text="INTERFACE"
+                                   styleClass="card-label"/>
+
+                            <Label text="JavaFX + MVVM"
+                                   styleClass="card-title"/>
+
+                            <Label wrapText="true"
+                                   text="Interface orientada à operação, com separação entre visão administrativa e mapa operacional."
+                                   styleClass="card-text"/>
+
+                        </VBox>
+
+                    </FlowPane>
+
+
+                    <!-- =====================================================
+                         MÓDULOS
+                         ===================================================== -->
+
+                    <VBox spacing="14"
+                          styleClass="about-section">
+
+                        <Label text="Estrutura do projeto"
+                               styleClass="section-title"/>
+
+                        <VBox spacing="8"
+                              styleClass="module-list">
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT"
+                                  styleClass="module-row">
+
+                                <Label text="01"
+                                       styleClass="module-number"/>
+
+                                <VBox spacing="2">
+
+                                    <Label text="sscagent-domain"
+                                           styleClass="module-name"/>
+
+                                    <Label wrapText="true"
+                                           text="Entidades, interpretação de instruções, consolidação, geração do mapa e operações de estoque."
+                                           styleClass="module-description"/>
+
+                                </VBox>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT"
+                                  styleClass="module-row">
+
+                                <Label text="02"
+                                       styleClass="module-number"/>
+
+                                <VBox spacing="2">
+
+                                    <Label text="sscagent-application"
+                                           styleClass="module-name"/>
+
+                                    <Label wrapText="true"
+                                           text="Casos de uso, DTOs e portas que definem as operações da aplicação."
+                                           styleClass="module-description"/>
+
+                                </VBox>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT"
+                                  styleClass="module-row">
+
+                                <Label text="03"
+                                       styleClass="module-number"/>
+
+                                <VBox spacing="2">
+
+                                    <Label text="sscagent-infrastructure"
+                                           styleClass="module-name"/>
+
+                                    <Label wrapText="true"
+                                           text="Leitura de JSON/XLS/XLSX e persistência local de perfis e pesos."
+                                           styleClass="module-description"/>
+
+                                </VBox>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT"
+                                  styleClass="module-row">
+
+                                <Label text="04"
+                                       styleClass="module-number"/>
+
+                                <VBox spacing="2">
+
+                                    <Label text="sscagent-desktop"
+                                           styleClass="module-name"/>
+
+                                    <Label wrapText="true"
+                                           text="Interface JavaFX e apresentação do aplicativo SSCAGENT.exe."
+                                           styleClass="module-description"/>
+
+                                </VBox>
+
+                            </HBox>
+
+                        </VBox>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         FLUXO
+                         ===================================================== -->
+
+                    <VBox spacing="14"
+                          styleClass="about-section">
+
+                        <Label text="Como o SSC AGENT funciona"
+                               styleClass="section-title"/>
+
+                        <VBox spacing="10">
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT">
+
+                                <Label text="01"
+                                       styleClass="step-number"/>
+
+                                <Label wrapText="true"
+                                       text="Importação — carregue a carga de venda e os dados de pallets e produtos."
+                                       styleClass="step-text"/>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT">
+
+                                <Label text="02"
+                                       styleClass="step-number"/>
+
+                                <Label wrapText="true"
+                                       text="Configuração — selecione o perfil de coleta que define os critérios da operação."
+                                       styleClass="step-text"/>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT">
+
+                                <Label text="03"
+                                       styleClass="step-number"/>
+
+                                <Label wrapText="true"
+                                       text="Interpretação — as instruções de carregamento são analisadas pelas regras configuradas."
+                                       styleClass="step-text"/>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT">
+
+                                <Label text="04"
+                                       styleClass="step-number"/>
+
+                                <Label wrapText="true"
+                                       text="Geração — o sistema seleciona posições elegíveis, consolida necessidades e calcula as caixas necessárias."
+                                       styleClass="step-text"/>
+
+                            </HBox>
+
+
+                            <HBox spacing="12"
+                                  alignment="CENTER_LEFT">
+
+                                <Label text="05"
+                                       styleClass="step-number"/>
+
+                                <Label wrapText="true"
+                                       text="Operação — o mapa de coleta apresenta somente as informações necessárias para a separação."
+                                       styleClass="step-text"/>
+
+                            </HBox>
+
+                        </VBox>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         MAPA OPERACIONAL
+                         ===================================================== -->
+
+                    <VBox spacing="12"
+                          styleClass="highlight-section">
+
+                        <Label text="Mapa operacional"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               text="A visão administrativa e o mapa operacional possuem objetivos diferentes. Enquanto as telas de gestão apresentam informações detalhadas e permitem alterações, o mapa de coleta é deliberadamente enxuto: mostra ao operador somente o que é necessário para executar a separação."
+                               styleClass="section-text"/>
+
+                        <Label wrapText="true"
+                               text="Quando uma necessidade utiliza mais de um pallet, o sistema preserva a distribuição física da carga. Posições equivalentes dentro do mesmo pallet podem ser agrupadas em uma única linha, mantendo a informação necessária para localizar as caixas sem poluir a impressão."
+                               styleClass="section-text"/>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         CONVERSÃO DE QUANTIDADE
+                         ===================================================== -->
+
+                    <VBox spacing="12"
+                          styleClass="about-section">
+
+                        <Label text="Da necessidade ao número de caixas"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               text="Quando a carga informa uma necessidade em quilogramas, o SSC AGENT converte automaticamente o peso consolidado para caixas utilizando o peso médio líquido cadastrado para o produto."
+                               styleClass="section-text"/>
+
+                        <HBox alignment="CENTER"
+                              styleClass="formula-box">
+
+                            <Label text="caixas necessárias = teto(peso consolidado ÷ peso médio líquido da caixa)"
+                                   styleClass="formula-text"/>
+
+                        </HBox>
+
+                        <Label wrapText="true"
+                               text="O arredondamento para cima garante que uma fração de caixa nunca seja planejada. A partir desse ponto, o operador trabalha somente com quantidades inteiras de caixas."
+                               styleClass="section-text"/>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         INSTRUÇÕES
+                         ===================================================== -->
+
+                    <VBox spacing="14"
+                          styleClass="about-section">
+
+                        <Label text="Interpretação das instruções"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               text="Cada pedido pode possuir uma instrução de carregamento fornecida pelo vendedor. O texto original é preservado e analisado por regras configuráveis. Isso permite que o sistema transforme uma instrução textual em critérios objetivos para seleção das caixas."
+                               styleClass="section-text"/>
+
+
+                        <FlowPane hgap="10"
+                                  vgap="10">
+
+                            <Label text="PAC = 9"
+                                   styleClass="condition-tag"/>
+
+                            <Label text="DIAS >= 121"
+                                   styleClass="condition-tag"/>
+
+                            <Label text="PRO = 28/03/2026"
+                                   styleClass="condition-tag"/>
+
+                            <Label text="VAL = 28/03/2026"
+                                   styleClass="condition-tag"/>
+
+                            <Label text="DIAS ↑"
+                                   styleClass="condition-tag"/>
+
+                        </FlowPane>
+
+
+                        <Label wrapText="true"
+                               text="Caso uma instrução não corresponda aos padrões ativos, o processamento é interrompido para intervenção do usuário. Novas expressões podem ser cadastradas ou editadas nos perfis de coleta sem alterar o código-fonte."
+                               styleClass="section-text"/>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         REGRAS DE ESTOQUE
+                         ===================================================== -->
+
+                    <VBox spacing="12"
+                          styleClass="about-section">
+
+                        <Label text="Critérios de seleção"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               text="Caixas vencidas, bloqueadas ou indisponíveis não são selecionadas automaticamente. Pallets sem endereço podem ser excluídos da geração conforme a configuração do perfil. Pesos menores atribuídos aos endereços recebem maior prioridade durante a seleção."
+                               styleClass="section-text"/>
+
+                        <Label wrapText="true"
+                               text="Pedidos que possuem instruções de carregamento são tratados como blocos independentes quando necessário, evitando que necessidades incompatíveis sejam consolidadas."
+                               styleClass="section-text"/>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         PERSISTÊNCIA
+                         ===================================================== -->
+
+                    <VBox spacing="12"
+                          styleClass="about-section">
+
+                        <Label text="Persistência local"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               text="Os perfis de coleta e os pesos dos endereços são armazenados localmente. A persistência permanece isolada da lógica de negócio, permitindo uma futura migração para banco de dados ou API sem modificar o núcleo da aplicação."
+                               styleClass="section-text"/>
+
+                        <HBox spacing="10">
+
+                            <Label text="profiles.json"
+                                   styleClass="file-tag"/>
+
+                            <Label text="address-weights.json"
+                                   styleClass="file-tag"/>
+
+                        </HBox>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         PRINCÍPIOS
+                         ===================================================== -->
+
+                    <VBox spacing="14"
+                          styleClass="about-section">
+
+                        <Label text="Princípios técnicos"
+                               styleClass="section-title"/>
+
+                        <FlowPane hgap="10"
+                                  vgap="10">
+
+                            <Label text="Clean Architecture"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="Hexagonal Architecture"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="DDD"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="MVVM"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="Strategy Pattern"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="Chain of Responsibility"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="Ports &amp; Adapters"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="Repository Pattern"
+                                   styleClass="technology-tag"/>
+
+                            <Label text="Multi-module Maven"
+                                   styleClass="technology-tag"/>
+
+                        </FlowPane>
+
+                    </VBox>
+
+
+                    <!-- =====================================================
+                         RODAPÉ
+                         ===================================================== -->
+
+                    <VBox spacing="8"
+                          alignment="CENTER"
+                          styleClass="about-footer">
+
+                        <Region prefHeight="1"
+                                maxWidth="900"
+                                styleClass="footer-separator"/>
+
+                        <Label text="SSC AGENT"
+                               styleClass="footer-title"/>
+
+                        <Label text="Sistema de Separação de Carga Inteligente"
+                               styleClass="footer-subtitle"/>
+
+                        <Label text="Java 25  •  JavaFX  •  Windows 10 / Windows 11"
+                               styleClass="footer-info"/>
+
+                        <Label text="Aplicação desenvolvida para tornar a separação mais inteligente, previsível e operacional."
+                               wrapText="true"
+                               textAlignment="CENTER"
+                               styleClass="footer-description"/>
+
+                    </VBox>
+
+                </VBox>
+
+            </content>
+
+        </ScrollPane>
+
 </Tab>
-
-
-
-
-

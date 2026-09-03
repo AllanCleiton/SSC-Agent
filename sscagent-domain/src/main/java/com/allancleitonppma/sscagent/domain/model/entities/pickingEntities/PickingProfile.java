@@ -1,10 +1,12 @@
 package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
+import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
+import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 import com.allancleitonppma.sscagent.domain.model.enums.QuantityUnit;
 
 import java.util.List;
 
-public class PickingProfile {
+public class PickingProfile implements EvaluateProduct{
     //*@ RECEBE O NOME O PERFIL DE COLETA*/
     private final String name;
 
@@ -167,6 +169,8 @@ public class PickingProfile {
         return productsContents.contains(productId);
     }
 
+
+
     /*==========================================================================
     //                   CLASSE AUXILIAR PARA DEFINIR O VALOR DE RANGE
     // =========================================================================*/
@@ -207,6 +211,24 @@ public class PickingProfile {
 
     public String getRangeOfCriticalRigor() {
         return rangeOfCriticalRigor;
+    }
+
+    public QuantityUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(QuantityUnit unit) {
+        this.unit = unit;
+    }
+
+    /**
+     * @param box
+     * @param pallet
+     * @return
+     */
+    @Override
+    public Boolean evaluate(StockBox box, Pallet pallet) {
+        return null;
     }
 }
 
