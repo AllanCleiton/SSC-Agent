@@ -37,9 +37,14 @@ public class ConsolidateSalesLoad {
     }
 
 
-    public static List<OrderPreview> consolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase) throws IOException {
+    public static List<OrderPreview> consolidate(Path path, ImportSalesLoadUseCase salesLoadUseCase, List<OrderPreview> ordes) throws IOException {
         //Aqui ele chama o metodo preConsolidat, que transformou cada Order order em OrderPreview previews
-        preConsolidat(path, salesLoadUseCase);
+        if(salesLoadUseCase == null && !(ordes.isEmpty())){
+            previews.clear();
+            previews.addAll(ordes);
+        }else if(salesLoadUseCase != null){
+            preConsolidat(path, salesLoadUseCase);
+        }
 
         Map<ConsolidationKey, OrderPreview> consolidated = new LinkedHashMap<>();
 
@@ -83,14 +88,7 @@ public class ConsolidateSalesLoad {
             }
         }
 
-        consolidated.values().forEach(x -> {
-            if(x.getProduct().equals("11046")){
-                IO.println("cod: " + x.getProduct() + " quant: " + x.getNeed());
-            }
-
-        });
-
-
+        previews.clear();
         return consolidated.values().stream().toList();
     }
 
