@@ -2,47 +2,41 @@
    SSC AGENT - IMPORTAÇÃO DE CARGA
    ========================================================= */
 
-
-/* =========================================================
-   CONTAINER PRINCIPAL
-   ========================================================= */
-
 .order-charge-file {
-    -fx-background-color: #f4f6f9;
+    -fx-background-color: #1E2329;
 }
-
 
 /* =========================================================
    BARRA DE IMPORTAÇÃO
    ========================================================= */
 
 .import-bar {
-    -fx-background-color: white;
-    -fx-border-color: #dce1e8;
+    -fx-background-color: #252B32;
+    -fx-border-color: #3B444F;
     -fx-border-width: 0 0 1px 0;
     -fx-padding: 10px 12px;
     -fx-spacing: 10px;
     -fx-alignment: CENTER_LEFT;
 }
 
-
 /* =========================================================
    LABELS
    ========================================================= */
 
 .import-bar .label {
-    -fx-text-fill: #5c6570;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
 }
-
 
 /* =========================================================
    CAMPO DE DIRETÓRIO
    ========================================================= */
 
 .import-bar .text-field {
-    -fx-background-color: white;
-    -fx-border-color: #00A8FF;
+    -fx-background-color: #2D343D;
+    -fx-text-fill: #E8EDF2;
+    -fx-prompt-text-fill: #7F8995;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-padding: 5px 8px;
@@ -50,69 +44,65 @@
 }
 
 .import-bar .text-field:hover {
-    -fx-border-color: #7d8da3;
+    -fx-border-color: #697585;
 }
 
 .import-bar .text-field:focused {
-    -fx-border-color: #2474c6;
+    -fx-border-color: #3D8BFF;
     -fx-effect: dropshadow(
         gaussian,
-        rgba(36, 116, 198, 0.18),
-        4,
+        rgba(61,139,255,0.22),
+        5,
         0,
         0,
         0
     );
 }
 
-
 /* =========================================================
    BOTÃO ABRIR
    ========================================================= */
 
 .import-bar .button {
-    -fx-background-color: #17365d;
+    -fx-background-color: #315FAD;
     -fx-text-fill: white;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
-
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
-
     -fx-padding: 6px 16px;
     -fx-pref-height: 30px;
 }
 
 .import-bar .button:hover {
-    -fx-background-color: #24558f;
+    -fx-background-color: #3D72C8;
 }
 
 .import-bar .button:pressed {
-    -fx-background-color: #122c4d;
+    -fx-background-color: #284F91;
 }
-
 
 /* =========================================================
    STATUS
    ========================================================= */
 
 .import-status {
-    -fx-text-fill: #5c6570;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
 }
 
 .import-status.ok {
-    -fx-text-fill: #25864a;
+    -fx-text-fill: #45B978;
     -fx-font-weight: bold;
 }
 
 .import-status.pending {
-    -fx-text-fill: #c47b16;
+    -fx-text-fill: #D6A94A;
     -fx-font-weight: bold;
 }
 
 .import-status.error {
-    -fx-text-fill: #b23b3b;
+    -fx-text-fill: #E05B61;
     -fx-font-weight: bold;
 }
 
@@ -125,10 +115,10 @@
 }
 
 .order-table .scroll-bar .thumb {
-    -fx-background-color: #cbd2dc;
+    -fx-background-color: #4A5562;
     -fx-background-radius: 4px;
 }
 
 .order-table .scroll-bar .thumb:hover {
-    -fx-background-color: #aeb8c5;
+    -fx-background-color: #697585;
 }

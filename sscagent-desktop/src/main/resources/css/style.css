@@ -1,164 +1,172 @@
 /* =========================================================
    SSC AGENT - ESTILO PRINCIPAL
+   Tema: Dark Industrial / Profissional
    ========================================================= */
 
 .root {
     -fx-font-family: "Segoe UI";
-    -fx-background-color: #f4f6f9;
+    -fx-background-color: #1E2329;
 }
-
-
 
 /* =========================================================
    MENU SUPERIOR
    ========================================================= */
 
-
 .menu-bar {
-    -fx-background-color: #17365d;
-    -fx-padding: 0 8px 0 8px;
+    -fx-background-color: #17202A;
+    -fx-padding: 0 8px;
 }
 
 .menu-bar .label {
-    -fx-text-fill: white;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 13px;
 }
 
 .menu-bar .menu:hover,
 .menu-bar .menu:showing {
-    -fx-background-color: #24558f;
+    -fx-background-color: #26384C;
 }
 
 .context-menu {
-    -fx-background-color: white;
-    -fx-background-radius: 4px;
-    -fx-border-color: #d9dee7;
-    -fx-border-radius: 4px;
+    -fx-background-color: #252B32;
+    -fx-background-radius: 5px;
+    -fx-border-color: #3B444F;
+    -fx-border-radius: 5px;
     -fx-padding: 4px;
 }
 
 .menu-item {
-    -fx-padding: 7px 18px 7px 18px;
+    -fx-padding: 7px 18px;
 }
 
 .menu-item .label {
-    -fx-text-fill: #30343b;
+    -fx-text-fill: #DCE2E8;
 }
 
 .menu-item:hover {
-    -fx-background-color: #e9f1fb;
+    -fx-background-color: #344150;
 }
 
-
 /* =========================================================
-   TÍTULO
+   TEXTOS
    ========================================================= */
 
 .label {
-    -fx-text-fill: #30343b;
+    -fx-text-fill: #E8EDF2;
 }
 
 .title {
-    -fx-text-fill: #17365d;
-    -fx-font-size: 40px;
+    -fx-text-fill: #F0F3F6;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
 
 .subtitle {
-    -fx-text-fill: #707985;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 13px;
 }
-
-
-
 
 /* =========================================================
    COMBOBOX
    ========================================================= */
 
 .combo-box {
-    -fx-background-color: white;
-    -fx-border-color: #cbd2dc;
+    -fx-background-color: #2D343D;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-pref-height: 30px;
 }
 
 .combo-box:hover {
-    -fx-border-color: #7d8da3;
+    -fx-border-color: #697585;
 }
 
 .combo-box:focused {
-    -fx-border-color: #2474c6;
-    -fx-effect: dropshadow(gaussian, rgba(36, 116, 198, 0.18), 4, 0, 0, 0);
+    -fx-border-color: #3D8BFF;
+    -fx-effect: dropshadow(gaussian, rgba(61,139,255,0.22), 5, 0, 0, 0);
 }
 
 .combo-box .list-cell {
-    -fx-text-fill: #30343b;
+    -fx-text-fill: #E8EDF2;
+    -fx-background-color: #2D343D;
     -fx-padding: 5px 8px;
 }
 
 .combo-box-popup .list-view {
-    -fx-background-color: white;
-    -fx-border-color: #cbd2dc;
+    -fx-background-color: #252B32;
+    -fx-border-color: #3B444F;
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #DCE2E8;
 }
 
 .combo-box-popup .list-cell:hover {
-    -fx-background-color: #e9f1fb;
+    -fx-background-color: #344150;
 }
 
 .combo-box-popup .list-cell:selected {
-    -fx-background-color: #2474c6;
+    -fx-background-color: #315FAD;
     -fx-text-fill: white;
 }
-
 
 /* =========================================================
    TOOLBAR / BARRA INFERIOR
    ========================================================= */
 
 .tool-bar {
-    -fx-background-color: white;
-    -fx-border-color: #dce1e8;
+    -fx-background-color: #252B32;
+    -fx-border-color: #3B444F;
     -fx-border-width: 1px 0 0 0;
-    -fx-padding: 4px 10px;
+    -fx-padding: 5px 10px;
     -fx-spacing: 8px;
 }
 
 .tool-bar .label {
-    -fx-text-fill: #5c6570;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
 }
-
 
 /* =========================================================
    SCROLLPANE
    ========================================================= */
 
 .scroll-pane {
-    -fx-background-color: white;
+    -fx-background-color: #1E2329;
     -fx-border-color: transparent;
 }
 
 .scroll-pane > .viewport {
-    -fx-background-color: white;
+    -fx-background-color: #1E2329;
 }
 
+.scroll-pane .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #4A5562;
+    -fx-background-radius: 5px;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: #697585;
+}
 
 /* =========================================================
    STATUS
    ========================================================= */
 
 .status {
-    -fx-text-fill: #5c6570;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
 }
 
 .status-ok {
-    -fx-text-fill: #25864a;
+    -fx-text-fill: #45B978;
     -fx-font-weight: bold;
 }
-
 
 /* =========================================================
    BARRAS / CONTAINERS
@@ -170,21 +178,21 @@
 }
 
 .header {
-    -fx-background-color: white;
+    -fx-background-color: #252B32;
     -fx-padding: 14px 18px;
-    -fx-border-color: #dce1e8;
+    -fx-border-color: #3B444F;
     -fx-border-width: 0 0 1px 0;
 }
 
 .header-status {
-    -fx-text-fill: #25864a;
+    -fx-text-fill: #45B978;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
 }
 
 .status-bar {
-    -fx-background-color: white;
-    -fx-border-color: #dce1e8;
+    -fx-background-color: #252B32;
+    -fx-border-color: #3B444F;
     -fx-border-width: 1px 0 0 0;
     -fx-padding: 6px 12px;
     -fx-spacing: 10px;
@@ -192,19 +200,8 @@
 }
 
 .status-bar .label {
-    -fx-text-fill: #626b76;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
-}
-
-.title {
-    -fx-text-fill: #17365d;
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-}
-
-.subtitle {
-    -fx-text-fill: #707985;
-    -fx-font-size: 13px;
 }
 
 /* =========================================================
@@ -212,77 +209,84 @@
    ========================================================= */
 
 .picking-block {
-    -fx-background-color: white;
+    -fx-background-color: #252B32;
     -fx-background-radius: 8px;
-    -fx-border-color: #dce1e8;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 8px;
     -fx-border-width: 1px;
     -fx-padding: 18px;
 }
 
-
-/* Cabeçalho */
-
 .picking-block-header {
     -fx-padding: 0 0 10px 0;
-    -fx-border-color: #e3e7ec;
+    -fx-border-color: #3B444F;
     -fx-border-width: 0 0 1px 0;
 }
 
-
 .picking-block-title {
-    -fx-text-fill: #17365d;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 17px;
     -fx-font-weight: bold;
 }
 
-
 .picking-block-subtitle {
-    -fx-text-fill: #7a838f;
+    -fx-text-fill: #929DAA;
     -fx-font-size: 12px;
 }
-
-
-/* Linhas de informação */
 
 .info-row {
     -fx-padding: 7px 5px;
     -fx-background-radius: 4px;
 }
 
-
 .info-row:hover {
-    -fx-background-color: #f5f8fb;
+    -fx-background-color: #2D343D;
 }
 
-
-/* Nome do campo */
-
 .info-label {
-    -fx-text-fill: #697481;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
     -fx-min-width: 155px;
 }
 
-
-/* Valor */
-
 .info-value {
-    -fx-text-fill: #30343b;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 13px;
 }
 
-
-/* Valor pendente */
-
 .info-value.pending {
-    -fx-text-fill: #c47b16;
+    -fx-text-fill: #D6A94A;
     -fx-font-weight: bold;
 }
 
 .tab-close-button {
-    -fx-background-color: #555555;
+    -fx-background-color: #89939F;
     -fx-background-radius: 0;
     -fx-padding: 0;
+}
+
+/* =========================================================
+   BOTÕES GERAIS
+   ========================================================= */
+
+.button {
+    -fx-background-color: #315FAD;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #3D72C8;
+}
+
+.button:pressed {
+    -fx-background-color: #284F91;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
 }

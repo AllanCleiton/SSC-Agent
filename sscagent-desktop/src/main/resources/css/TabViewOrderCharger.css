@@ -1,9 +1,11 @@
 /* =========================================================
-   TAB PANE
+   SSC AGENT - TAB VIEW / PEDIDOS
    ========================================================= */
 
 .tab-pane {
     -fx-background-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 .tab-pane .tab-header-area {
@@ -15,36 +17,101 @@
 }
 
 .tab {
-    -fx-background-color: #e2e6ec;
+    -fx-background-color: #252B32;
     -fx-background-radius: 6px 6px 0 0;
-    -fx-padding: 8px 18px 8px 18px;
+    -fx-padding: 8px 18px;
+    -fx-border-color: #3B444F;
+    -fx-border-radius: 6px 6px 0 0;
 }
 
 .tab .tab-label {
-    -fx-text-fill: #5d6672;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 13px;
 }
 
 .tab:hover {
-    -fx-background-color: #d5dce5;
+    -fx-background-color: #303842;
 }
 
 .tab:selected {
-    -fx-background-color: white;
+    -fx-background-color: #2D343D;
+    -fx-border-color: #3D8BFF;
+    -fx-border-width: 2px 0 0 0;
 }
 
 .tab:selected .tab-label {
-    -fx-text-fill: #17365d;
+    -fx-text-fill: #E8EDF2;
     -fx-font-weight: bold;
 }
 
 .tab-pane > .tab-content-area {
-    -fx-background-color: white;
-    -fx-border-color: #dce1e8;
+    -fx-background-color: #1E2329;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 0 0 6px 6px;
 }
 
-.tab-pane {
-    -fx-focus-color: transparent;
-    -fx-faint-focus-color: transparent;
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.table-view {
+    -fx-background-color: #252B32;
+    -fx-control-inner-background: #252B32;
+    -fx-control-inner-background-alt: #293038;
+    -fx-border-color: #3B444F;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #17202A;
+}
+
+.table-view .column-header {
+    -fx-background-color: #17202A;
+    -fx-border-color: #3B444F;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #E8EDF2;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.table-cell {
+    -fx-text-fill: #DCE2E8;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: #252B32;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #293038;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #344150;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #315FAD;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+.table-view .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #4A5562;
+    -fx-background-radius: 4px;
+}
+
+.table-view .scroll-bar .thumb:hover {
+    -fx-background-color: #697585;
 }

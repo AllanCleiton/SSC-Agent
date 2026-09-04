@@ -1,39 +1,33 @@
 /* =========================================================
    SSC AGENT - MAPA DE COLETA / ANÁLISE
-   ========================================================= */
-
-
-/* =========================================================
-   ROOT DA VIEW
+   Tema: Dark Industrial / Profissional
    ========================================================= */
 
 .root {
     -fx-font-family: "Segoe UI";
-    -fx-background-color: #f4f6f9;
+    -fx-background-color: #1E2329;
 }
-
 
 /* =========================================================
    TÍTULOS DAS SEÇÕES
    ========================================================= */
 
 .section-title {
-    -fx-text-fill: #17365d;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
 
 .map-count {
-    -fx-text-fill: #5c5e61;
+    -fx-text-fill: #929DAA;
     -fx-font-size: 11px;
 }
 
 .street-title {
-    -fx-text-fill: #5c6570;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
-
 
 /* =========================================================
    SCROLLPANE - MAPAS
@@ -55,77 +49,74 @@
 }
 
 .map-scroll .scroll-bar:vertical .thumb {
-    -fx-background-color: #c5ccd5;
+    -fx-background-color: #4A5562;
     -fx-background-radius: 5px;
 }
 
 .map-scroll .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #aeb7c2;
+    -fx-background-color: #697585;
 }
 
-
 /* =========================================================
-   CONTAINER DOS BLOCOS DE SEPARAÇÃO
+   CONTAINER DOS BLOCOS
    ========================================================= */
 
 .separation-block {
     -fx-background-color: transparent;
+    -fx-max-width: Infinity;
 }
-
 
 /* =========================================================
    BLOCO DE SEPARAÇÃO
    ========================================================= */
 
 .separation-block .toggle-button {
-    -fx-background-color: white;
+    -fx-background-color: #252B32;
     -fx-background-radius: 7px;
-    -fx-border-color: #dce1e8;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 7px;
     -fx-border-width: 1px;
     -fx-padding: 10px;
     -fx-alignment: CENTER_LEFT;
     -fx-cursor: hand;
+    -fx-max-width: Infinity;
+    -fx-text-fill: #E8EDF2;
 }
-
-
-/* Hover */
 
 .separation-block .toggle-button:hover {
-    -fx-background-color: #c5e4cd;
-    -fx-border-color: #aeb9c7;
+    -fx-background-color: #303842;
+    -fx-border-color: #697585;
 }
-
-
-/* Selecionado */
 
 .separation-block .toggle-button:selected {
-    -fx-background-color: #e8dada;
-    -fx-border-color: #f64e61;
+    -fx-background-color: #263B55;
+    -fx-border-color: #3D8BFF;
     -fx-border-width: 1.5px;
 }
-
 
 /* =========================================================
    CONTEÚDO DO BLOCO
    ========================================================= */
 
 .block-map-id {
-    -fx-text-fill: #17365d;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
 
+.block-content {
+    -fx-max-width: Infinity;
+}
+
 .block-content .label {
-    -fx-text-fill: #4f5965;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 11px;
 }
 
 .positions {
-    -fx-text-fill: #000000;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 14px;
 }
-
 
 /* =========================================================
    SEPARATOR
@@ -136,312 +127,253 @@
 }
 
 .separator .line {
-    -fx-border-color: #e3e7ec;
+    -fx-border-color: #3B444F;
     -fx-border-width: 1px 0 0 0;
 }
-
 
 /* =========================================================
    SCROLLPANE - ESTOQUE
    ========================================================= */
 
 .stock-scroll {
-    -fx-background-insets: 50;
-    -fx-background-color: #5c5858;
+    -fx-background-insets: 0;
+    -fx-background-color: #1E2329;
 }
-
-
 
 .stock-scroll > .viewport {
-    -fx-background-color: #c0c0c0;
-
-        -fx-effect: innershadow(
-            gaussian,
-            rgba(0, 0, 0, 0.30),
-            12,
-            0.25,
-            5,
-            5
-        );
+    -fx-background-color: #1E2329;
+    -fx-effect: innershadow(
+        gaussian,
+        rgba(0,0,0,0.30),
+        12,
+        0.25,
+        5,
+        5
+    );
 }
-
 
 /* =========================================================
    CABEÇALHO DO ESTOQUE
    ========================================================= */
 
 .stock-header {
-    -fx-background-color: white;
+    -fx-background-color: #252B32;
     -fx-background-radius: 6px;
-    -fx-border-color: #dce1e8;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 6px;
     -fx-padding: 7px 12px;
-
-    -fx-text-fill: #17365d;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 11px;
     -fx-font-weight: bold;
 }
-
 
 /* =========================================================
    POSIÇÃO DE ESTOQUE
    ========================================================= */
 
 .stock-position {
-    -fx-background-color: white;
+    -fx-background-color: #252B32;
     -fx-background-radius: 6px;
-    -fx-border-color: #d6dce4;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 6px;
     -fx-border-width: 1px;
-
     -fx-padding: 5px;
     -fx-cursor: hand;
 }
 
-
-/* Hover */
-
 .stock-position:hover {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #9eabb9;
+    -fx-background-color: #303842;
+    -fx-border-color: #697585;
 }
-
-
-/* =========================================================
-   POSIÇÃO SELECIONADA
-   ========================================================= */
 
 .stock-position:selected {
-    -fx-background-color: #e9f1fb;
-    -fx-border-color: #2474c6;
+    -fx-background-color: #263B55;
+    -fx-border-color: #3D8BFF;
     -fx-border-width: 1.5px;
 }
-
 
 /* =========================================================
    INFORMAÇÕES DA POSIÇÃO
    ========================================================= */
 
 .stock-position .label {
-    -fx-text-fill: #59636f;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 10px;
 }
 
-
-/* Campo ao receber foco */
+.stock-position .text-field {
+    -fx-background-color: #2D343D;
+    -fx-text-fill: #E8EDF2;
+    -fx-border-color: #3B444F;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
 
 .stock-position .text-field:focused {
-    -fx-background-color: white;
-    -fx-border-color: #2474c6;
+    -fx-background-color: #2D343D;
+    -fx-border-color: #3D8BFF;
     -fx-effect: dropshadow(
         gaussian,
-        rgba(36, 116, 198, 0.18),
-        4,
+        rgba(61,139,255,0.22),
+        5,
         0,
         0,
         0
     );
 }
 
-
 /* =========================================================
-   ESTADO - POSIÇÃO ORIGINAL DO A*
-
-   Essa classe pode ser adicionada pelo controller:
-
-   .stock-position.astar-selected
+   ESTADO - A*
    ========================================================= */
 
 .stock-position.astar-selected {
-    -fx-background-color: #f0f6fd;
-    -fx-border-color: #f64e61;
+    -fx-background-color: #302C3A;
+    -fx-border-color: #B77CFF;
 }
-
-
-/* A* + selecionado manualmente */
 
 .stock-position.astar-selected:selected {
-    -fx-background-color: #e3f0fc;
-    -fx-border-color: #2474c6;
+    -fx-background-color: #263B55;
+    -fx-border-color: #3D8BFF;
 }
-
 
 /* =========================================================
    ESTADO - SELEÇÃO MANUAL
-
-   Pode ser usado quando futuramente quiser diferenciar
-   visualmente a seleção manual da seleção original do A*.
    ========================================================= */
 
 .stock-position.manual-selected {
-    -fx-background-color: #eef8f2;
-    -fx-border-color: #4b9b6b;
+    -fx-background-color: #23372D;
+    -fx-border-color: #45B978;
 }
 
 .stock-position.manual-selected:selected {
-    -fx-background-color: #e2f3e8;
-    -fx-border-color: #25864a;
+    -fx-background-color: #244A36;
+    -fx-border-color: #45B978;
 }
-
 
 /* =========================================================
    ÁREA INFERIOR / EDIÇÃO
    ========================================================= */
 
 .edit-bar {
-    -fx-background-color: white;
-
-    -fx-border-color: #dce1e8;
+    -fx-background-color: #252B32;
+    -fx-border-color: #3B444F;
     -fx-border-width: 1px 0 0 0;
-
     -fx-padding: 8px 10px;
     -fx-spacing: 10px;
-
     -fx-alignment: CENTER_LEFT;
+    -fx-max-width: Infinity;
 }
 
-
-/* =========================================================
-   LABELS DA ÁREA DE EDIÇÃO
-   ========================================================= */
-
 .edit-bar .label {
-    -fx-text-fill: #5c6570;
+    -fx-text-fill: #A9B2BD;
     -fx-font-size: 12px;
 }
 
 .edit-title {
-    -fx-text-fill: #17365d !important;
+    -fx-text-fill: #E8EDF2 !important;
     -fx-font-weight: bold;
 }
 
 .quantity-label {
-    -fx-text-fill: #697481 !important;
+    -fx-text-fill: #A9B2BD !important;
     -fx-font-size: 14px !important;
 }
 
-
 /* =========================================================
-   TEXTFIELD - QUANTIDADE SOLICITADA
+   QUANTIDADE SOLICITADA
    ========================================================= */
 
 .requested-quantity {
-    -fx-background-color: white;
-
-    -fx-border-color: #cbd2dc;
+    -fx-background-color: #2D343D;
+    -fx-border-color: #3B444F;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
-
     -fx-pref-width: 70px;
     -fx-padding: 5px 7px;
-
-    -fx-text-fill: #30343b;
+    -fx-text-fill: #E8EDF2;
     -fx-font-size: 12px;
 }
 
 .requested-quantity:hover {
-    -fx-border-color: #9da9b7;
+    -fx-border-color: #697585;
 }
 
 .requested-quantity:focused {
-    -fx-border-color: #2474c6;
+    -fx-border-color: #3D8BFF;
     -fx-effect: dropshadow(
         gaussian,
-        rgba(36, 116, 198, 0.18),
-        4,
+        rgba(61,139,255,0.22),
+        5,
         0,
         0,
         0
     );
 }
 
-
 /* =========================================================
    QUANTIDADE SELECIONADA
    ========================================================= */
 
 .selected-quantity {
-    -fx-text-fill: #30343b !important;
+    -fx-text-fill: #E8EDF2 !important;
     -fx-font-size: 13px !important;
     -fx-font-weight: bold;
 }
 
 .selected-quantity.ok {
-    -fx-text-fill: #25864a !important;
+    -fx-text-fill: #45B978 !important;
 }
 
 .selected-quantity.warning {
-    -fx-text-fill: #c47b16 !important;
+    -fx-text-fill: #D6A94A !important;
 }
 
 .selected-quantity.error {
-    -fx-text-fill: #b83a3a !important;
+    -fx-text-fill: #E05B61 !important;
 }
-
 
 /* =========================================================
    ESTADO DESABILITADO
    ========================================================= */
 
-.apply-button:disabled {
-    -fx-opacity: 0.55;
-}
-
-.cancel-button:disabled {
-    -fx-opacity: 0.55;
-}
-
+.apply-button:disabled,
+.cancel-button:disabled,
 .stock-position:disabled {
-    -fx-opacity: 0.55;
+    -fx-opacity: 0.45;
 }
 
+/* =========================================================
+   BOTÕES DE AÇÃO
+   ========================================================= */
+
+.action-button {
+    -fx-background-color: #315FAD;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 6px 16px;
+    -fx-pref-height: 30px;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #3D72C8;
+}
+
+.action-button:pressed {
+    -fx-background-color: #284F91;
+}
+
+.action-button:disabled {
+    -fx-opacity: 0.45;
+}
 
 /* =========================================================
    COMPONENTES RESPONSIVOS
    ========================================================= */
 
-/* Área dos blocos de separação */
-.separation-block {
-    -fx-max-width: Infinity;
-}
-
-
-/* Bloco individual */
-.separation-block .toggle-button {
-    -fx-max-width: Infinity;
-}
-
-
-/* Área de edição inferior */
-.edit-bar {
-    -fx-max-width: Infinity;
-}
-
-
-/* Campos de texto */
 .edit-bar .text-field {
     -fx-max-width: 180px;
-}
-
-
-/* Títulos e informações podem crescer */
-.block-content {
-    -fx-max-width: Infinity;
-}
-
-.action-button {
-    -fx-background-color: #17365d;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-
-    -fx-padding: 6px 16px;
-    -fx-pref-height: 30px;
-}
-
-.action-button:hover {
-    -fx-background-color: #24558f;
 }

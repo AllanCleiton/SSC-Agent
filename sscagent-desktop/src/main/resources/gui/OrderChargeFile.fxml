@@ -26,15 +26,16 @@
 
         <columns>
 
-            <TableColumn fx:id="tableColumnProduct" minWidth="100" text="CÓD. PRODUTO" />
+            <TableColumn fx:id="tableColumnProduct" maxWidth="-1.0" minWidth="100" prefWidth="-1.0" text="CÓD. PRODUTO" />
 
-            <TableColumn fx:id="tableColumNeed" minWidth="100" text="NECESSIDADE" />
+            <TableColumn fx:id="tableColumNeed" maxWidth="-1.0" minWidth="100" prefWidth="-1.0" text="NECESSIDADE" />
 
-            <TableColumn fx:id="tableColumnOrder" minWidth="100" text="PEDIDO" />
+            <TableColumn fx:id="tableColumnOrder" maxWidth="-1.0" minWidth="100" prefWidth="-1.0" text="PEDIDO" />
 
-            <TableColumn fx:id="tableColumnCondition" minWidth="100" prefWidth="164.0" text="CONDIÇÃO" />
+            <TableColumn fx:id="tableColumnCondition" maxWidth="-1.0" minWidth="160.0" prefWidth="-1.0" text="CONDIÇÃO" />
 
-            <TableColumn fx:id="tableColumnInstruction" minWidth="250.0" prefWidth="300.0" text="INSTRUÇÃO" />
+            <TableColumn fx:id="tableColumnInstruction" maxWidth="-1.0" minWidth="300.0" prefWidth="-1.0" text="INSTRUÇÃO" />
+         <TableColumn maxWidth="-1.0" minWidth="200.0" prefWidth="-1.0" text="STATUS" />
 
         </columns>
 
