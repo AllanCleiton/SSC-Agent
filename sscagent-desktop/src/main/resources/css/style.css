@@ -9,6 +9,96 @@
 }
 
 /* =========================================================
+   BARRA PERSONALIZADA DA JANELA
+   ========================================================= */
+
+.window-title-bar {
+    -fx-background-color: #17202A;
+    -fx-pref-height: 34px;
+    -fx-min-height: 34px;
+    -fx-max-height: 34px;
+
+    -fx-padding: 0 4px 0 12px;
+
+    -fx-alignment: CENTER_LEFT;
+}
+
+
+/* =========================================================
+   TÍTULO DA JANELA
+   ========================================================= */
+
+.window-title {
+    -fx-text-fill: #E8EDF2;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================================================
+   CONTAINER DOS CONTROLES
+   ========================================================= */
+
+.window-controls {
+    -fx-alignment: CENTER_RIGHT;
+    -fx-spacing: 2px
+}
+
+
+/* =========================================================
+   BOTÕES DA JANELA
+   ========================================================= */
+
+.window-control-button {
+    -fx-background-color: transparent;
+
+    -fx-text-fill: #A9B2BD;
+
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+
+    -fx-padding: 0;
+
+    -fx-min-width: 42px;
+    -fx-pref-width: 42px;
+    -fx-max-width: 42px;
+
+    -fx-min-height: 34px;
+    -fx-pref-height: 34px;
+    -fx-max-height: 34px;
+
+    -fx-font-size: 14px;
+
+    -fx-cursor: hand;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.window-control-button:hover {
+    -fx-background-color: #303842;
+    -fx-text-fill: #E8EDF2;
+}
+
+
+/* =========================================================
+   FECHAR
+   ========================================================= */
+
+.window-control-button:last-child:hover {
+    -fx-background-color: #C42B3A;
+    -fx-text-fill: white;
+}
+
+/* =========================================================
+    FIM BARRA PERSONALIZADA DA JANELA
+   ========================================================= */
+
+
+
+/* =========================================================
    MENU SUPERIOR
    ========================================================= */
 

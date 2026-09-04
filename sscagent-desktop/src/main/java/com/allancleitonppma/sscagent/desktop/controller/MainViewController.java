@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,12 +18,19 @@ import java.util.ResourceBundle;
 public class MainViewController implements Initializable {
     @FXML
     public Tab tabOrderCharge;
+
     @FXML
     private ComboBox<String> comboBoxDataMode;
     @FXML
     private Tab tabCollectMap;
     @FXML
     private TabPane tabPaneMain;
+
+    //Variável windowTitleBar é a variável responsável por controlar a barra de controle da janela
+    @FXML
+    public HBox windowTitleBar;
+    private double xOffset;
+    private double yOffset;
 
     //PROVISORIO PARA CARREGAR O CONTEUDO DA ABA MAPA DE SEPARAÇÃO
     @FXML
@@ -32,6 +41,18 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
+            windowTitleBar.setOnMousePressed(event -> {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            });
+
+            windowTitleBar.setOnMouseDragged(event -> {
+
+                Stage stage = (Stage) windowTitleBar.getScene().getWindow();
+
+                stage.setX(event.getScreenX() - xOffset);
+                stage.setY(event.getScreenY() - yOffset);
+            });
             initializeNodes();
         } catch (IOException e) {
             e.printStackTrace();

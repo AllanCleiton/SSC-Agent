@@ -21,7 +21,7 @@ public class Launcher extends Application{
             BorderPane borderPane = loader.load();
 
             primaryStage.initStyle(StageStyle.UNDECORATED);
-            
+
             mainScene = new Scene(borderPane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("SSG-Agent");
