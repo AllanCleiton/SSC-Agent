@@ -40,7 +40,7 @@
                     <Button fx:id="minimizeButton"
                             styleClass="window-control-button"
                             text="—" />
-                    <Button
+                    <Button  fx:id="maximizeButton"
                             styleClass="window-control-button"
                             text="□" />
                     <Button

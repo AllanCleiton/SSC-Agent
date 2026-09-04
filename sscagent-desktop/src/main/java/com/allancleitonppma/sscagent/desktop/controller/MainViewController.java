@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 public class MainViewController implements Initializable {
     @FXML
     public Tab tabOrderCharge;
+
     @FXML
     private ComboBox<String> comboBoxDataMode;
     @FXML
@@ -29,6 +30,8 @@ public class MainViewController implements Initializable {
     //============================================================================
     //     Variáveis responsáveis por controlar a barra de controle da janela
     // ==========================================================================*/
+    @FXML
+    public Button maximizeButton;
     @FXML
     public Button minimizeButton;
     @FXML
@@ -49,6 +52,7 @@ public class MainViewController implements Initializable {
                 xOffset = event.getSceneX();
                 yOffset = event.getSceneY();
             });
+    //---------------------------------------------------------------------------------
 
             windowTitleBar.setOnMouseDragged(event -> {
 
@@ -57,6 +61,7 @@ public class MainViewController implements Initializable {
                 stage.setX(event.getScreenX() - xOffset);
                 stage.setY(event.getScreenY() - yOffset);
             });
+    //---------------------------------------------------------------------------------
 
             minimizeButton.setOnAction(event -> {
 
@@ -64,6 +69,8 @@ public class MainViewController implements Initializable {
 
                 stage.setIconified(true);
             });
+    //---------------------------------------------------------------------------------
+            maximizeButton.setOnAction(event -> toggleMaximize());
 
             initializeNodes();
         } catch (IOException e) {
@@ -133,5 +140,12 @@ public class MainViewController implements Initializable {
         tabPaneMain.getTabs().add(aboutTab);
     }
 
+
+    private void toggleMaximize() {
+
+        Stage stage = (Stage) maximizeButton.getScene().getWindow();
+
+        stage.setMaximized(!stage.isMaximized());
+    }
 
 }
