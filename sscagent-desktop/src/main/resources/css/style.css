@@ -86,9 +86,12 @@
 /* =========================================================
    FECHAR
    ========================================================= */
-
-.window-control-button:last-child:hover {
+.window-controls .window-control-button:last-child:hover {
     -fx-background-color: #C42B3A;
+    -fx-text-fill: white;
+}
+.window-controls .window-control-button:last-child:pressed {
+    -fx-background-color: #96232E;
     -fx-text-fill: white;
 }
 
