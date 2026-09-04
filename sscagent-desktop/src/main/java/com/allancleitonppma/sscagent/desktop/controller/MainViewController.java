@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -18,7 +19,6 @@ import java.util.ResourceBundle;
 public class MainViewController implements Initializable {
     @FXML
     public Tab tabOrderCharge;
-
     @FXML
     private ComboBox<String> comboBoxDataMode;
     @FXML
@@ -26,7 +26,11 @@ public class MainViewController implements Initializable {
     @FXML
     private TabPane tabPaneMain;
 
-    //Variável windowTitleBar é a variável responsável por controlar a barra de controle da janela
+    //============================================================================
+    //     Variáveis responsáveis por controlar a barra de controle da janela
+    // ==========================================================================*/
+    @FXML
+    public Button minimizeButton;
     @FXML
     public HBox windowTitleBar;
     private double xOffset;
@@ -53,6 +57,14 @@ public class MainViewController implements Initializable {
                 stage.setX(event.getScreenX() - xOffset);
                 stage.setY(event.getScreenY() - yOffset);
             });
+
+            minimizeButton.setOnAction(event -> {
+
+                Stage stage = (Stage) minimizeButton.getScene().getWindow();
+
+                stage.setIconified(true);
+            });
+
             initializeNodes();
         } catch (IOException e) {
             e.printStackTrace();

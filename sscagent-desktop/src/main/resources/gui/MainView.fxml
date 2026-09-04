@@ -37,7 +37,7 @@
                 <HBox styleClass="window-controls">
                     <Button text="?" styleClass="about-button" onAction="#loadAbout" style="-fx-background-color: #1E2329"/>
 
-                    <Button
+                    <Button fx:id="minimizeButton"
                             styleClass="window-control-button"
                             text="—" />
                     <Button
