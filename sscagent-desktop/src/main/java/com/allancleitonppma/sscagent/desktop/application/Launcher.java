@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -19,13 +20,16 @@ public class Launcher extends Application{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
             BorderPane borderPane = loader.load();
 
-
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            
             mainScene = new Scene(borderPane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("SSG-Agent");
 
             primaryStage.setMinWidth(900);
             primaryStage.setMinHeight(700);
+
+
 
             primaryStage.show();
 
