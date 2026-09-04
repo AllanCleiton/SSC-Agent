@@ -43,7 +43,7 @@
                     <Button  fx:id="maximizeButton"
                             styleClass="window-control-button"
                             text="□" />
-                    <Button
+                    <Button fx:id="closeButton"
                             styleClass="window-control-button"
                             text="×" />
                 </HBox>
