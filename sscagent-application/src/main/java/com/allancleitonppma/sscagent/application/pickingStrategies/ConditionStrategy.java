@@ -29,7 +29,7 @@ public class ConditionStrategy implements PickingStrategy {
      * @return
      */
     @Override
-    public PickingMap generated(InterpretedOrder order, List<Pallet> pallets) {
+    public PickingMap generated(InterpretedOrder order, List<Pallet> pallets,  List<StockBox> boxes) {
         stock = pallets;
         this.order = order;
 
@@ -39,13 +39,17 @@ public class ConditionStrategy implements PickingStrategy {
 
     public boolean processedOrder(InterpretedOrder order, List<StockBox> boxes){
         double quantityRequired = 0.0;
+        String palletId;
+
+        boolean itFound;
+
 
         for(StockBox boxe: boxes){
             if(evaluate(order.getExpression(), boxe)){
                 quantityRequired += boxe.getNetWeight();
                 boxe.isAvailable = StockAvailability.Consumed.getValue();
                 pickingMap.getBoxes().add(boxe);
-
+                palletId = boxe.palletId;
             }
             if (quantityRequired >= order.getNeed()){
                 break;

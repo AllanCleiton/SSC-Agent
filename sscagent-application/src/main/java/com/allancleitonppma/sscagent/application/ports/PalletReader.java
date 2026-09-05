@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface PalletReader {
-    Pallet PalletLoad(String idPallet) throws IOException;
+    Pallet palletLoad(String idPallet) throws IOException;
 
-    List<Pallet> PalletLoadAll(String code) throws IOException;
+    List<Pallet> palletLoadAll(String code) throws IOException;
 }

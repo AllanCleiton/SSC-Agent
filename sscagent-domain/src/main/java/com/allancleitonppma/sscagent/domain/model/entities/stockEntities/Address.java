@@ -10,6 +10,7 @@ public class Address{
     String street;
     String position;
 
+
     public Address(String original, String camera, String street, String position) {
         this.original = original;
         this.camera = camera;

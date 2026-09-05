@@ -144,7 +144,7 @@ public class ExcelLoaderStockBox implements StockBoxReader {
         StockBox box = new StockBox();
 
         box.productId = String.valueOf(boxStockDTO.getProductId());
-        box.address = new Address(boxStockDTO.getAddress(),boxStockDTO.getAddress(),boxStockDTO.getAddress(),boxStockDTO.getAddress());
+        box.address = new Address(null,null, null, null);
         box.packages = boxStockDTO.getPackages();
         box.daysToExpiry = boxStockDTO.getDaysToExpire();
         box.productCode = String.valueOf(boxStockDTO.getSankhyaId());

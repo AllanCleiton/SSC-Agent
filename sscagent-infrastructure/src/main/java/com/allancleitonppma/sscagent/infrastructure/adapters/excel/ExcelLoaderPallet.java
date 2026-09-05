@@ -5,6 +5,8 @@ import com.allancleitonppma.sscagent.domain.model.entities.productEntities.Stock
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 import com.allancleitonppma.sscagent.infrastructure.dto.BoxStockDTO;
+import com.allancleitonppma.sscagent.infrastructure.dto.IdIntegration;
+import com.allancleitonppma.sscagent.infrastructure.dto.PalletDto;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -13,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +29,7 @@ public class ExcelLoaderPallet implements PalletReader {
         this.arquivo = path;
     }
 
-    public List<BoxStockDTO> load(String id) throws IOException {
-
-        List<BoxStockDTO> boxes = new ArrayList<>();
+    public PalletDto load(String idPallet) throws IOException {
 
         try (InputStream inputStream = Files.newInputStream(arquivo);
              Workbook workbook = criarWorkbook(arquivo, inputStream)) {
@@ -51,43 +50,37 @@ public class ExcelLoaderPallet implements PalletReader {
                  *
                  * Se estiver vazia, a linha inteira é ignorada.
                  */
-                String etiquetaProduto = getString(row.getCell(2));
+                String etiquetaPallet = getString(row.getCell(1));
                 String idProduct = getString(row.getCell(3));
 
-                if (etiquetaProduto.isBlank()) {
+                if (etiquetaPallet.isBlank()) {
                     continue;
                 }
 
-                if(idProduct.equals(id)) {
-                    BoxStockDTO dtoBox = new BoxStockDTO(
+                if(idProduct.equals(idPallet)) {
+                    return new PalletDto(
                             getString(row.getCell(0)),
                             getString(row.getCell(1)),
-                            getLong(row.getCell(2)),
-                            getLong(row.getCell(3)),
-                            getLong(row.getCell(4)),
+                            getString(row.getCell(2)),
+                            getDouble(row.getCell(3)),
+                            getInteger(row.getCell(4)),
                             getString(row.getCell(5)),
-                            getInteger(row.getCell(6)),
-                            getString(row.getCell(7)),
-                            getDouble(row.getCell(13)),
-                            getInteger(row.getCell(14)),
-                            getString(row.getCell(15)),
-                            getString(row.getCell(16))
+                            getString(row.getCell(6)),
+                            getInteger(row.getCell(7)),
+                            getInteger(row.getCell(8))
 
                     );
 
-                    boxes.add(dtoBox);
                 }
             }
         }
 
-
-
-        return boxes;
+        return null;
     }
 
-    private List<BoxStockDTO> loadAll() throws IOException {
+    private List<PalletDto> loadAll(String code) throws IOException {
 
-        List<BoxStockDTO> boxes = new ArrayList<>();
+        List<PalletDto> pallets = new ArrayList<>();
 
         try (InputStream inputStream = Files.newInputStream(arquivo);
              Workbook workbook = criarWorkbook(arquivo, inputStream)) {
@@ -108,71 +101,62 @@ public class ExcelLoaderPallet implements PalletReader {
                  *
                  * Se estiver vazia, a linha inteira é ignorada.
                  */
-                String etiquetaProduto = getString(row.getCell(2));
-                String idProduct = getString(row.getCell(3));
+                String etiquetaPallet = getString(row.getCell(0));
+                String codepalle = getString(row.getCell(2));
 
-                if (etiquetaProduto.isBlank()) {
+                if (etiquetaPallet.isBlank()) {
                     continue;
                 }
 
+                if(codepalle.equals(code)) {
+                    PalletDto palletDto = new PalletDto(
+                            getString(row.getCell(0)),
+                            getString(row.getCell(1)),
+                            getString(row.getCell(2)),
+                            getDouble(row.getCell(3)),
+                            getInteger(row.getCell(4)),
+                            getString(row.getCell(5)),
+                            getString(row.getCell(6)),
+                            getInteger(row.getCell(7)),
+                            getInteger(row.getCell(8))
 
-                BoxStockDTO dtoBox = new BoxStockDTO(
-                        getString(row.getCell(0)),
-                        getString(row.getCell(1)),
-                        getLong(row.getCell(2)),
-                        getLong(row.getCell(3)),
-                        getLong(row.getCell(4)),
-                        getString(row.getCell(5)),
-                        getInteger(row.getCell(6)),
-                        getString(row.getCell(7)),
-                        getDouble(row.getCell(13)),
-                        getInteger(row.getCell(14)),
-                        getString(row.getCell(15)),
-                        getString(row.getCell(16))
+                    );
+                    pallets.add(palletDto);
+                }
 
-                );
 
-                boxes.add(dtoBox);
 
             }
         }
 
 
 
-        return boxes;
+        return pallets;
     }
 
-    private StockBox mapBoxStock(BoxStockDTO boxStockDTO) {
-        StockBox box = new StockBox();
+    private Pallet mapPallet(PalletDto palletDto) {
+        Pallet pallet = new Pallet();
 
-        box.productId = String.valueOf(boxStockDTO.getProductId());
-        box.address = new Address(boxStockDTO.getAddress(),boxStockDTO.getAddress(),boxStockDTO.getAddress(),boxStockDTO.getAddress());
-        box.packages = boxStockDTO.getPackages();
-        box.daysToExpiry = boxStockDTO.getDaysToExpire();
-        box.productCode = String.valueOf(boxStockDTO.getSankhyaId());
-        box.palletId = boxStockDTO.getMotherId();
-        box.expirationDate = LocalDate.parse(boxStockDTO.getValidity(), DATE_FORMAT);
-        box.productName = boxStockDTO.getProductDescription();
-        box.NetWeight = boxStockDTO.getNetWeight();
-        box.SankhyaId = boxStockDTO.getSankhyaId();
-        box.productionDate = LocalDate.parse(boxStockDTO.getManufacturingDate(), DATE_FORMAT);
-        box.sourceStatus = boxStockDTO.getStatus();
-        return box;
+        pallet.setPalletID(palletDto.etiquetaPalet);
+        pallet.setStatus(palletDto.situacao);
+        pallet.setProductCode(palletDto.apontamento);
+        pallet.setProductDescription(palletDto.produto);
+        pallet.setAddress(new Address(null,null, null, null));
+        pallet.setSankhyaId(IdIntegration.getIntegrationIds().get(palletDto.apontamento));
+
+        return pallet;
     }
 
     @Override
-    public Pallet PalletLoad(String id) throws IOException {
-        return load(id)
-                .stream()
-                .map(this::mapBoxStock)
-                .toList();
+    public Pallet palletLoad(String id) throws IOException {
+        return mapPallet(load(id));
     }
 
     @Override
-    public List<Pallet> PalletLoadAll(String code) throws IOException {
-        return loadAll()
+    public List<Pallet> palletLoadAll(String code) throws IOException {
+        return loadAll(code)
                 .stream()
-                .map(this::mapBoxStock)
+                .map(this::mapPallet)
                 .toList();
     }
 
