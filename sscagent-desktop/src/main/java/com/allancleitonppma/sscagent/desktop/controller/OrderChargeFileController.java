@@ -54,8 +54,6 @@ public class OrderChargeFileController implements Initializable, DataChangeListe
     @FXML
     private TableColumn<OrderDTO,String> tableColumnCondition;
     @FXML
-    private TableColumn<OrderDTO,String> tableColumnOrder;
-    @FXML
     private TableColumn<OrderDTO,String> tableColumnInstruction;
     @FXML
     private TableView<OrderDTO> tableViewOrderCharge = new TableView<>();
@@ -232,7 +230,6 @@ public class OrderChargeFileController implements Initializable, DataChangeListe
         tableColumnProduct.setCellValueFactory(new PropertyValueFactory<>("product"));
         tableColumNeed.setCellValueFactory(new PropertyValueFactory<>("need"));
         tableColumnCondition.setCellValueFactory(new PropertyValueFactory<>("condition"));
-        tableColumnOrder.setCellValueFactory(new PropertyValueFactory<>("order"));
         tableColumnInstruction.setCellValueFactory(new PropertyValueFactory<>("instruction"));
 
 

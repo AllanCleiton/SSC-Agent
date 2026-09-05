@@ -3,6 +3,7 @@ package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 import com.allancleitonppma.sscagent.domain.model.enums.QuantityUnit;
+import com.allancleitonppma.sscagent.domain.model.enums.Rigor;
 
 import java.util.List;
 

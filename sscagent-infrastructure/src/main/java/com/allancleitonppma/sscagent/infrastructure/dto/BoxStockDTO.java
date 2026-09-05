@@ -38,7 +38,7 @@ public class BoxStockDTO {
     /**
      *REFERENCIA A COLUNA {[13]-Peso Liq CX}
      */
-    private BigDecimal netWeight;
+    private Double netWeight;
     /**
      *REFERENCIA A COLUNA {[14]-Pacotes}
      */
@@ -64,7 +64,7 @@ public class BoxStockDTO {
             String productDescription,
             Integer daysToExpire,
             String validity,
-            BigDecimal netWeight,
+            Double netWeight,
             Integer packages,
             String manufacturingDate,
             String status) {
@@ -147,11 +147,11 @@ public class BoxStockDTO {
         this.validity = validity;
     }
 
-    public BigDecimal getNetWeight() {
+    public Double getNetWeight() {
         return netWeight;
     }
 
-    public void setNetWeight(BigDecimal netWeight) {
+    public void setNetWeight(Double netWeight) {
         this.netWeight = netWeight;
     }
 

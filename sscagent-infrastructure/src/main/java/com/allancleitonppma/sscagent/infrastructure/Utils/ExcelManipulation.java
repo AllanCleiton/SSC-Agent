@@ -68,7 +68,7 @@ public class ExcelManipulation {
         return Integer.parseInt(valor.replace(",", ".").split("\\.")[0]);
     }
 
-    public static BigDecimal getBigDecimal(Cell cell) {
+    public static Double getDouble(Cell cell) {
 
         String valor = getString(cell);
 
@@ -76,7 +76,7 @@ public class ExcelManipulation {
             return null;
         }
 
-        return new BigDecimal(valor.replace(",", "."));
+        return Double.valueOf(valor.replace(",", "."));
     }
 
     public static LocalDate getData(Cell cell) {

@@ -6,1408 +6,1115 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="allocationProduct" alignment="CENTER" HBox.hgrow="SOMETIMES" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.allancleitonppma.sscagent.desktop.controller.AllocationPositionController">
+<VBox fx:id="allocationProduct" alignment="CENTER" HBox.hgrow="SOMETIMES" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.allancleitonppma.sscagent.desktop.controller.AllocationPositionController">
     <children>
         <Label prefHeight="17.0" prefWidth="352.0" styleClass="stock-header" text="CAMARA 03 RUA 14" VBox.vgrow="ALWAYS">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
+        <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
             <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
+                <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
                     <graphic>
-                        <VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
                             <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                <HBox alignment="CENTER" spacing="20.0">
                                     <children>
                                         <Label text="7A">
                                             <font>
                                                 <Font name="System Bold" size="11.0" />
                                             </font>
                                         </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
+                                        <Label text="11046">
                                             <font>
                                                 <Font size="10.0" />
                                             </font>
-                                        </TextField>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                        </Label>
                                     </children>
                                 </HBox>
-                                <HBox>
+                                <HBox alignment="CENTER">
                                     <children>
-                                        <Label text="Cód:  ">
+                                        <Label text="354">
                                             <font>
                                                 <Font size="10.0" />
                                             </font>
                                         </Label>
-                                        <Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                                        <Label text="cx: ">
                                             <font>
                                                 <Font size="10.0" />
                                             </font>
                                         </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
                                     </children>
                                 </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
+                                  <TextField maxWidth="50.0" promptText="PEGAR">
+                                      <font>
+                                          <Font size="10.0" />
+                                      </font>
+                                  </TextField>
                             </children>
                         </VBox>
                     </graphic>
                 </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
             </children>
             <padding>
                 <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
             </padding>
         </HBox>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
-            <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
-            <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
-            <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
-            <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
-            <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
-        <HBox alignment="CENTER" focusTraversable="true" spacing="5.0">
-            <children>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-                <ToggleButton prefHeight="54.0" prefWidth="115.0" styleClass="stock-position">
-                    <graphic>
-                        <VBox>
-                            <children>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                                    <children>
-                                        <Label text="7A">
-                                            <font>
-                                                <Font name="System Bold" size="11.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField maxWidth="50.0" promptText="PEGAR">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="Cód:  ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="caixas: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <HBox>
-                                    <children>
-                                        <Label text="dias: ">
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                        <Label>
-                                            <font>
-                                                <Font size="10.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-                    </graphic>
-                </ToggleButton>
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
+      <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
+         <children>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
+         <children>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
+         <children>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
+         <children>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
+         <children>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" focusTraversable="true" spacing="10.0">
+         <children>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton prefHeight="54.0" prefWidth="90.0" styleClass="stock-position">
+               <graphic>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label text="7A">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11046">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="354">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Region prefHeight="5.0" prefWidth="20.0" />
+                              <Label text="cx: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label text="50">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField maxWidth="50.0" promptText="PEGAR">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </graphic>
+            </ToggleButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
         <Separator prefWidth="200.0" />
     </children>
    <padding>

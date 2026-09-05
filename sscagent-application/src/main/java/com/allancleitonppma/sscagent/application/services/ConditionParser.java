@@ -2,6 +2,9 @@ package com.allancleitonppma.sscagent.application.services;
 
 
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.*;
+import com.allancleitonppma.sscagent.domain.model.enums.ComparisonOperator;
+import com.allancleitonppma.sscagent.domain.model.enums.ConditionType;
+import com.allancleitonppma.sscagent.domain.model.enums.LogicalOperator;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

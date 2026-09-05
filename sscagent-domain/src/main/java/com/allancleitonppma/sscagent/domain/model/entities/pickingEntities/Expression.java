@@ -1,5 +1,7 @@
 package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
+import com.allancleitonppma.sscagent.domain.model.enums.LogicalOperator;
+
 import java.util.List;
 
 public class Expression {

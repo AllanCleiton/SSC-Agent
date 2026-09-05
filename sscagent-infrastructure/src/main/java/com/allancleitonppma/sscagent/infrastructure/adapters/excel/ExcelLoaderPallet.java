@@ -1,12 +1,13 @@
 package com.allancleitonppma.sscagent.infrastructure.adapters.excel;
 
-import java.util.List;
-
-import com.allancleitonppma.sscagent.application.ports.StockBoxReader;
-import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
+import com.allancleitonppma.sscagent.application.ports.PalletReader;
 import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
+import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
+import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 import com.allancleitonppma.sscagent.infrastructure.dto.BoxStockDTO;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,15 +15,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.allancleitonppma.sscagent.infrastructure.Utils.ExcelManipulation.*;
 
 
-public class ExcelLoaderStockBox implements StockBoxReader {
+public class ExcelLoaderPallet implements PalletReader {
 
     private final Path arquivo;
 
-    public ExcelLoaderStockBox(Path path){
+    public ExcelLoaderPallet(Path path){
         this.arquivo = path;
     }
 
@@ -159,7 +161,7 @@ public class ExcelLoaderStockBox implements StockBoxReader {
     }
 
     @Override
-    public List<StockBox> StockBoxLoad(String id) throws IOException {
+    public Pallet PalletLoad(String id) throws IOException {
         return load(id)
                 .stream()
                 .map(this::mapBoxStock)
@@ -167,7 +169,7 @@ public class ExcelLoaderStockBox implements StockBoxReader {
     }
 
     @Override
-    public List<StockBox> StockBoxLoadAll(String idProduct) throws IOException {
+    public List<Pallet> PalletLoadAll(String code) throws IOException {
         return loadAll()
                 .stream()
                 .map(this::mapBoxStock)

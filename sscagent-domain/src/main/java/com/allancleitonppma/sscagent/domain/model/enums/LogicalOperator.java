@@ -1,4 +1,4 @@
-package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
+package com.allancleitonppma.sscagent.domain.model.enums;
 
 public enum LogicalOperator {
 

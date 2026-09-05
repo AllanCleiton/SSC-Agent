@@ -1,5 +1,8 @@
 package com.allancleitonppma.sscagent.domain.model.entities.pickingEntities;
 
+import com.allancleitonppma.sscagent.domain.model.enums.ComparisonOperator;
+import com.allancleitonppma.sscagent.domain.model.enums.ConditionType;
+
 public class Condition {
     private final ConditionType type;
     private final ComparisonOperator operator;
