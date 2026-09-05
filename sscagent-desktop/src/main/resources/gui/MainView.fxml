@@ -4,9 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,27 +22,18 @@
             <!-- =====================================================
             BARRA DA JANELA
             ===================================================== -->
-            <HBox styleClass="window-title-bar"
-                  fx:id="windowTitleBar">
-                <Label
-                        styleClass="window-title"
-                />
-                <HBox styleClass="window-controls" >
+            <HBox fx:id="windowTitleBar" styleClass="window-title-bar">
+                <Label styleClass="window-title" />
+                <HBox styleClass="window-controls">
                     <!--FUTUROS BOTÕES DE FUNCUINALIDADES-->
                 </HBox>
                 <Region HBox.hgrow="ALWAYS" />
                 <HBox styleClass="window-controls">
-                    <Button text="?" styleClass="about-button" onAction="#loadAbout" style="-fx-background-color: #1E2329"/>
+                    <Button onAction="#loadAbout" style="-fx-background-color: #1E2329" styleClass="about-button" text="?" />
 
-                    <Button fx:id="minimizeButton"
-                            styleClass="window-control-button"
-                            text="—" />
-                    <Button  fx:id="maximizeButton"
-                            styleClass="window-control-button"
-                            text="□" />
-                    <Button fx:id="closeButton"
-                            styleClass="window-control-button"
-                            text="×" />
+                    <Button fx:id="minimizeButton" styleClass="window-control-button" text="—" />
+                    <Button fx:id="maximizeButton" styleClass="window-control-button" text="□" />
+                    <Button id="closeButton" fx:id="closeButton" styleClass="window-control-button" text="×" />
                 </HBox>
             </HBox>
 
@@ -58,11 +46,11 @@
                 </VBox>
             <HBox alignment="CENTER" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Retroceder" />
-                  <Button mnemonicParsing="false" text="Avançar" />
+                  <Button id="btxRetroceder" mnemonicParsing="false" text="←" />
+                  <Button id="btxAvancar" mnemonicParsing="false" text="→" />
                </children>
                <HBox.margin>
-                  <Insets right="50.0" />
+                  <Insets />
                </HBox.margin>
                <padding>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />

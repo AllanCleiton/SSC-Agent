@@ -191,7 +191,70 @@ public class MainViewController implements Initializable {
                                 stage.setHeight(newHeight);
                             }
                         }
+
+
+                        if (activeResizeDirection == ResizeDirection.NORTH_WEST) {
+
+                            double newWidth = initialStageWidth - deltaX;
+                            double newHeight = initialStageHeight - deltaY;
+
+                            if (newWidth >= stage.getMinWidth()) {
+                                stage.setX(initialStageX + deltaX);
+                                stage.setWidth(newWidth);
+                            }
+
+                            if (newHeight >= stage.getMinHeight()) {
+                                stage.setY(initialStageY + deltaY);
+                                stage.setHeight(newHeight);
+                            }
+                        }
+
+                        if (activeResizeDirection == ResizeDirection.NORTH_EAST) {
+
+                            double newWidth = initialStageWidth + deltaX;
+                            double newHeight = initialStageHeight - deltaY;
+
+                            if (newWidth >= stage.getMinWidth()) {
+                                stage.setWidth(newWidth);
+                            }
+
+                            if (newHeight >= stage.getMinHeight()) {
+                                stage.setY(initialStageY + deltaY);
+                                stage.setHeight(newHeight);
+                            }
+                        }
+
+                        if (activeResizeDirection == ResizeDirection.SOUTH_WEST) {
+
+                            double newWidth = initialStageWidth - deltaX;
+                            double newHeight = initialStageHeight + deltaY;
+
+                            if (newWidth >= stage.getMinWidth()) {
+                                stage.setX(initialStageX + deltaX);
+                                stage.setWidth(newWidth);
+                            }
+
+                            if (newHeight >= stage.getMinHeight()) {
+                                stage.setHeight(newHeight);
+                            }
+                        }
+
+                        if (activeResizeDirection == ResizeDirection.SOUTH_EAST) {
+
+                            double newWidth = initialStageWidth + deltaX;
+                            double newHeight = initialStageHeight + deltaY;
+
+                            if (newWidth >= stage.getMinWidth()) {
+                                stage.setWidth(newWidth);
+                            }
+
+                            if (newHeight >= stage.getMinHeight()) {
+                                stage.setHeight(newHeight);
+                            }
+                        }
                     });
+
+
 
                     newScene.addEventFilter(MouseEvent.MOUSE_RELEASED, event -> {
                         activeResizeDirection = ResizeDirection.NONE;

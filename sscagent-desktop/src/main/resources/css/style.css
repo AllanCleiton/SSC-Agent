@@ -41,7 +41,7 @@
 
 .window-controls {
     -fx-alignment: CENTER_RIGHT;
-    -fx-spacing: 2px
+    -fx-spacing: 4px
 }
 
 
@@ -59,13 +59,13 @@
 
     -fx-padding: 0;
 
-    -fx-min-width: 42px;
-    -fx-pref-width: 42px;
-    -fx-max-width: 42px;
+    -fx-min-width: 22px;
+    -fx-pref-width: 32px;
+    -fx-max-width: 32px;
 
-    -fx-min-height: 34px;
-    -fx-pref-height: 34px;
-    -fx-max-height: 34px;
+    -fx-min-height: 24px;
+    -fx-pref-height: 24px;
+    -fx-max-height: 24px;
 
     -fx-font-size: 14px;
 
@@ -86,11 +86,13 @@
 /* =========================================================
    FECHAR
    ========================================================= */
-.window-controls .window-control-button:last-child:hover {
+
+#closeButton:hover {
     -fx-background-color: #C42B3A;
     -fx-text-fill: white;
 }
-.window-controls .window-control-button:last-child:pressed {
+
+#closeButton:armed {
     -fx-background-color: #96232E;
     -fx-text-fill: white;
 }
@@ -157,6 +159,72 @@
 .subtitle {
     -fx-text-fill: #A9B2BD;
     -fx-font-size: 13px;
+}
+
+/* =========================================================
+   BOTÕES RE AVANCAR E RETROCEDER
+   ========================================================= */
+#btxRetroceder,
+#btxAvancar {
+
+    -fx-background-color: #2A3139;
+    -fx-text-fill: #E8EDF2;
+
+    fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+
+    -fx-border-color: #46515D;
+    -fx-border-width: 1px;
+
+    -fx-min-width: 38px;
+    -fx-min-height: 38px;
+    -fx-pref-width: 38px;
+    -fx-pref-height: 38px;
+    -fx-max-width: 38px;
+    -fx-max-height: 38px;
+
+    -fx-padding: 0;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0, 0, 0, 0.45),
+        7,
+        0.25,
+        0,
+        3
+    );
+
+    -fx-cursor: hand;
+}
+
+#btxRetroceder:hover,
+#btxAvancar:hover {
+    -fx-background-color: #343D47;
+    -fx-border-color: #596674;
+}
+
+#btxRetroceder:pressed,
+#btxAvancar:pressed {
+    -fx-background-color: #222830;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0, 0, 0, 0.30),
+        3,
+        0.15,
+        0,
+        1
+    );
+}
+
+#btxRetroceder:disabled,
+#btxAvancar:disabled {
+    -fx-opacity: 0.4;
+    -fx-effect: none;
+    -fx-cursor: default;
 }
 
 /* =========================================================
