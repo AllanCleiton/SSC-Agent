@@ -1,11 +1,9 @@
 package com.allancleitonppma.sscagent.infrastructure.adapters.excel;
 
 import com.allancleitonppma.sscagent.application.ports.PalletReader;
-import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 import com.allancleitonppma.sscagent.infrastructure.config.AddressProfileLoader;
-import com.allancleitonppma.sscagent.infrastructure.dto.BoxStockDTO;
 import com.allancleitonppma.sscagent.infrastructure.dto.IdIntegration;
 import com.allancleitonppma.sscagent.infrastructure.dto.PalletDto;
 import org.apache.poi.ss.usermodel.Row;

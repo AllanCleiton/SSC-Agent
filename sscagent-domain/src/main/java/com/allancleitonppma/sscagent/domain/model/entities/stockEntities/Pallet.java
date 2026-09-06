@@ -1,5 +1,7 @@
 package com.allancleitonppma.sscagent.domain.model.entities.stockEntities;
 
+import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class Pallet
     String status;
     Address address;
     int expectedBoxCount;
-    List<String> boxIds = new ArrayList<>();
+    List<StockBox> boxes = new ArrayList<>();
 
     public Pallet(String palletID, String productDescription, String productCode, String sankhyaId, String status, Address address, int expectedBoxCount) {
         this.palletID = palletID;
@@ -83,8 +85,8 @@ public class Pallet
         this.expectedBoxCount = expectedBoxCount;
     }
 
-    public List<String> getBoxIds() {
-        return boxIds;
+    public List<StockBox> getBoxes() {
+        return boxes;
     }
 
 }

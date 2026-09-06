@@ -1,6 +1,8 @@
 package com.allancleitonppma.sscagent.application.pickingStrategies;
 
 
+import com.allancleitonppma.sscagent.application.usecase.ImportPallet;
+import com.allancleitonppma.sscagent.application.usecase.ImportStockBox;
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.Condition;
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.Expression;
 import com.allancleitonppma.sscagent.domain.model.entities.pickingEntities.InterpretedOrder;
@@ -10,52 +12,79 @@ import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
 import com.allancleitonppma.sscagent.domain.model.enums.ComparisonOperator;
 import com.allancleitonppma.sscagent.domain.model.enums.ConditionType;
 import com.allancleitonppma.sscagent.domain.model.enums.LogicalOperator;
-import com.allancleitonppma.sscagent.domain.model.enums.StockAvailability;
 
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+
+/**
+ *@author allan
+ * @version 1.0
+ * @implNote "Encontrar conjuntos de StockBoxes, agrupados por pallet, que atendem a uma condição, priorizando a concentração física da coleta."
+ */
 public class ConditionStrategy implements PickingStrategy {
-    List<Pallet> stock;
-    InterpretedOrder order;
-    PickingMap pickingMap = new PickingMap();
-    Double quantityDeft;
-
 
 
     /**
      * @param order
-     * @param pallets
+     * @param importStockBox
      * @return
      */
     @Override
-    public PickingMap generated(InterpretedOrder order, List<Pallet> pallets,  List<StockBox> boxes) {
-        stock = pallets;
-        this.order = order;
+    public PickingMap generated(InterpretedOrder order,ImportPallet importPallet, ImportStockBox importStockBox) throws IOException {
 
-        return null;
+        return  processedOrder(order, importPallet, importStockBox);
+
     }
 
 
-    public boolean processedOrder(InterpretedOrder order, List<StockBox> boxes){
+    public PickingMap processedOrder(
+            InterpretedOrder order,
+            ImportPallet importPallet,
+            ImportStockBox importStockBox
+    ) throws IOException {
+        PickingMap pickingMap = new PickingMap();
         double quantityRequired = 0.0;
-        String palletId;
 
-        boolean itFound;
+        Set<String> processedPallets = new HashSet<>();
 
+        for (StockBox box : importStockBox.StockBoxLoadAll(order.getProduct())) {
 
-        for(StockBox boxe: boxes){
-            if(evaluate(order.getExpression(), boxe)){
-                quantityRequired += boxe.getNetWeight();
-                boxe.isAvailable = StockAvailability.Consumed.getValue();
-                pickingMap.getBoxes().add(boxe);
-                palletId = boxe.palletId;
+            // Esse pallet já foi analisado anteriormente
+            if (processedPallets.contains(box.palletId)) {
+                continue;
             }
-            if (quantityRequired >= order.getNeed()){
-                break;
+
+            // Essa caixa não atende à condição.
+            // Portanto, seu pallet não é candidato.
+            if (!evaluate(order.getExpression(), box)) {
+                continue;
+            }
+
+            processedPallets.add(box.palletId);
+
+            // Encontramos um pallet candidato.
+            // Agora exploramos o pallet inteiro.
+            for (StockBox palletBox : importStockBox.loadAllForPallet(box.palletId)) {
+
+                if (!evaluate(order.getExpression(), palletBox)) {
+                    continue;
+                }
+
+                quantityRequired += palletBox.getNetWeight();
+
+                pickingMap.getBoxes().add(palletBox);
+
+                if (quantityRequired >= order.getNeed()) {
+                    return pickingMap;
+                }
             }
         }
-        return true;
+
+        return pickingMap;
     }
 
     private boolean evaluate(
@@ -67,7 +96,7 @@ public class ConditionStrategy implements PickingStrategy {
 
             for (Condition condition : expression.getConditions()) {
 
-                boolean result = AtomEvaluate(
+                boolean result = atomEvaluate(
                         condition.getType(),
                         stockBox,
                         condition.getOperator(),
@@ -86,7 +115,7 @@ public class ConditionStrategy implements PickingStrategy {
 
             for (Condition condition : expression.getConditions()) {
 
-                boolean result = AtomEvaluate(
+                boolean result = atomEvaluate(
                         condition.getType(),
                         stockBox,
                         condition.getOperator(),
@@ -105,7 +134,7 @@ public class ConditionStrategy implements PickingStrategy {
     }
 
 
-    private boolean AtomEvaluate(ConditionType variable, StockBox stockBox, ComparisonOperator operator, Object expectedValue) {
+    private boolean atomEvaluate(ConditionType variable, StockBox stockBox, ComparisonOperator operator, Object expectedValue) {
 
         Object actualValue = getValue(variable, stockBox);
 
@@ -132,13 +161,13 @@ public class ConditionStrategy implements PickingStrategy {
         switch (operator) {
 
             case GREATER_THAN -> {
-                if(actual.getClass().isInstance(LocalDate.class)){
+                if(actual instanceof LocalDate){
                     LocalDate actualAux = (LocalDate) actual;
                     LocalDate expectedAux = (LocalDate) expected;
                     return actualAux.isAfter(expectedAux);
                 }
 
-                if(actual.getClass().isInstance(Integer.class)){
+                if(actual instanceof Integer){
                     Integer actualAux = (Integer) actual;
                     Integer expecterAux = (Integer) expected;
                     return actualAux > expecterAux;
@@ -146,13 +175,13 @@ public class ConditionStrategy implements PickingStrategy {
             }
 
             case LESS_THAN -> {
-                if(actual.getClass().isInstance(LocalDate.class)){
+                if(actual instanceof LocalDate){
                     LocalDate actualAux = (LocalDate) actual;
                     LocalDate expectedAux = (LocalDate) expected;
                     return actualAux.isBefore(expectedAux);
                 }
 
-                if(actual.getClass().isInstance(Integer.class)){
+                if(actual instanceof Integer){
                     Integer actualAux = (Integer) actual;
                     Integer expecterAux = (Integer) expected;
                     return actualAux < expecterAux;
@@ -160,7 +189,7 @@ public class ConditionStrategy implements PickingStrategy {
             }
 
             case GREATER_OR_EQUAL -> {
-                if (actual.getClass().isInstance(LocalDate.class)) {
+                if (actual instanceof LocalDate) {
                     LocalDate actualAux = (LocalDate) actual;
                     LocalDate expectedAux = (LocalDate) expected;
 
@@ -169,7 +198,7 @@ public class ConditionStrategy implements PickingStrategy {
                     }
                 }
 
-                if(actual.getClass().isInstance(Integer.class)){
+                if(actual instanceof Integer){
                     Integer actualAux = (Integer) actual;
                     Integer expecterAux = (Integer) expected;
                     return actualAux >= expecterAux;
@@ -178,7 +207,7 @@ public class ConditionStrategy implements PickingStrategy {
 
             }
             case LESS_OR_EQUAL -> {
-                if (actual.getClass().isInstance(LocalDate.class)) {
+                if (actual instanceof LocalDate) {
                     LocalDate actualAux = (LocalDate) actual;
                     LocalDate expectedAux = (LocalDate) expected;
 
@@ -188,7 +217,7 @@ public class ConditionStrategy implements PickingStrategy {
                 }
 
 
-                if(actual.getClass().isInstance(Integer.class)){
+                if(actual instanceof Integer){
                     Integer actualAux = (Integer) actual;
                     Integer expecterAux = (Integer) expected;
                     return actualAux <= expecterAux;
@@ -197,14 +226,14 @@ public class ConditionStrategy implements PickingStrategy {
 
             }
             case EQUAL -> {
-                if (actual.getClass().isInstance(LocalDate.class)) {
+                if (actual instanceof LocalDate) {
                     LocalDate actualAux = (LocalDate) actual;
                     LocalDate expectedAux = (LocalDate) expected;
                     return actualAux.isEqual(expectedAux);
                 }
 
 
-                if(actual.getClass().isInstance(Integer.class)){
+                if(actual instanceof Integer){
                     Integer actualAux = (Integer) actual;
                     Integer expecterAux = (Integer) expected;
                     return actualAux.equals(expecterAux);
@@ -213,14 +242,14 @@ public class ConditionStrategy implements PickingStrategy {
             }
 
             case NOT_EQUAL ->{
-                if(actual.getClass().isInstance(LocalDate.class)){
+                if(actual instanceof LocalDate){
                     LocalDate actualAux = (LocalDate) actual;
                     LocalDate expectedAux = (LocalDate) expected;
                     return !actualAux.isEqual(expectedAux);
                 }
 
 
-                if(actual.getClass().isInstance(Integer.class)){
+                if(actual instanceof Integer){
                     Integer actualAux = (Integer) actual;
                     Integer expecterAux = (Integer) expected;
                     return !actualAux.equals(expecterAux);

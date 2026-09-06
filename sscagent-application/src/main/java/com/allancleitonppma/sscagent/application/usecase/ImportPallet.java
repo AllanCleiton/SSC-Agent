@@ -13,11 +13,11 @@ public class ImportPallet {
         this.palletReader = palletReader;
     }
 
-    private Pallet LoadPallet(String idPallet) throws IOException {
+    public Pallet LoadPallet(String idPallet) throws IOException {
         return  palletReader.palletLoad(idPallet);
     }
 
-    private List<Pallet> palletLoadAll(String idPallet) throws IOException {
+    public List<Pallet> palletLoadAll(String idPallet) throws IOException {
         return  palletReader.palletLoadAll(idPallet);
     }
 

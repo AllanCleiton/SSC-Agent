@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.util.List;
 
 public interface StockBoxReader {
-    List<StockBox> StockBoxLoad(String idProduct) throws IOException;
+    StockBox  StockBoxLoad(String idProduct) throws IOException;
 
     List<StockBox> StockBoxLoadAll(String idProduct) throws IOException;
+
+    List<StockBox> loadAllForPallet(String idPallet) throws IOException;
 }
