@@ -9,13 +9,14 @@ public class Address{
     String camera;
     String street;
     String position;
+    Integer peso;
 
-
-    public Address(String original, String camera, String street, String position) {
+    public Address(String original, String camera, String street, String position, Integer peso) {
         this.original = original;
         this.camera = camera;
         this.street = street;
         this.position = position;
+        this.peso = peso;
 
     }
 

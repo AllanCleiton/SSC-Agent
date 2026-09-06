@@ -33,6 +33,13 @@
             <version>3.2.2</version>
             <scope>compile</scope>
         </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-yaml -->
+        <dependency>
+            <groupId>tools.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>3.2.2</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -50,6 +57,7 @@
             <artifactId>pdfbox</artifactId>
             <version>3.0.6</version>
         </dependency>
+
 
     </dependencies>
 

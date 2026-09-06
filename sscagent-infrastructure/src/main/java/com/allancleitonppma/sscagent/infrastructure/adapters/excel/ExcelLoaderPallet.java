@@ -4,6 +4,7 @@ import com.allancleitonppma.sscagent.application.ports.PalletReader;
 import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
+import com.allancleitonppma.sscagent.infrastructure.config.AddressProfileLoader;
 import com.allancleitonppma.sscagent.infrastructure.dto.BoxStockDTO;
 import com.allancleitonppma.sscagent.infrastructure.dto.IdIntegration;
 import com.allancleitonppma.sscagent.infrastructure.dto.PalletDto;
@@ -17,16 +18,21 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static com.allancleitonppma.sscagent.infrastructure.Utils.ExcelManipulation.*;
 
 
 public class ExcelLoaderPallet implements PalletReader {
-
     private final Path arquivo;
+    private final Map<String, Integer> addressProfiles;
 
-    public ExcelLoaderPallet(Path path){
+
+
+    public ExcelLoaderPallet(Path path) throws IOException {
         this.arquivo = path;
+        this.addressProfiles = new AddressProfileLoader().load(Path.of("src/main/resources/addressProfile.yaml")).getAddressProfile();
+
     }
 
     public PalletDto load(String idPallet) throws IOException {
@@ -134,14 +140,14 @@ public class ExcelLoaderPallet implements PalletReader {
         return pallets;
     }
 
-    private Pallet mapPallet(PalletDto palletDto) {
+    private Pallet mapPallet(PalletDto palletDto){
         Pallet pallet = new Pallet();
 
         pallet.setPalletID(palletDto.etiquetaPalet);
         pallet.setStatus(palletDto.situacao);
         pallet.setProductCode(palletDto.apontamento);
         pallet.setProductDescription(palletDto.produto);
-        pallet.setAddress(new Address(null,null, null, null));
+        pallet.setAddress(new Address(null,null, null, null, addressProfiles.get(palletDto.local)));
         pallet.setSankhyaId(IdIntegration.getIntegrationIds().get(palletDto.apontamento));
 
         return pallet;
