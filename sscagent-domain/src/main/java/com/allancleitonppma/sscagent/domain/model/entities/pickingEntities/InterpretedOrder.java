@@ -64,4 +64,16 @@ public class InterpretedOrder {
     public void setCandidateStocks(List<CandidateStock> candidateStocks) {
         this.candidateStocks = candidateStocks;
     }
+
+    @Override
+    public String toString() {
+        return "InterpretedOrder{" +
+                "product='" + product + '\n' +
+                ", need=" + need + '\n'+
+                ", condition='" + condition + '\n'+
+                ", order='" + order + '\n'+
+                ", instruction='" + instruction + '\n'+
+                ", candidateStocks=" + candidateStocks +
+                '}';
+    }
 }

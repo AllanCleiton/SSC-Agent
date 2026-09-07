@@ -9,6 +9,7 @@ module sscagent.infrastructure {
     requires tools.jackson.dataformat.yaml;
 
 
+
     exports com.allancleitonppma.sscagent.infrastructure.adapters.json;
     exports com.allancleitonppma.sscagent.infrastructure.adapters.excel;
     exports com.allancleitonppma.sscagent.infrastructure.export;

@@ -24,7 +24,7 @@ public class ImportStockBox {
     }
 
     public List<StockBox> loadAllForPallet(String idPallet) throws IOException {
-        return  stockBoxReader.StockBoxLoadAll(idPallet);
+        return  stockBoxReader.loadAllForPallet(idPallet);
     }
 
 

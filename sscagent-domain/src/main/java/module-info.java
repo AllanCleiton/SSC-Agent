@@ -8,4 +8,5 @@ module sscagent.domain {
     exports com.allancleitonppma.sscagent.domain.model.entities.mapResultEntities;
     exports com.allancleitonppma.sscagent.domain.model.entities.clientEntities;
     exports com.allancleitonppma.sscagent.domain.model.enums;
+    exports com.allancleitonppma.sscagent.domain.model.serviceInterfaces;
 }

@@ -1,26 +1,71 @@
 package com.allancleitonppma.sscagent.domain.model.entities.stockEntities;
 
 
-import java.util.Arrays;
-import java.util.Objects;
 
-public class Address{
-    String original;
-    String camera;
-    String street;
-    String position;
-    Integer peso;
+public class Address implements Comparable<Address> {
 
-    public Address(String original, String camera, String street, String position, Integer peso) {
+    private  String original;
+    private  String zone;
+    private  String street;
+    private  String module;
+    private  String level;
+    private  Integer peso;
+
+    public Address() {}
+
+
+    public Address(String original, String zone, String street, String module, String level, Integer peso) {
         this.original = original;
-        this.camera = camera;
+        this.zone = zone;
         this.street = street;
-        this.position = position;
+        this.module = module;
+        this.level = level;
         this.peso = peso;
-
     }
 
-    public String DisplayName = ((original != null) ? String.join( " - ", (CharSequence) Arrays.stream(new String[] { camera, street, position }).filter(Objects::nonNull)) : null);
+    /**
+     * Ordena os endereços pelo peso da posição física,
+     * priorizando posições de menor dificuldade de coleta.
+     */
+    @Override
+    public int compareTo(Address other) {
+        return Integer.compare(this.peso, other.peso);
+    }
 
+    public String getOriginal() {
+        return original;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getModule() {
+        return module;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public Integer getPeso() {
+        return peso;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "original='" + original + '\'' +
+                ", zone='" + zone + '\'' +
+                ", street='" + street + '\'' +
+                ", module='" + module + '\'' +
+                ", level='" + level + '\'' +
+                ", peso=" + peso +
+                '}';
+    }
 }
 

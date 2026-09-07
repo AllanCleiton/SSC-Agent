@@ -5,6 +5,9 @@ import java.util.List;
 import com.allancleitonppma.sscagent.application.ports.StockBoxReader;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
 import com.allancleitonppma.sscagent.domain.model.entities.productEntities.StockBox;
+import com.allancleitonppma.sscagent.infrastructure.Utils.DefaultAddressParser;
+import com.allancleitonppma.sscagent.infrastructure.config.AddressProfileLoader;
+import com.allancleitonppma.sscagent.infrastructure.dto.AddressPattern;
 import com.allancleitonppma.sscagent.infrastructure.dto.BoxStockDTO;
 import org.apache.poi.ss.usermodel.*;
 
@@ -14,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Map;
 
 import static com.allancleitonppma.sscagent.infrastructure.Utils.ExcelManipulation.*;
 
@@ -21,9 +25,12 @@ import static com.allancleitonppma.sscagent.infrastructure.Utils.ExcelManipulati
 public class ExcelLoaderStockBox implements StockBoxReader {
 
     private final Path arquivo;
+    private final  Map<String, Integer> addressProfile;
 
-    public ExcelLoaderStockBox(Path path){
+    public ExcelLoaderStockBox(Path path) throws IOException {
         this.arquivo = path;
+        AddressProfileLoader addressProfileLoader = new AddressProfileLoader();
+        addressProfile = addressProfileLoader.load(Path.of("C:\\Users\\allan\\Documents\\MyWorkspace\\SSCAgent\\SSCAGENT\\sscagent-infrastructure\\src\\main\\resources\\addressProfile.yaml")).getAddressProfile();
     }
 
     public BoxStockDTO load(String id) throws IOException {
@@ -81,7 +88,7 @@ public class ExcelLoaderStockBox implements StockBoxReader {
         return null;
     }
 
-    private List<BoxStockDTO> loadAll() throws IOException {
+    private List<BoxStockDTO> loadAll(String productCode) throws IOException {
 
         List<BoxStockDTO> boxes = new ArrayList<>();
 
@@ -111,25 +118,25 @@ public class ExcelLoaderStockBox implements StockBoxReader {
                     continue;
                 }
 
+                if(idProduct.equals(productCode)) {
+                    BoxStockDTO dtoBox = new BoxStockDTO(
+                            getString(row.getCell(0)),
+                            getString(row.getCell(1)),
+                            getLong(row.getCell(2)),
+                            getLong(row.getCell(3)),
+                            getLong(row.getCell(4)),
+                            getString(row.getCell(5)),
+                            getInteger(row.getCell(6)),
+                            getString(row.getCell(7)),
+                            getDouble(row.getCell(13)),
+                            getInteger(row.getCell(14)),
+                            getString(row.getCell(15)),
+                            getString(row.getCell(16))
 
-                BoxStockDTO dtoBox = new BoxStockDTO(
-                        getString(row.getCell(0)),
-                        getString(row.getCell(1)),
-                        getLong(row.getCell(2)),
-                        getLong(row.getCell(3)),
-                        getLong(row.getCell(4)),
-                        getString(row.getCell(5)),
-                        getInteger(row.getCell(6)),
-                        getString(row.getCell(7)),
-                        getDouble(row.getCell(13)),
-                        getInteger(row.getCell(14)),
-                        getString(row.getCell(15)),
-                        getString(row.getCell(16))
+                    );
 
-                );
-
-                boxes.add(dtoBox);
-
+                    boxes.add(dtoBox);
+                }
             }
         }
 
@@ -162,13 +169,13 @@ public class ExcelLoaderStockBox implements StockBoxReader {
                  * Se estiver vazia, a linha inteira é ignorada.
                  */
                 String etiquetaProduto = getString(row.getCell(2));
-                String idProduct = getString(row.getCell(4));
+                String id = getString(row.getCell(1));
 
                 if (etiquetaProduto.isBlank()) {
                     continue;
                 }
 
-                if(idProduct.equals(idPallet)) {
+                if(id.equals(idPallet)) {
                     BoxStockDTO dtoBox = new BoxStockDTO(
                             getString(row.getCell(0)),
                             getString(row.getCell(1)),
@@ -196,11 +203,14 @@ public class ExcelLoaderStockBox implements StockBoxReader {
     }
 
 
-    private StockBox mapBoxStock(BoxStockDTO boxStockDTO) {
+    private StockBox mapBoxStock(BoxStockDTO boxStockDTO){
         StockBox box = new StockBox();
 
+        AddressPattern pattern = new AddressPattern("CAM", "R", "A");
+        DefaultAddressParser addressParser = new DefaultAddressParser(pattern ,addressProfile );
+
         box.productId = String.valueOf(boxStockDTO.getProductId());
-        box.address = new Address(null,null, null, null, null);
+        box.address = addressParser.parse(boxStockDTO.getAddress());
         box.packages = boxStockDTO.getPackages();
         box.daysToExpiry = boxStockDTO.getDaysToExpire();
         box.productCode = String.valueOf(boxStockDTO.getSankhyaId());
@@ -222,7 +232,7 @@ public class ExcelLoaderStockBox implements StockBoxReader {
 
     @Override
     public List<StockBox> StockBoxLoadAll(String idProduct) throws IOException {
-        return loadAll()
+        return loadAll(idProduct)
                 .stream()
                 .map(this::mapBoxStock)
                 .toList();

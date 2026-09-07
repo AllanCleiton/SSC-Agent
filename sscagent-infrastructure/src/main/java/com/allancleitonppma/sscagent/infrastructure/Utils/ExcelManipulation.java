@@ -54,7 +54,7 @@ public class ExcelManipulation {
             return null;
         }
 
-        return Long.parseLong(valor.replace(",", ".").split("\\.")[0]);
+        return Long.parseLong(valor.replace(".", ""));
     }
 
     public static Integer getInteger(Cell cell) {

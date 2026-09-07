@@ -15,9 +15,7 @@ import com.allancleitonppma.sscagent.domain.model.enums.LogicalOperator;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 /**
@@ -46,12 +44,17 @@ public class ConditionStrategy implements PickingStrategy {
             ImportPallet importPallet,
             ImportStockBox importStockBox
     ) throws IOException {
+
         PickingMap pickingMap = new PickingMap();
         double quantityRequired = 0.0;
 
         Set<String> processedPallets = new HashSet<>();
+        List<StockBox> stockBoxes =
+                new ArrayList<>(importStockBox.StockBoxLoadAll(order.getProduct()));
 
-        for (StockBox box : importStockBox.StockBoxLoadAll(order.getProduct())) {
+        stockBoxes.sort(Comparator.comparing(StockBox::getAddress));
+
+        for (StockBox box : stockBoxes) {
 
             // Esse pallet já foi analisado anteriormente
             if (processedPallets.contains(box.palletId)) {
@@ -128,6 +131,25 @@ public class ConditionStrategy implements PickingStrategy {
             }
 
             return false;
+        }
+
+        if (expression.getOperator() == null) {
+
+            for (Condition condition : expression.getConditions()) {
+
+                boolean result = atomEvaluate(
+                        condition.getType(),
+                        stockBox,
+                        condition.getOperator(),
+                        condition.getValue()
+                );
+
+                if (!result) {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         return false;

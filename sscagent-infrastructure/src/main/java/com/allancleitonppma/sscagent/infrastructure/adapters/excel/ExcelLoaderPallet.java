@@ -3,7 +3,9 @@ package com.allancleitonppma.sscagent.infrastructure.adapters.excel;
 import com.allancleitonppma.sscagent.application.ports.PalletReader;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Address;
 import com.allancleitonppma.sscagent.domain.model.entities.stockEntities.Pallet;
+import com.allancleitonppma.sscagent.infrastructure.Utils.DefaultAddressParser;
 import com.allancleitonppma.sscagent.infrastructure.config.AddressProfileLoader;
+import com.allancleitonppma.sscagent.infrastructure.dto.AddressPattern;
 import com.allancleitonppma.sscagent.infrastructure.dto.IdIntegration;
 import com.allancleitonppma.sscagent.infrastructure.dto.PalletDto;
 import org.apache.poi.ss.usermodel.Row;
@@ -23,13 +25,14 @@ import static com.allancleitonppma.sscagent.infrastructure.Utils.ExcelManipulati
 
 public class ExcelLoaderPallet implements PalletReader {
     private final Path arquivo;
-    private final Map<String, Integer> addressProfiles;
+    private final  Map<String, Integer> addressProfile;
 
 
 
     public ExcelLoaderPallet(Path path) throws IOException {
         this.arquivo = path;
-        this.addressProfiles = new AddressProfileLoader().load(Path.of("src/main/resources/addressProfile.yaml")).getAddressProfile();
+        AddressProfileLoader addressProfileLoader = new AddressProfileLoader();
+        addressProfile = addressProfileLoader.load(Path.of("C:\\Users\\allan\\Documents\\MyWorkspace\\SSCAgent\\SSCAGENT\\sscagent-infrastructure\\src\\main\\resources\\addressProfile.yaml")).getAddressProfile();
 
     }
 
@@ -141,11 +144,14 @@ public class ExcelLoaderPallet implements PalletReader {
     private Pallet mapPallet(PalletDto palletDto){
         Pallet pallet = new Pallet();
 
+        AddressPattern pattern = new AddressPattern("CAM", "R", "A");
+        DefaultAddressParser addressParser = new DefaultAddressParser(pattern ,addressProfile );
+
         pallet.setPalletID(palletDto.etiquetaPalet);
         pallet.setStatus(palletDto.situacao);
         pallet.setProductCode(palletDto.apontamento);
         pallet.setProductDescription(palletDto.produto);
-        pallet.setAddress(new Address(null,null, null, null, addressProfiles.get(palletDto.local)));
+        pallet.setAddress( addressParser.parse(palletDto.local));  //<- tem que consertar aqui.
         pallet.setSankhyaId(IdIntegration.getIntegrationIds().get(palletDto.apontamento));
 
         return pallet;

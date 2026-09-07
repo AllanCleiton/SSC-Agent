@@ -5,7 +5,7 @@ import com.allancleitonppma.sscagent.domain.model.enums.StockAvailability;
 
 import java.time.LocalDate;
 
-public class StockBox implements Comparable{
+public class StockBox{
         public Address address;
         public String  palletId;
         public String productId;
@@ -86,8 +86,23 @@ public class StockBox implements Comparable{
         this.daysToExpiry = daysToExpiry;
     }
 
+
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public String toString() {
+        return "StockBox{" +
+                ", palletId='" + palletId + '\n' +
+                ", productId='" + productId + '\n' +
+                ", productCode='" + productCode + '\n' +
+                ", SankhyaId=" + SankhyaId +'\n' +
+                ", productName='" + productName + '\n' +
+                ", packages=" + packages +'\n' +
+                ", NetWeight=" + NetWeight +'\n' +
+                ", expirationDate=" + expirationDate +'\n' +
+                ", productionDate=" + productionDate +'\n' +
+                ", daysToExpiry=" + daysToExpiry +'\n' +
+                ", sourceStatus='" + sourceStatus + '\n' +
+                ", isAvailable=" + isAvailable +'\n' +
+                "address=" + address +
+                '}';
     }
 }

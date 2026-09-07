@@ -13,6 +13,11 @@ import java.util.UUID;
 
 public class Main {
     static void main() {
+        // =========================================================
+        // todo TESTE 1 - INTERPRETATION ENGINE
+        // =========================================================
+
+        //Criando uma ordem
         OrderPreview order = new OrderPreview(
                 UUID.randomUUID(),
                 "FRANGO CONGELADO CX. 20KG",
@@ -22,16 +27,18 @@ public class Main {
                 null
         );
 
-        InterpretationEngine engine =
-                new InterpretationEngine();
 
-        InterpretedOrder result =
-                engine.interpret(order);
+        //Instanciando um InterpretationEngine, para a posteriore interpretar a order
+        InterpretationEngine engine =  new InterpretationEngine();
 
-        System.out.println(
-                result.getExpression().getOperator()
-        );
+        // A partir da order, o interpretationEngine cria uma InterpretedOrder, que pe uma ordem com sua condition interpretada
+        InterpretedOrder result =  engine.interpret(order);
 
+        // aqui ele imprime na tela o operador  da InterpretedOrder. OR ou And
+        System.out.println( result.getExpression().getOperator());
+
+
+        //Aqui ele imprime as condições da  InterpretedOrder.
         for (Condition condition :
                 result.getExpression().getConditions()) {
 
@@ -44,6 +51,13 @@ public class Main {
             );
         }
 
+
+        // =========================================================
+        // todo TESTE 2 - PICKING PROFILE
+        // =========================================================
+
+        //*aqui ele cria um objeto pickingProfile, (que vai ser um tipo que implementa a interface EvaluateProduct, isso será usado dentro
+        // das classes PickingStrategy conforme o tipo de PickingStrategy*/
         PickingProfile profile = new PickingProfile(
         "PRODUTOS CRÍTICOS",
                 new ArrayList<>(List.of("11046")),
@@ -56,8 +70,11 @@ public class Main {
                 QuantityUnit.Kilograms
         );
 
-
+        //aqui é um teste para printar na tela o rigor do PickingProfile que criei acima.
         System.out.println("Rigor de separaçao: " + profile.getRigor().toString());
+
+
+
 
     }
 }
