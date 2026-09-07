@@ -22,9 +22,9 @@ class ConditionStrategyTest {
         // preparar Order + Infrastructure
         OrderPreview order = new OrderPreview(
                 UUID.randomUUID(),
-                "11161",
-                40,
-                "DIAS = 6",
+                "11070",
+                100,
+                "DIAS = 8",
                 "123456",
                 null
         );
@@ -37,7 +37,7 @@ class ConditionStrategyTest {
         InterpretedOrder result =  engine.interpret(order);
 
 
-//        importStockBox.loadAllForPallet("334.177").forEach(IO::println);
+        //importStockBox.StockBoxLoadAll("6005").forEach(IO::println);
 
         PickingMap map = new ConditionStrategy().generated(result, null, importStockBox);
 

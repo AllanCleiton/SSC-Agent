@@ -63,7 +63,7 @@ public class ConditionStrategy implements PickingStrategy {
 
             // Essa caixa não atende à condição.
             // Portanto, seu pallet não é candidato.
-            if (!evaluate(order.getExpression(), box)) {
+            if (!evaluate(order.getExpression(), box) ) {
                 continue;
             }
 
@@ -76,10 +76,11 @@ public class ConditionStrategy implements PickingStrategy {
                 if (!evaluate(order.getExpression(), palletBox)) {
                     continue;
                 }
+                if(palletBox.SankhyaId.equals(box.SankhyaId)) {
+                    quantityRequired += palletBox.getNetWeight();
+                    pickingMap.getBoxes().add(palletBox);
+                }
 
-                quantityRequired += palletBox.getNetWeight();
-
-                pickingMap.getBoxes().add(palletBox);
 
                 if (quantityRequired >= order.getNeed()) {
                     return pickingMap;
